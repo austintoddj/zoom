@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7496bdc95169d1b3cc66199af8b9f01d",
+    "content-hash": "04535e11b42a333ebe83c7cd965541dc",
     "packages": [
         {
             "name": "bepsvpt/csp-builder",
