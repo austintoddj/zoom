@@ -1,9 +1,15 @@
 {
     "name": "austintoddj/laravel-zoom",
     "description": "A Laravel 5 Boilerplate Application",
-    "keywords": ["laravel", "boilerplate"],
+    "keywords": ["laravel", "boilerplate", "application"],
     "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "Todd Austin",
+            "email": "austin.todd.j@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=7.0.0",
         "laravel/tinker": "~1.0",
