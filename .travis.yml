@@ -16,10 +16,12 @@ matrix:
 before_install:
   - if [[ $TRAVIS_PHP_VERSION != 7.2 ]] ; then phpenv config-rm xdebug.ini; fi
   - mv .env.example .env
-  - php artisan key:generate
 
 install:
   - composer install
+
+before_script:
+  - php artisan key:generate
 
 script:
   - vendor/bin/phpunit
