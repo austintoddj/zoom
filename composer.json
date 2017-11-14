@@ -15,7 +15,8 @@
         "laravel/tinker": "~1.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
-        "bepsvpt/secure-headers": "^4.1"
+        "bepsvpt/secure-headers": "^4.1",
+        "spatie/laravel-activitylog": "^2.3"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
