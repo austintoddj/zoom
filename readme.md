@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/austintoddj/laravel-zoom/blob/master/resources/assets/img/laravel-zoom.png" width="316"></p>
+<p align="center"><img src="https://github.com/austintoddj/laravel-zoom/blob/master/resources/assets/img/laravel-zoom.png" width="310"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/laravel-zoom"><img src="https://travis-ci.org/austintoddj/laravel-zoom.svg" alt="Build Status"></a>
@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/austintoddj/laravel-zoom"><img src="https://poser.pugx.org/austintoddj/laravel-zoom/license.svg" alt="License"></a>
 </p>
 
-## About Laravel Zoom
+## Introduction
 
 Laravel Zoom is a boilerplate meant to standardize much of the setup that almost every web application needs. Reclaim the first few hours of development on a new project by allowing Laravel Zoom to give you a little speed boost.
 
