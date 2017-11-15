@@ -89,7 +89,7 @@
                 <div class="links">
                     <a href="https://github.com/austintoddj/laravel-zoom#features">Features</a>
                     <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">Laravel Zoom</a>
-                    <a href="https://github.com/austintoddj/laravel-zoom#installation" target="_blank">Installation</a>
+                    <a href="https://github.com/austintoddj/laravel-zoom#configuration" target="_blank">Configuration</a>
                 </div>
             </div>
         </div>

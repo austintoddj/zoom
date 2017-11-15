@@ -23,6 +23,8 @@ Laravel Zoom is built on [Laravel 5.5](https://github.com/laravel/framework) and
 
 ## Installation
 
+## Configuration
+
 ## License
 
 Laravel Zoom is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
