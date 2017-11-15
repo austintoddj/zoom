@@ -64,7 +64,7 @@
         }
 
         img {
-            width: 100px;
+            width: 316px;
         }
     </style>
 </head>
@@ -83,12 +83,12 @@
 
     <div class="content">
         <div class="title m-b-md">
-            <img src="{{ asset('img/lightning.svg') }}">
+            <img src="{{ asset('img/laravel-zoom.png') }}">
         </div>
 
         <div class="links">
             <a href="https://github.com/austintoddj/laravel-zoom#features">Features</a>
-            <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">Laravel Zoom</a>
+            <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">GitHub</a>
             <a href="https://github.com/austintoddj/laravel-zoom#configuration" target="_blank">Configuration</a>
         </div>
     </div>
