@@ -1,14 +1,14 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Modules
-@import "modules/_base";
+@import "modules/variables";
+@import "modules/global";
 
 // Pages
 
 // Partials
-@import "partials/_bootstrap-overrides";
+@import "partials/bootstrap-overrides";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap";
