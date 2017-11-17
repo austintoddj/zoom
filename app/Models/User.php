@@ -11,6 +11,13 @@ class User extends Authenticatable
     use Notifiable, LogsActivity;
 
     /**
+     * The database table used by the model.
+     *
+     * @string $table
+     */
+    protected $table = 'Users';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -29,7 +36,8 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be be logged when created, updated, or deleted.
+     * The attributes that should be be logged when the model is
+     * created, updated, or deleted.
      *
      * @var array
      */
