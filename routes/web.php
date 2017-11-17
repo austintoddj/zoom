@@ -11,8 +11,10 @@
 |
 */
 
-Route::view('/', 'public.index');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Public Routes...
+Helper::includeRouteFiles(__DIR__.'/public/');
+
+// Admin Routes...
+Helper::includeRouteFiles(__DIR__.'/admin/');
