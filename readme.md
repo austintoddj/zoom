@@ -39,6 +39,10 @@ Use Laravel Zoom to cater to your specific requirements on the application you'r
 
 Since you downloaded Laravel Zoom via Composer, an `.env` file will already have been generated for you. Use it to set some basic application variables.
 
+### Registration
+
+Not every application will require users to register. You can toggle this feature on or off by setting `APP_REGISTRATION` to `true` or `false` in your `.env`  file.
+
 ### PHP Secure Headers
 
 Setting secure headers can be done by modifying `config/secure-headers.php` to fit your needs. Read more from the [official documentation](https://github.com/BePsvPT/secure-headers).
