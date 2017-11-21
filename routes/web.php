@@ -11,7 +11,8 @@
 |
 */
 
-Auth::routes();
+// Auth Routes...
+Helper::includeRouteFiles(__DIR__.'/auth/');
 
 // Public Routes...
 Helper::includeRouteFiles(__DIR__.'/public/');
