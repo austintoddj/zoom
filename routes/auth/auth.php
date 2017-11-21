@@ -5,7 +5,7 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('login', 'LoginController@login');
     Route::post('logout', 'LoginController@logout')->name('logout');
 
-    if (env('APP_REGISTRATION')) {
+    if (config('auth.registration')) {
         Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
         Route::post('register', 'RegisterController@register');
     }
