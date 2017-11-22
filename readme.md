@@ -41,7 +41,7 @@ Since you downloaded Laravel Zoom via Composer, an `.env` file will already have
 
 ### Registration
 
-Not every application will require users to register. You can toggle this feature on or off by setting `APP_REGISTRATION` to `true` or `false` in your `.env`  file.
+Not every application will require users to register. You can toggle this feature by setting `APP_REGISTRATION` to either `true` or `false` in your `.env`  file.
 
 ### PHP Secure Headers
 
