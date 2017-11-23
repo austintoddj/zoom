@@ -27,12 +27,7 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    @if (Auth::guest())
-                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-                        @if (env('APP_REGISTRATION'))
-                            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
-                        @endif
-                    @else
+                    @auth
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
                                data-toggle="dropdown"
@@ -51,7 +46,12 @@
                                 </form>
                             </div>
                         </li>
-                    @endif
+                    @else
+                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                        @if (config('auth.registration'))
+                            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                        @endif
+                    @endauth
                 </ul>
             </div>
 
