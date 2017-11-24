@@ -19,7 +19,7 @@ Laravel Zoom is built on [Laravel 5.5](https://github.com/laravel/framework) and
 * [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
 * [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
 * [Activity Log](https://docs.spatie.be/laravel-activitylog/v1/introduction)
-* [User Authentication](https://laravel.com/docs/5.5/authentication#authentication-quickstart)
+* [User Authentication & Registration](https://laravel.com/docs/5.5/authentication#authentication-quickstart)
 
 ## Installation
 
