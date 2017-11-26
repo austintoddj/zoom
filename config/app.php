@@ -180,6 +180,7 @@ return [
         /*
          * Custom Service Providers...
          */
+        BladeSvg\BladeSvgServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
