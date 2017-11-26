@@ -30,7 +30,7 @@
                     @auth
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ Auth::user()->name }}
+                                <img src="{{ Helper::gravatar(Auth::user()->email) }}" alt="{{ Auth::user()->name }} Profile Image" style="border-radius: 50%; width: 24px"> {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <a href="#" class="dropdown-item">Profile</a>
