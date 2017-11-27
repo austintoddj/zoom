@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-class HomeController extends Controller
+use App\Http\Controllers\Controller;
+
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home.index');
+        return view('admin.dashboard.index');
     }
 }
