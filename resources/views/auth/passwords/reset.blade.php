@@ -21,6 +21,7 @@
                                             class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                             name="email"
                                             value="{{ $email or old('email') }}"
+                                            autofocus
                                     >
                                     @if ($errors->has('email'))
                                         <div class="invalid-feedback">

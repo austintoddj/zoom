@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/austintoddj/laravel-zoom/blob/master/resources/assets/img/laravel-zoom.png" width="310"></p>
+<p align="center"><img src="https://github.com/austintoddj/laravel-zoom/blob/master/resources/assets/admin/img/laravel-zoom.png" width="362"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/laravel-zoom"><img src="https://travis-ci.org/austintoddj/laravel-zoom.svg" alt="Build Status"></a>

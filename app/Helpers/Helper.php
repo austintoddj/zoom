@@ -3,13 +3,14 @@
 namespace App\Helpers;
 
 use App\Meta\Constants;
+use Illuminate\Support\Arr;
 
 class Helper extends Constants
 {
     /**
      * Strip the protocol identifier from the given URL.
      *
-     * @param string $url
+     * @param  string $url
      * @return string
      */
     public static function stripProtocolIdentifier($url)
@@ -38,5 +39,21 @@ class Helper extends Constants
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+    }
+
+    /**
+     * Generate a Gravatar URL for the given email address.
+     *
+     * @param  string  $email
+     * @param  string  $connection
+     * @return string
+     */
+    public static function gravatar($email, $connection = 'default')
+    {
+        $config = array_filter(config("gravatar.$connection", []));
+        $url = Arr::pull($config, 'url', 'https://secure.gravatar.com/avatar');
+        $query = http_build_query($config);
+
+        return $url.'/'.md5(strtolower(trim($email))).($query ? "?$query" : '');
     }
 }
