@@ -6,9 +6,14 @@
             <div class="col-md-2">
                 <aside id="mainSidebar">
                     <ul class="nav flex-column">
-                        <li class="nav-item router-link-exact-active active">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item active">
+                            <a href="{{ url('/home') }}" class="nav-link">
                                 <i>@icon('dashboard')</i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i>@icon('user-solid-circle')</i>Profile
                             </a>
                         </li>
                         <li class="nav-item">
