@@ -22,7 +22,7 @@
                                 <div class="col-lg-6">
                                     <input type="email"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" autofocus>
+                                           name="email" value="{{ old('email') }}">
 
                                     @if ($errors->has('email'))
                                         <div class="invalid-feedback">

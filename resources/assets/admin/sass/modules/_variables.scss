@@ -1,30 +1,26 @@
 // Body
-$body-bg: #ebebeb;
+$body-bg: #fff;
 
-// Typography
-$font-family-base: Lato;
-$font-size-base: 0.95rem;
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border-color: $laravel-border-color;
+
+$card-border-color: $laravel-border-color;
 
 // Brands
-$primary: #0069ff;
+$primary: #3097D1;
+$info: #8eb4cb;
+$success: #2ab27b;
+$warning: #cbb956;
+$danger: #bf5329;
 
-// Cards
-$card-border-width: 0;
-$card-inner-border-radius: 5px;
-$card-cap-bg: #fff;
-$card-bg: #fafafa;
-
-// Tables
-$table-hover-bg: #f5f8fc;
-
-// Modals
-$modal-content-border-width: 0;
-$modal-backdrop-opacity: .7;
+// Typography
+$font-family-sans-serif: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
+"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-size-base: .875rem; // 14px
+$line-height-base: 1.6;
+$text-color: #636b6f;
 
 // Inputs
-$input-box-shadow: 0;
-$input-btn-focus-box-shadow: 0;
-$input-border-radius: 0;
-
-// Tooltips
-$tooltip-max-width: 500px;
+$input-border-color: lighten($text-color, 40%);
+$input-placeholder-color: lighten($text-color, 30%);
