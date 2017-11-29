@@ -13,7 +13,11 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        You are logged in!
+                        @if (config('auth.registration'))
+                            <i class="icon-sm icon-enabled">@icon('checkmark-outline')</i> Registration Enabled
+                        @else
+                            <i class="icon-sm icon-disabled">@icon('close-outline')</i> Registration Disabled
+                        @endif
                     </div>
                 </div>
             </div>

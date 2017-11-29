@@ -16,6 +16,7 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "nothingworks/blade-svg": "^0.2.2",
         "spatie/laravel-activitylog": "^2.3"
     },
     "require-dev": {

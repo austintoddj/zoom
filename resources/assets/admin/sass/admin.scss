@@ -12,6 +12,19 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+i .icon-sm {
+    display: inline-flex;
+    align-self: center;
+    position: relative;
+    height: 1em;
+    width: 0.4em;
+    margin-right: 1.5rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+}
 
 #mainHeader {
   border-bottom: solid 1px #d8d8d8;
@@ -23,6 +36,12 @@
 
 .card {
   box-shadow: 0 2px 3px rgba(0, 0, 0, .16);
+
+  .card-body {
+    i.icon-sm {
+      vertical-align: middle;
+    }
+  }
 
   .card-header {
     padding: 1rem 1.25rem;
