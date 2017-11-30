@@ -38,7 +38,7 @@ class ProfileController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email'
+            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
         ]);
 
         // Update the user profile in the database
