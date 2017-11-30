@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -33,8 +30,11 @@
                                 <img src="{{ Helper::gravatar(Auth::user()->email) }}" alt="{{ Auth::user()->name }} Profile Image" style="border-radius: 50%; width: 24px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <h6 class="dropdown-header">Signed in as <strong>{{ Auth::user()->name }}</strong></h6>
+                                <div class="dropdown-divider"></div>
                                 <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
-                                <a href="{{ route('profile') }}" class="dropdown-item">Profile</a>
+                                <a href="{{ route('profile') }}" class="dropdown-item">Your Profile</a>
+                                <a href="{{ route('activity') }}" class="dropdown-item">Activity</a>
                                 <div class="dropdown-divider"></div>
                                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -42,12 +42,12 @@
                                 </form>
                             </div>
                         </li>
-                        @else
-                            <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-                            @if (config('auth.registration'))
-                                <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
-                            @endif
-                            @endauth
+                    @else
+                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                        @if (config('auth.registration'))
+                            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                        @endif
+                    @endauth
                 </ul>
             </div>
 
@@ -57,7 +57,6 @@
     @yield('content')
 </div>
 
-<!-- Scripts -->
 <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>

@@ -13,11 +13,24 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        @if (config('auth.registration'))
-                            <i class="icon-sm icon-enabled">@icon('checkmark-outline')</i> Registration Enabled
-                        @else
-                            <i class="icon-sm icon-disabled">@icon('close-outline')</i> Registration Disabled
-                        @endif
+
+                        <p>
+                            @if (config('auth.registration'))
+                                <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
+                            @else
+                                <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
+                            @endif
+                            Registration
+                        </p>
+
+                        <p>
+                            @if (config('mail.username'))
+                                <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
+                            @else
+                                <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
+                            @endif
+                            Email Configuration
+                        </p>
                     </div>
                 </div>
             </div>

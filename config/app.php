@@ -235,6 +235,7 @@ return [
         /*
          * Custom Aliases...
          */
+        'Carbon' => \Carbon\Carbon::class,
         'Helper' => \App\Helpers\Helper::class,
 
     ],
