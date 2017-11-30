@@ -30,6 +30,7 @@ i .icon-sm {
 
   .card-body {
     i.icon-sm {
+      padding-right: 5px;
       vertical-align: middle;
     }
   }
@@ -49,6 +50,10 @@ i .icon-sm {
 
 .fill-white {
   fill: #fff;
+}
+
+.fill-grey {
+  fill: #ccc;
 }
 
 .fill-primary {
