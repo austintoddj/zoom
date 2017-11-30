@@ -180,8 +180,8 @@ return [
         /*
          * Custom Service Providers...
          */
-        BladeSvg\BladeSvgServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        BladeSvg\BladeSvgServiceProvider::class,
 
     ],
 
@@ -235,6 +235,7 @@ return [
         /*
          * Custom Aliases...
          */
+        'Carbon' => \Carbon\Carbon::class,
         'Helper' => \App\Helpers\Helper::class,
 
     ],

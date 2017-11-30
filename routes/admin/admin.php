@@ -1,3 +1,8 @@
 <?php
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['namespace' => 'Admin'], function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::post('/profile', 'ProfileController@update');
+    Route::get('/activity', 'ActivityController@index')->name('activity');
+});
