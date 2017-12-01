@@ -39,7 +39,7 @@ class ProfileController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email'
+            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
         ]);
 
         $subject = User::where('email', $request->email)->first();
@@ -55,12 +55,12 @@ class ProfileController extends Controller
             ->withProperties([
                 'attributes' => [
                     'name' => $request->name,
-                    'email' => $request->email
+                    'email' => $request->email,
                 ],
                 'old' => [
                     'name' => $subject->name,
-                    'email' => $subject->email
-                ]
+                    'email' => $subject->email,
+                ],
             ])
             ->log('user.update');
 
