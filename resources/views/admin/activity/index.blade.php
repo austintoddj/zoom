@@ -10,7 +10,7 @@
                     <li class="list-group-item justify-content-between">
                         <a class="btn btn-link" data-toggle="collapse" href="#collapse{{ $item->id }}"
                            aria-expanded="false" aria-controls="collapse{{ $item->id }}">
-                            {{ strtolower(preg_replace('/[\\\\]/', '_', $item->subject_type)).'.'.$item->description }}
+                            {{ $item->description }}
                         </a>
                         <span class="pull-right"><small>{{ Carbon::parse($item->created_at)->diffForHumans() }}</small></span>
                         <div class="collapse table-responsive" id="collapse{{ $item->id }}">
@@ -24,14 +24,18 @@
                                     <td>Description</td>
                                     <td>{{ $item->description }}</td>
                                 </tr>
-                                <tr>
-                                    <td>Subject ID</td>
-                                    <td>{{ $item->subject_id }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Subject Type</td>
-                                    <td>{{ $item->subject_type }}</td>
-                                </tr>
+                                @if(isset($item->subject_id))
+                                    <tr>
+                                        <td>Subject ID</td>
+                                        <td>{{ $item->subject_id }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($item->subject_type))
+                                    <tr>
+                                        <td>Subject Type</td>
+                                        <td>{{ $item->subject_type }}</td>
+                                    </tr>
+                                @endif
                                 <tr>
                                     <td>Causer ID</td>
                                     <td>{{ $item->causer_id }}</td>

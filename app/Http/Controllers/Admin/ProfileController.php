@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -38,11 +39,30 @@ class ProfileController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
+            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email'
         ]);
 
+        $subject = User::where('email', $request->email)->first();
+        $causer = Auth::user();
+
         // Update the user profile in the database
-        Auth::user()->update($request->all());
+        $subject->update($request->all());
+
+        // Log the update activity
+        activity()
+            ->causedBy($causer)
+            ->performedOn($subject)
+            ->withProperties([
+                'attributes' => [
+                    'name' => $request->name,
+                    'email' => $request->email
+                ],
+                'old' => [
+                    'name' => $subject->name,
+                    'email' => $subject->email
+                ]
+            ])
+            ->log('user.update');
 
         return back()->with('success', 'Your profile has been updated!');
     }
