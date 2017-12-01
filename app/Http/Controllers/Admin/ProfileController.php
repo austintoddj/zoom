@@ -26,8 +26,8 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
-// TODO: Add password validation and update ONLY if not null
-// 'password' => 'required|string|min:6|confirmed',
+        // TODO: Add password validation and update ONLY if not null
+        // 'password' => 'required|string|min:6|confirmed',
 
         // Grab the old attribute values
         $oldName = Auth::user()->name;
@@ -36,7 +36,7 @@ class ProfileController extends Controller
         // Validate the request data
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email'
+            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
         ]);
 
         // Update the user profile in the database

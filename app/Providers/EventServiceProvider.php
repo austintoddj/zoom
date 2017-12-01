@@ -22,7 +22,7 @@ class EventServiceProvider extends ServiceProvider
 
         'Illuminate\Auth\Events\Failed' => [
             'App\Listeners\LogFailedLogin',
-        ]
+        ],
     ];
 
     /**
