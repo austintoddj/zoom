@@ -9,16 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Show the Profile Page.
      *
      * @return \Illuminate\Http\Response
@@ -36,6 +26,9 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+// TODO: Add password validation and update ONLY if not null
+// 'password' => 'required|string|min:6|confirmed',
+
         // Grab the old attribute values
         $oldName = Auth::user()->name;
         $oldEmail = Auth::user()->email;
@@ -43,7 +36,7 @@ class ProfileController extends Controller
         // Validate the request data
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
+            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email'
         ]);
 
         // Update the user profile in the database
@@ -65,6 +58,6 @@ class ProfileController extends Controller
             ])
             ->log('profile_update');
 
-        return back()->with('success', 'Your profile has been updated!');
+        return back()->with('success', trans('notifications.update_success', ['entity' => 'Profile']));
     }
 }

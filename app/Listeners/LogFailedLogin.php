@@ -26,7 +26,7 @@ class LogFailedLogin
     {
         activity('user')
             ->withProperties([
-                'attempted_email' => $event->credentials['email'],
+                'email' => $event->credentials['email'],
                 'ip' => $_SERVER['REMOTE_ADDR'],
                 'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             ])

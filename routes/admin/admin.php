@@ -1,10 +1,8 @@
 <?php
 
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::post('/profile', 'ProfileController@update');
-    Route::get('/password', 'PasswordController@index')->name('password');
-    Route::post('/password', 'PasswordController@update');
     Route::get('/activity', 'ActivityController@index')->name('activity');
 });
