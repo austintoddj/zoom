@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use Illuminate\Auth\Events\Failed;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class LogFailedLogin
 {
@@ -30,7 +28,7 @@ class LogFailedLogin
             ->causedBy($event->user)
             ->withProperties([
                 'ip' => $_SERVER['REMOTE_ADDR'],
-                'user_agent' => $_SERVER['HTTP_USER_AGENT']
+                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             ])
             ->log('user.failed_login');
     }

@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use Illuminate\Auth\Events\Login;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class LogSuccessfulLogin
 {
@@ -30,7 +28,7 @@ class LogSuccessfulLogin
             ->causedBy($event->user)
             ->withProperties([
                 'ip' => $_SERVER['REMOTE_ADDR'],
-                'user_agent' => $_SERVER['HTTP_USER_AGENT']
+                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             ])
             ->log('user.login');
     }
