@@ -24,12 +24,12 @@ class LogFailedLogin
      */
     public function handle(Failed $event)
     {
-        activity()
-            ->causedBy($event->user)
+        activity('user')
             ->withProperties([
+                'attempted_email' => $event->credentials['email'],
                 'ip' => $_SERVER['REMOTE_ADDR'],
-                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+                'user_agent' => $_SERVER['HTTP_USER_AGENT']
             ])
-            ->log('user.failed_login');
+            ->log('failed_login');
     }
 }

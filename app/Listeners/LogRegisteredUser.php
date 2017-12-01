@@ -24,12 +24,12 @@ class LogRegisteredUser
      */
     public function handle(Registered $event)
     {
-        activity()
+        activity('user')
             ->performedOn($event->user)
             ->withProperties([
                 'ip' => $_SERVER['REMOTE_ADDR'],
                 'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             ])
-            ->log('user.register');
+            ->log('register');
     }
 }

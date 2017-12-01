@@ -10,7 +10,7 @@
                     <li class="list-group-item justify-content-between">
                         <a class="btn btn-link" data-toggle="collapse" href="#collapse{{ $item->id }}"
                            aria-expanded="false" aria-controls="collapse{{ $item->id }}">
-                            {{ $item->description }}
+                            {{ $item->log_name.'.'.$item->description }}
                         </a>
                         <span class="pull-right"><small>{{ Carbon::parse($item->created_at)->diffForHumans() }}</small></span>
                         <div class="collapse table-responsive" id="collapse{{ $item->id }}">
@@ -36,14 +36,18 @@
                                         <td>{{ $item->subject_type }}</td>
                                     </tr>
                                 @endif
-                                <tr>
-                                    <td>Causer ID</td>
-                                    <td>{{ $item->causer_id }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Causer Type</td>
-                                    <td>{{ $item->causer_type }}</td>
-                                </tr>
+                                @if(isset($item->causer_id))
+                                    <tr>
+                                        <td>Causer ID</td>
+                                        <td>{{ $item->causer_id }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($item->causer_type))
+                                    <tr>
+                                        <td>Causer Type</td>
+                                        <td>{{ $item->causer_type }}</td>
+                                    </tr>
+                                @endif
                                 <tr>
                                     <td>Properties</td>
                                     <td>{{ $item->properties }}</td>

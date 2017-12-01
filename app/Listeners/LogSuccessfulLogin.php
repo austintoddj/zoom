@@ -24,12 +24,12 @@ class LogSuccessfulLogin
      */
     public function handle(Login $event)
     {
-        activity()
+        activity('user')
             ->causedBy($event->user)
             ->withProperties([
                 'ip' => $_SERVER['REMOTE_ADDR'],
                 'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             ])
-            ->log('user.login');
+            ->log('login');
     }
 }
