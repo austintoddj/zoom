@@ -43,6 +43,12 @@ class PasswordController extends Controller
         // Update the user password in the database
         Auth::user()->update(['password' => bcrypt($request->password)]);
 
+        // Log the update activity
+        activity('user')
+            ->causedBy(Auth::user())
+            ->performedOn(Auth::user())
+            ->log('password_update');
+
         return back()->with('success', 'Your password has been updated!');
     }
 }

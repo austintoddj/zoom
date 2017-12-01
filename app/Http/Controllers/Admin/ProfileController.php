@@ -63,7 +63,7 @@ class ProfileController extends Controller
                     'email' => $oldEmail,
                 ],
             ])
-            ->log('update');
+            ->log('profile_update');
 
         return back()->with('success', 'Your profile has been updated!');
     }

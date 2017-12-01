@@ -48,11 +48,13 @@
                                         <td>{{ $item->causer_type }}</td>
                                     </tr>
                                 @endif
-                                <tr>
-                                    <td>Properties</td>
-                                    <td>{{ $item->properties }}</td>
-                                </tr>
-                                <tr>
+                                @if($item->properties != '[]')
+                                    <tr>
+                                        <td>Properties</td>
+                                        <td>{{ $item->properties }}</td>
+                                    </tr>
+                                @endif
+                                    <tr>
                                     <td>Created At</td>
                                     <td>{{ $item->created_at }}</td>
                                 </tr>
@@ -67,6 +69,6 @@
                 @endforeach
             </ul>
         </div>
-        {{ $activity->links() }}
+        {{ $activity->render() }}
     </div>
 @endsection
