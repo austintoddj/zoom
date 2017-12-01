@@ -34,13 +34,13 @@ class ProfileController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
-            'password' => 'nullable|string|min:6|confirmed'
+            'password' => 'nullable|string|min:6|confirmed',
         ]);
 
         // Update the user profile in the database
         Auth::user()->name = $request->name;
         Auth::user()->email = $request->email;
-        if(isset($request->password)) {
+        if (isset($request->password)) {
             Auth::user()->password = bcrypt($request->password);
         }
         Auth::user()->save();
