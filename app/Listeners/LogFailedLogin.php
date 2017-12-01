@@ -28,7 +28,7 @@ class LogFailedLogin
             ->withProperties([
                 'attempted_email' => $event->credentials['email'],
                 'ip' => $_SERVER['REMOTE_ADDR'],
-                'user_agent' => $_SERVER['HTTP_USER_AGENT']
+                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             ])
             ->log('failed_login');
     }
