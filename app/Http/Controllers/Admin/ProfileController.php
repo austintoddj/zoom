@@ -26,10 +26,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
-        // TODO: Add password validation and update ONLY if not null
-        // 'password' => 'required|string|min:6|confirmed',
-
-        // Grab the old attribute values
+        // Save original attribute values
         $oldName = Auth::user()->name;
         $oldEmail = Auth::user()->email;
 
@@ -37,10 +34,16 @@ class ProfileController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
+            'password' => 'nullable|string|min:6|confirmed'
         ]);
 
         // Update the user profile in the database
-        Auth::user()->update($request->all());
+        Auth::user()->name = $request->name;
+        Auth::user()->email = $request->email;
+        if(isset($request->password)) {
+            Auth::user()->password = bcrypt($request->password);
+        }
+        Auth::user()->save();
 
         // Log the update activity
         activity('user')
