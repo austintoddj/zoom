@@ -17,10 +17,7 @@
                     <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
 
                     <div class="col-lg-6">
-                        <input type="email"
-                               class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                               name="email" value="{{ old('email') }}">
-
+                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                         @if ($errors->has('email'))
                             <div class="invalid-feedback">
                                 <strong>{{ $errors->first('email') }}</strong>
