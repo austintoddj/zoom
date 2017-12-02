@@ -11,7 +11,6 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -66,8 +65,15 @@
             </div>
         </div>
     </div>
-</div>
 
-<script src="{{ asset('js/admin.js') }}"></script>
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+            <footer class="footer">
+                    <span class="text-muted small"><strong>Laravel</strong> Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>

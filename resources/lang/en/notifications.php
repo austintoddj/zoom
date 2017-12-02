@@ -12,6 +12,6 @@ return [
     |
     */
 
-    'update_success' => 'Success! :entity has been updated.',
+    'update_success' => ':entity has been updated.',
 
 ];

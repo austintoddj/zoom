@@ -6,6 +6,8 @@
 
         <div class="card-body">
 
+            <p class="text-muted small"><strong>Components</strong></p>
+
             <p>
                 @if (config('auth.registration'))
                     <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
