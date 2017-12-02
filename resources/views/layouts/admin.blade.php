@@ -11,7 +11,6 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -26,18 +25,24 @@
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ Helper::gravatar(Auth::user()->email) }}" alt="{{ Auth::user()->name }} Profile Image" style="border-radius: 50%; width: 24px">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{{ Helper::gravatar(Auth::user()->email) }}"
+                                     alt="{{ Auth::user()->name }} Profile Image"
+                                     style="border-radius: 50%; width: 24px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <h6 class="dropdown-header">Signed in as <strong>{{ Auth::user()->name }}</strong></h6>
                                 <div class="dropdown-divider"></div>
                                 <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
                                 <a href="{{ route('profile') }}" class="dropdown-item">Your Profile</a>
-                                <a href="{{ route('activity') }}" class="dropdown-item">Activity</a>
+                                <a href="{{ route('activity') }}" class="dropdown-item">Activity Log</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <a href="{{ route('logout') }}" class="dropdown-item"
+                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log
+                                    Out</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </div>
@@ -50,13 +55,25 @@
                     @endauth
                 </ul>
             </div>
-
         </div>
     </nav>
 
-    @yield('content')
-</div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                @yield('content')
+            </div>
+        </div>
+    </div>
 
-<script src="{{ asset('js/admin.js') }}"></script>
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+            <footer class="footer">
+                    <span class="text-muted"><strong>Laravel</strong> Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>

@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
-use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, LogsActivity;
+    use Notifiable;
 
     /**
      * The database table used by the model.
@@ -34,12 +33,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * The attributes that should be be logged when the model is
-     * created, updated, or deleted.
-     *
-     * @var array
-     */
-    protected static $logAttributes = ['name', 'email', 'password'];
 }
