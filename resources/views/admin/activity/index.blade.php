@@ -69,7 +69,5 @@
                 @endforeach
             </ul>
         </div>
-        {{--Todo: Fix the pagination button styling--}}
-        {{ $activity->render() }}
     </div>
 @endsection

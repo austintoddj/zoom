@@ -14,7 +14,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activity = DB::table('activity_log')->orderBy('created_at', 'desc')->simplePaginate(15);
+        $activity = DB::table('activity_log')->orderBy('created_at', 'desc')->take(50)->get();
 
         return view('admin.activity.index', ['activity' => $activity]);
     }
