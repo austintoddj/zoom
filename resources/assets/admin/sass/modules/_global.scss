@@ -1,3 +1,27 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+.fill-white {
+  fill: #fff;
+}
+
+.fill-muted {
+  fill: #868e96;
+}
+
+.fill-primary {
+  fill: $primary;
+}
+
+.fill-success {
+  fill: $success;
+}
+
+.fill-danger {
+  fill: $danger;
+}
+
+.fill-warning {
+  fill: $warning;
+}

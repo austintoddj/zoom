@@ -25,6 +25,15 @@
                 @endif
                 Email Configuration
             </p>
+
+            <p>
+                @if (env('GOOGLE_ANALYTICS'))
+                    <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
+                @else
+                    <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
+                @endif
+                Google Analytics
+            </p>
         </div>
     </div>
 @endsection

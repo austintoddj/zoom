@@ -69,7 +69,7 @@
     <div class="container">
         <div class="col-md-8 offset-md-2">
             <footer class="footer">
-                    <span class="text-muted"><strong>Laravel</strong> Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</span>
+                    <span class="text-muted"><i class="icon-sm">@icon('bolt', 'fill-muted')</i><strong>Laravel</strong> Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</span>
             </footer>
         </div>
     </div>
