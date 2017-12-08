@@ -6,9 +6,10 @@
             <img src="{{ asset('img/laravel-zoom.svg') }}">
         </div>
         <div class="links">
-            <a href="https://github.com/austintoddj/laravel-zoom#features" target="_blank">Features</a>
+            <a href="https://github.com/austintoddj/laravel-zoom/wiki" target="_blank">Documentation</a>
             <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">GitHub</a>
-            <a href="https://github.com/austintoddj/laravel-zoom#configuration" target="_blank">Configuration</a>
+            <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">License</a>
+            <a href="https://github.com/austintoddj/laravel-zoom/releases" target="_blank">Releases</a>
         </div>
     </div>
 @endsection
