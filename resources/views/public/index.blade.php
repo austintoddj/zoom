@@ -3,7 +3,7 @@
 @section('content')
     <div class="content">
         <div class="title m-b-md">
-            <img src="{{ asset('img/laravel-zoom.png') }}">
+            <img src="{{ asset('img/laravel-zoom.svg') }}">
         </div>
         <div class="links">
             <a href="https://github.com/austintoddj/laravel-zoom#features" target="_blank">Features</a>

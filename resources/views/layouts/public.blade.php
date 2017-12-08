@@ -62,10 +62,6 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-
-            img {
-                width: 316px;
-            }
         </style>
     </head>
     <body>

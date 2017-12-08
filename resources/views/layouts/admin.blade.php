@@ -13,8 +13,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('img/laravel-zoom.png') }}" alt="Laravel Zoom Logo" height="27">
+            <a class="navbar-brand" href="{{ Auth::check() ? route('dashboard') : url('/') }}">
+                <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +69,7 @@
     <div class="container">
         <div class="col-md-8 offset-md-2">
             <footer class="footer">
-                    <span class="text-muted"><i class="icon-sm">@icon('bolt', 'fill-muted')</i><strong>Laravel</strong> Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</span>
+                    <span class="text-muted">Laravel Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</span>
             </footer>
         </div>
     </div>
