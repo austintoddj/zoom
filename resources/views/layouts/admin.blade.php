@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('img/laravel-zoom.png') }}" alt="Laravel Zoom Logo" height="27">
+                <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
