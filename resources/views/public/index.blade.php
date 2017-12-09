@@ -8,7 +8,7 @@
         <div class="links">
             <a href="https://github.com/austintoddj/laravel-zoom/wiki" target="_blank">Documentation</a>
             <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">GitHub</a>
-            <a href="https://github.com/austintoddj/laravel-zoom" target="_blank">License</a>
+            <a href="https://github.com/austintoddj/laravel-zoom/blob/master/license" target="_blank">License</a>
             <a href="https://github.com/austintoddj/laravel-zoom/releases" target="_blank">Releases</a>
         </div>
     </div>
