@@ -13,7 +13,7 @@ Laravel Zoom is a boilerplate meant to standardize much of the setup that almost
 
 ## Official Documentation
 
-Documentation for Horizon can be found on the [Wiki](https://github.com/austintoddj/laravel-zoom/wiki).
+Documentation for Laravel Zoom can be found on the [Wiki](https://github.com/austintoddj/laravel-zoom/wiki).
 
 ## License
 
