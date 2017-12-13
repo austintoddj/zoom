@@ -13,16 +13,13 @@
                     <div class="media">
                         <span class="small text-success">&#9679;</span> <i class="icon-md d-flex mr-3 ml-3">@icon('computer-desktop', 'fill-muted')</i>
                         <div class="media-body">
-                            <h6 class="mt-0">{{ $data['session']['ip'] }}
-                                <br>
-                                <span class="small">
-                                    <b>{{ $data['session']['browser'] }}</b> on {{ $data['session']['operatingSystem'] }}
-                                </span>
-                                <br>
-                                <span class="small">
-                                    <b>Last accessed</b> on {{ $data['session']['lastAccessed'] }}
-                                </span>
-                            </h6>
+                            <h6 class="mb-2">{{ $data['session']['ip'] }}</h6>
+                            <p class="small mb-2">
+                                <b>{{ $data['session']['browser'] }}</b> on {{ $data['session']['operatingSystem'] }}
+                            </p>
+                            <p class="small mb-2">
+                                <b>Last accessed</b> on {{ $data['session']['lastAccessed'] }}
+                            </p>
                         </div>
                         <span class="pull-right">
                             <button href="{{ route('logout') }}" type="button" class="btn btn-sm btn-outline-secondary btn-secondary"
