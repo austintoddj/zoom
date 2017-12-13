@@ -237,6 +237,7 @@ return [
          */
         'Carbon' => \Carbon\Carbon::class,
         'Helper' => \App\Helpers\Helper::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
