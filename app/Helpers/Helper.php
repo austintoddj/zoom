@@ -56,4 +56,64 @@ class Helper extends Constants
 
         return $url.'/'.md5(strtolower(trim($email))).($query ? "?$query" : '');
     }
+
+    /**
+     * Return the browser name based on the HTTP User Agent.
+     *
+     * @param  string  #userAgent
+     * @return string
+     */
+    public static function getBrowser($userAgent)
+    {
+        switch (true) {
+            case strpos($userAgent, 'MSIE'):
+                return 'Internet Explorer';
+                break;
+            case strpos($userAgent, 'Trident'):
+                return 'Internet Explorer';
+                break;
+            case strpos($userAgent, 'Firefox'):
+                return 'Firefox';
+                break;
+            case strpos($userAgent, 'Chrome'):
+                return 'Google Chrome';
+                break;
+            case strpos($userAgent, 'Opera Mini'):
+                return 'Opera Mini';
+                break;
+            case strpos($userAgent, 'Opera'):
+                return 'Opera';
+                break;
+            case strpos($userAgent, 'Safari'):
+                return 'Safari';
+                break;
+            default:
+                return 'Unknown browser';
+                break;
+        }
+    }
+
+    /**
+     * Return the operating system based on the HTTP User Agent.
+     *
+     * @param  string  #userAgent
+     * @return string
+     */
+    public static function getOperatingSystem($userAgent)
+    {
+        switch (true) {
+            case preg_match('/Linux/', $userAgent):
+                return 'Linux';
+                break;
+            case preg_match('/Win/', $userAgent):
+                return 'Windows';
+                break;
+            case preg_match('/Mac/', $userAgent):
+                return 'macOS';
+                break;
+            default:
+                return 'Unknown operating system';
+                break;
+        }
+    }
 }

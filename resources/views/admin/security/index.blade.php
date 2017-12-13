@@ -1,20 +1,53 @@
 @extends('layouts.admin')
 
+@section('title', 'Security')
+
 @section('content')
     <div class="card">
-        <div class="card-header">Activity Log</div>
+        <div class="card-header">Security</div>
 
         <div class="card-body">
+            <p class="text-muted small"><strong>Current Session</strong></p>
             <ul class="list-group">
-                @foreach($activity as $item)
+                <li class="list-group-item">
+                    <div class="media">
+                        <span class="small text-success">&#9679;</span> <i class="icon-md d-flex mr-3 ml-3">@icon('computer-desktop', 'fill-muted')</i>
+                        <div class="media-body">
+                            <h6 class="mt-0">{{ $data['session']['ip'] }}
+                                <br>
+                                <span class="small">
+                                    <b>{{ $data['session']['browser'] }}</b> on {{ $data['session']['operatingSystem'] }}
+                                </span>
+                                <br>
+                                <span class="small">
+                                    <b>Last accessed</b> on {{ $data['session']['lastAccessed'] }}
+                                </span>
+                            </h6>
+                        </div>
+                        <span class="pull-right">
+                            <button href="{{ route('logout') }}" type="button" class="btn btn-sm btn-outline-secondary btn-secondary"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</button>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+
+            <br>
+
+            <p class="text-muted small"><strong>Activity Log</strong></p>
+            <ul class="list-group">
+                @foreach($data['activity'] as $item)
                     <li class="list-group-item justify-content-between">
-                        <a class="btn btn-link" data-toggle="collapse" href="#collapse{{ $item->id }}"
+                        <a class="btn btn-link p-0" data-toggle="collapse" href="#collapse{{ $item->id }}"
                            aria-expanded="false" aria-controls="collapse{{ $item->id }}">
                             {{ $item->log_name.'.'.$item->description }}
                         </a>
                         <span class="pull-right"><small>{{ Carbon::parse($item->created_at)->diffForHumans() }}</small></span>
                         <div class="collapse table-responsive" id="collapse{{ $item->id }}">
-                            <table class="table table-striped table-sm table-bordered">
+                            <table class="table table-striped table-sm table-bordered mt-3">
                                 <tbody>
                                 <tr>
                                     <td>Log Name</td>

@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
+@section('title', 'Dashboard')
+
 @section('content')
     <div class="card">
         <div class="card-header">Dashboard</div>
 
         <div class="card-body">
-
             <p class="text-muted small"><strong>Components</strong></p>
-
             <p>
                 @if (config('auth.registration'))
                     <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
