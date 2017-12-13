@@ -24,8 +24,8 @@ class SecurityController extends Controller
                 'ip' => $_SERVER['REMOTE_ADDR'],
                 'browser' => Helper::getBrowser($_SERVER['HTTP_USER_AGENT']),
                 'operatingSystem' => Helper::getOperatingSystem($_SERVER['HTTP_USER_AGENT']),
-                'lastAccessed' => Carbon::parse(Activity::all()->where('causer_id', Auth::user()->id)->where('description', 'login')->last()->toArray()['created_at'])->toFormattedDateString()
-            ]
+                'lastAccessed' => Carbon::parse(Activity::all()->where('causer_id', Auth::user()->id)->where('description', 'login')->last()->toArray()['created_at'])->toFormattedDateString(),
+            ],
         ];
 
         return view('admin.security.index', compact('data'));
