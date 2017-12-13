@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Helpers\Helper;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Activitylog\Models\Activity;
@@ -18,13 +17,14 @@ class SecurityController extends Controller
      */
     public function __invoke()
     {
+        $activity = Activity::orderBy('created_at', 'desc')->get();
         $data = [
-            'activity' => DB::table('activity_log')->orderBy('created_at', 'desc')->take(50)->get(),
+            'activity' => $activity->take(50),
             'session' => [
                 'ip' => $_SERVER['REMOTE_ADDR'],
                 'browser' => Helper::getBrowser($_SERVER['HTTP_USER_AGENT']),
                 'operatingSystem' => Helper::getOperatingSystem($_SERVER['HTTP_USER_AGENT']),
-                'lastAccessed' => Carbon::parse(Activity::all()->where('causer_id', Auth::user()->id)->where('description', 'login')->last()->toArray()['created_at'])->toFormattedDateString(),
+                'lastAccessed' => Carbon::parse($activity->where('causer_id', Auth::user()->id)->where('description', 'login')->last()->toArray()['created_at'])->toFormattedDateString(),
             ],
         ];
 
