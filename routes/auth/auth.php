@@ -1,8 +1,8 @@
 <?php
 
 Route::group(['namespace' => 'Auth'], function () {
-    Route::get('/login/{social}','LoginController@socialLogin')->where('social','twitter|facebook|google|github');
-    Route::get('/login/{social}/callback','LoginController@handleProviderCallback')->where('social','twitter|facebook|google|github');
+    Route::get('/login/{social}', 'LoginController@socialLogin')->where('social', 'twitter|facebook|google|github');
+    Route::get('/login/{social}/callback', 'LoginController@handleProviderCallback')->where('social', 'twitter|facebook|google|github');
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login');
     Route::post('logout', 'LoginController@logout')->name('logout');

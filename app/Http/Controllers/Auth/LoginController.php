@@ -63,6 +63,7 @@ class LoginController extends Controller
 
         if ($user) {
             Auth::login($user);
+
             return redirect(route('dashboard'));
         } else {
             return view('auth.register', ['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
