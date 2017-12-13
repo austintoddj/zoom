@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -35,5 +38,35 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Handle the social login request.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function socialLogin($social)
+    {
+        return Socialite::driver($social)->redirect();
+    }
+
+    /**
+     * Obtain user information from the social login provider.
+     *
+     * @param $social
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback($social)
+    {
+        $userSocial = Socialite::driver($social)->user();
+        $user = User::where(['email' => $userSocial->getEmail()])->first();
+
+        if ($user) {
+            Auth::login($user);
+
+            return redirect(route('dashboard'));
+        } else {
+            return view('auth.register', ['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
+        }
     }
 }
