@@ -1,5 +1,5 @@
 <div class="text-center">
-    <hr>
+    <div class="my-4"><hr></div>
     <p class="text-muted">Connect with one of your other accounts:</p>
 
     @if(env('FACEBOOK_CLIENT_ID') && env('FACEBOOK_CLIENT_SECRET') && env('FACEBOOK_REDIRECT'))
