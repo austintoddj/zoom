@@ -1,10 +1,8 @@
 // Modules
 @import "modules/variables";
 @import "modules/global";
-
-// Pages
-@import "pages/dashboard";
-@import "pages/activity";
+@import "modules/cards";
+@import "modules/icons";
 
 // Partials
 @import "partials/bootstrap-overrides";
