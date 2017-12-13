@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
@@ -36,7 +36,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
                                 <a href="{{ route('profile') }}" class="dropdown-item">Your Profile</a>
-                                <a href="{{ route('activity') }}" class="dropdown-item">Activity Log</a>
+                                <a href="{{ route('security') }}" class="dropdown-item">Security</a>
                                 <div class="dropdown-divider"></div>
                                 <a href="{{ route('logout') }}" class="dropdown-item"
                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log
