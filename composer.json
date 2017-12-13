@@ -15,6 +15,7 @@
         "bepsvpt/secure-headers": "^4.1",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
+        "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "nothingworks/blade-svg": "^0.2.2",
         "spatie/laravel-activitylog": "^2.3"
