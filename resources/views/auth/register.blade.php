@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">Register</div>
         <div class="card-body">
-            <form role="form" method="POST" action="{{ url('/register') }}">
+            <form role="form" method="POST" action="{{ route('register') }}">
                 {!! csrf_field() !!}
 
                 <div class="col-lg-8 offset-lg-2">
@@ -69,9 +69,8 @@
                         <button type="submit" class="btn btn-primary btn-block">
                             Register
                         </button>
-                    </div>
-
-                    <div class="form-group">
+                        <p class="small text-muted text-center mt-3">Already have an account? <a
+                                    href="{{ route('login') }}">Login</a></p>
                         @if(env('SOCIALITE'))
                             @include('auth.components.socialite.links')
                         @endif

@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">Reset Password</div>
         <div class="card-body">
-            <form role="form" method="POST" action="{{ url('/password/reset') }}">
+            <form role="form" method="POST" action="{{ route('password.reset') }}">
                 {!! csrf_field() !!}
 
                 <input type="hidden" name="token" value="{{ $token }}">
