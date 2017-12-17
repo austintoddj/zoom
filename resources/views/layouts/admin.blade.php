@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="{{ Auth::check() ? route('dashboard') : url('/') }}">
+        <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -23,38 +23,31 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                @auth
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ Helper::gravatar(Auth::user()->email) }}"
-                                 alt="{{ Auth::user()->name }} Profile Image"
-                                 style="border-radius: 50%; width: 24px">
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <h6 class="dropdown-header">Signed in as <strong>{{ Auth::user()->name }}</strong></h6>
-                            <div class="dropdown-divider"></div>
-                            <a href="{{ route('dashboard') }}" class="dropdown-item"
-                               aria-label="Dashboard">Dashboard</a>
-                            <a href="{{ route('profile') }}" class="dropdown-item" aria-label="Your Profile">Your
-                                Profile</a>
-                            <a href="{{ route('security') }}" class="dropdown-item" aria-label="Security">Security</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="{{ route('logout') }}" class="dropdown-item"
-                               onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-                               aria-label="Log Out">Log Out</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                  style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </div>
-                    </li>
-                @else
-                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link" aria-label="Login">Login</a></li>
-                    @if (config('auth.registration'))
-                        <li class="nav-item"><a href="{{ route('register') }}" class="nav-link" aria-label="Register">Register</a></li>
-                    @endif
-                @endauth
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ Helper::gravatar(Auth::user()->email) }}"
+                             alt="{{ Auth::user()->name }} Profile Image"
+                             style="border-radius: 50%; width: 24px">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <h6 class="dropdown-header">Signed in as <strong>{{ Auth::user()->name }}</strong></h6>
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('dashboard') }}" class="dropdown-item"
+                           aria-label="Dashboard">Dashboard</a>
+                        <a href="{{ route('profile') }}" class="dropdown-item" aria-label="Your Profile">Your
+                            Profile</a>
+                        <a href="{{ route('security') }}" class="dropdown-item" aria-label="Security">Security</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('logout') }}" class="dropdown-item"
+                           onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                           aria-label="Log Out">Log Out</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                              style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -71,12 +64,12 @@
 <div class="container">
     <div class="col-md-8 offset-md-2">
         <footer class="footer">
-            <span class="text-muted">Laravel Zoom is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT" aria-label="MIT License">MIT license</a>.</span>
+            <span class="text-muted">Laravel Zoom is open-sourced software licensed under the <a
+                        href="http://opensource.org/licenses/MIT" aria-label="MIT License">MIT license</a>.</span>
         </footer>
     </div>
 </div>
 
 <script src="{{ asset('js/admin.js') }}"></script>
-@stack('scripts')
 </body>
 </html>
