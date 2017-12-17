@@ -58,13 +58,15 @@
         </div>
     </div>
     <p class="text-center small mt-4">
-        <a href="{{ route('password.request') }}" class="btn btn-link">Forgot Your Password?</a>&nbsp;&nbsp;
-        <a href="{{ route('register') }}" class="btn btn-link">Need an account? Register</a>
+        <a href="{{ route('password.request') }}" class="btn btn-link">Forgot your password?</a>
+        @if (config('auth.registration'))
+            <a href="{{ route('register') }}" class="btn btn-link">Need an account? Register</a>
+        @endif
     </p>
 
-    <div class="text-center mt-3">
-        @if(env('SOCIALITE'))
+    @if(env('SOCIALITE'))
+        <div class="text-center mt-3">
             @include('auth.components.socialite.links')
-        @endif
-    </div>
+        </div>
+    @endif
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.auth')
 
 @section('title', 'Reset Password')
 
@@ -11,50 +11,52 @@
 
                 <input type="hidden" name="token" value="{{ $token }}">
 
-                <div class="form-group row">
-                    <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
+                <div class="form-group">
                     <div class="col-lg-6">
-                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email or old('email') }}">
+                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                               name="email" placeholder="E-Mail Address" value="{{ $email or old('email') }}">
                         @if ($errors->has('email'))
                             <div class="invalid-feedback">
                                 <strong>{{ $errors->first('email') }}</strong>
                             </div>
                         @endif
                     </div>
-                </div>
 
-                <div class="form-group row">
-                    <label class="col-lg-4 col-form-label text-lg-right">Password</label>
-                    <div class="col-lg-6">
-                        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
-                        @if ($errors->has('password'))
-                            <div class="invalid-feedback">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </div>
-                        @endif
-                    </div>
-                </div>
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            <input type="password"
+                                   class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                   name="password" placeholder="Password">
+                            @if ($errors->has('password'))
+                                <div class="invalid-feedback">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </div>
+                            @endif
+                        </div>
 
-                <div class="form-group row">
-                    <label class="col-lg-4 col-form-label text-lg-right">Confirm Password</label>
-                    <div class="col-lg-6">
-                        <input type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation">
-                        @if ($errors->has('password_confirmation'))
-                            <div class="invalid-feedback">
-                                <strong>{{ $errors->first('password_confirmation') }}</strong>
-                            </div>
-                        @endif
-                    </div>
-                </div>
+                        <div class="form-group">
+                            <input type="password"
+                                   class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}"
+                                   name="password_confirmation" placeholder="Confirm Password">
+                            @if ($errors->has('password_confirmation'))
+                                <div class="invalid-feedback">
+                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                </div>
+                            @endif
+                        </div>
 
-                <div class="form-group row">
-                    <div class="col-lg-6 offset-lg-4">
-                        <button type="submit" class="btn btn-primary">
-                            Reset Password
-                        </button>
-                    </div>
-                </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary pull-right">
+                                Reset Password
+                            </button>
+                        </div>
             </form>
         </div>
     </div>
+
+    @if(env('SOCIALITE'))
+        <div class="text-center mt-3">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
 @endsection
