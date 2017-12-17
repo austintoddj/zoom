@@ -13,7 +13,7 @@
                     <div class="media">
                         <span class="small text-success">&#9679;</span> <i class="icon-md d-flex mr-3 ml-3">@icon('computer-desktop', 'fill-muted')</i>
                         <div class="media-body">
-                            <h6 class="mb-1">{{ $data['session']['ip'] }}</h6>
+                            <h6 class="mb-2">{{ $data['session']['ip'] }}</h6>
                             <p class="small mb-1">
                                 <b>{{ $data['session']['browser'] }}</b> on {{ $data['session']['operatingSystem'] }}
                             </p>
