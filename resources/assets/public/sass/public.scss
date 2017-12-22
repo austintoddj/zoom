@@ -1,9 +1,6 @@
-// Modules
-@import "modules/variables";
-@import "modules/global";
+// Globals
+@import "globals/variables";
+@import "globals/base";
 
-// Partials
-@import "partials/bootstrap-overrides";
-
-// Bootstrap
-@import "~bootstrap/scss/bootstrap";
+// Components
+@import "components/buttons";

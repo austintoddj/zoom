@@ -14,7 +14,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">
-            <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo">
+            <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="28">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container text-center my-4">
     <div class="col-md-8 offset-md-2">
         <footer class="footer">
             <span class="text-muted">Laravel Zoom is open-sourced software licensed under the <a

@@ -19,7 +19,7 @@ class SecurityController extends Controller
     {
         $activity = Activity::orderBy('created_at', 'desc')->get();
         $data = [
-            'activity' => $activity->take(50),
+            'activity' => $activity->take(25),
             'session' => [
                 'ip' => $_SERVER['REMOTE_ADDR'],
                 'browser' => Helper::getBrowser($_SERVER['HTTP_USER_AGENT']),
