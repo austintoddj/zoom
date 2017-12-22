@@ -26,38 +26,6 @@
                     @endif
                     Laravel Socialite
                 </p>
-                <p class="ml-5">
-                    @if (env('FACEBOOK_CLIENT_ID') && env('FACEBOOK_CLIENT_SECRET') && env('FACEBOOK_REDIRECT'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Facebook
-                </p>
-                <p class="ml-5">
-                    @if (env('TWITTER_CLIENT_ID') && env('TWITTER_CLIENT_SECRET') && env('TWITTER_REDIRECT'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Twitter
-                </p>
-                <p class="ml-5">
-                    @if (env('GOOGLE_CLIENT_ID') && env('GOOGLE_CLIENT_SECRET') && env('GITHUB_REDIRECT'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Google
-                </p>
-                <p class="ml-5">
-                    @if (env('GITHUB_CLIENT_ID') && env('GITHUB_CLIENT_SECRET') && env('GITHUB_REDIRECT'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Github
-                </p>
             </div>
 
             <div class="container">

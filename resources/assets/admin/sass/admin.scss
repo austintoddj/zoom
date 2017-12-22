@@ -1,15 +1,11 @@
-// Modules
-@import "modules/variables";
-@import "modules/global";
-@import "modules/cards";
-@import "modules/icons";
-
-// Partials
-@import "partials/bootstrap-overrides";
+// Globals
+@import "globals/variables";
+@import "globals/base";
 
 // Components
-@import "components/navbar";
-@import "components/footer";
+@import "components/buttons";
+@import "components/cards";
+@import "components/icons";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";

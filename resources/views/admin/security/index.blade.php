@@ -34,7 +34,7 @@
 
             <br>
 
-            <p class="text-muted small"><strong>Activity Log</strong></p>
+            <p class="text-muted small"><strong>Activity Log ({{ count($data['activity']) }})</strong></p>
             <ul class="list-group">
                 @foreach($data['activity'] as $item)
                     <li class="list-group-item justify-content-between">
