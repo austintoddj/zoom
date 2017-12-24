@@ -3892,8 +3892,8 @@ marked-terminal@^1.6.2:
     node-emoji "^1.4.1"
 
 marked@^0.3.6:
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.7.tgz#80ef3bbf1bd00d1c9cfebe42ba1b8c85da258d0d"
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.9.tgz#54ce6a57e720c3ac6098374ec625fcbcc97ff290"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -6094,8 +6094,8 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 uglify-es@^3.2.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.2.2.tgz#15c62b7775002c81b7987a1c49ecd3f126cace73"
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.0.tgz#a4acd1cf31f2768ec4d2e72adb739d7018de93aa"
   dependencies:
     commander "~2.12.1"
     source-map "~0.6.1"
