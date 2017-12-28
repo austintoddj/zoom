@@ -14,6 +14,11 @@ let mix = require('laravel-mix');
 // Public Assets...
 mix.js('resources/assets/public/js/public.js', 'public/js')
     .sass('resources/assets/public/sass/public.scss', 'public/css')
+    .copy('resources/assets/vendor/css/toolkit-minimal.css', 'public/vendor/css')
+    .copy('resources/assets/vendor/css/application-minimal.css', 'public/vendor/css')
+    .copy('resources/assets/vendor/js/toolkit.js', 'public/vendor/js')
+    .copy('resources/assets/vendor/js/application.js', 'public/vendor/js')
+    .copy('resources/assets/vendor/fonts', 'public/vendor/fonts')
     .copy('resources/assets/public/img', 'public/img');
 
 // Admin Assets...
