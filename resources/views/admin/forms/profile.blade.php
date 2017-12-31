@@ -47,7 +47,7 @@
     <div class="form-group row">
         <div class="col-lg-6 offset-lg-4">
             <p class="small">Your password must be a minimum of 6 characters.</p>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-outline-primary">
                 Update Profile
             </button>
         </div>

@@ -1,8 +1,10 @@
 // Globals
+@import "globals/variables";
 @import "globals/base";
 
 // Components
 @import "components/buttons";
+@import "components/icons";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
