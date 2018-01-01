@@ -5,6 +5,8 @@
     "/js/admin.js": "/js/admin.js",
     "/vendor/css/toolkit-inverse.css": "/vendor/css/toolkit-inverse.css",
     "/vendor/css/application.css": "/vendor/css/application.css",
+    "/vendor/js/chart.js": "/vendor/js/chart.js",
+    "/vendor/js/tablesorter.min.js": "/vendor/js/tablesorter.min.js",
     "/vendor/js/toolkit.js": "/vendor/js/toolkit.js",
     "/vendor/js/application.js": "/vendor/js/application.js"
 }

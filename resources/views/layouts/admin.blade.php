@@ -93,6 +93,8 @@
 </div>
 
 <script src="{{ asset('js/admin.js') }}"></script>
+<script src="{{ asset('vendor/js/chart.js') }}"></script>
+<script src="{{ asset('vendor/js/tablesorter.min.js') }}"></script>
 <script src="{{ asset('vendor/js/toolkit.js') }}"></script>
 <script src="{{ asset('vendor/js/application.js') }}"></script>
 </body>
