@@ -51,7 +51,7 @@
 
                         <li class="nav-header">Laravel Zoom</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/austintoddj/laravel-zoom/wiki">
+                            <a class="nav-link" href="https://github.com/austintoddj/laravel-zoom/wiki" target="_blank">
                                 Documentation
                             </a>
                         </li>
@@ -61,12 +61,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/austintoddj/laravel-zoom/blob/master/license">
+                            <a class="nav-link" href="https://github.com/austintoddj/laravel-zoom/blob/master/license" target="_blank">
                                 License
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/austintoddj/laravel-zoom/releases">
+                            <a class="nav-link" href="https://github.com/austintoddj/laravel-zoom/releases" target="_blank">
                                 Releases
                             </a>
                         </li>
