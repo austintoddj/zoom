@@ -11,7 +11,7 @@ use Spatie\Activitylog\Models\Activity;
 class SecurityController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show the Security page.
      *
      * @return \Illuminate\Http\Response
      */

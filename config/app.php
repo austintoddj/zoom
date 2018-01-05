@@ -236,6 +236,7 @@ return [
          * Custom Aliases...
          */
         'Carbon' => \Carbon\Carbon::class,
+        'Constants' => \App\Meta\Constants::class,
         'Helper' => \App\Helpers\Helper::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
