@@ -3,51 +3,40 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="card">
-        <div class="card-header">Dashboard</div>
+    <div class="col-lg-8 offset-lg-2">
+        <div class="card">
+            <div class="card-header">Dashboard</div>
 
-        <div class="card-body">
-            <div class="container mb-4">
-                <p class="text-muted small"><strong>Authentication</strong></p>
-                <p class="ml-3">
-                    @if (config('auth.registration'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Registration
-                </p>
-
-                <p class="ml-3">
-                    @if (env('SOCIALITE'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Laravel Socialite
-                </p>
-            </div>
-
-            <div class="container">
-                <p class="text-muted small"><strong>Components</strong></p>
-
-                <p class="ml-3">
-                    @if (config('mail.username'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    E-Mail
-                </p>
-
-                <p class="ml-3">
-                    @if (env('GOOGLE_ANALYTICS'))
-                        <i class="icon-sm">@icon('checkmark-outline', 'fill-success')</i>
-                    @else
-                        <i class="icon-sm">@icon('close-outline', 'fill-danger')</i>
-                    @endif
-                    Google Analytics
-                </p>
+            <div class="card-body">
+                <div class="container">
+                    <p>Laravel Zoom is a boilerplate meant to standardize much of the setup that almost every web application needs. Reclaim your first few hours of development on every new project by allowing Laravel Zoom to give you a little speed boost.</p>
+                    <hr>
+                    <div class="pull-right">
+                        <ul class="list-inline small">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/austintoddj/laravel-zoom/wiki" target="_blank">Documentation</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/austintoddj/laravel-zoom" target="blank">
+                                    Github
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/austintoddj/laravel-zoom/blob/master/license" target="blank">
+                                    License
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/austintoddj/laravel-zoom/releases" target="blank">
+                                    Releases
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pull-left">
+                        <p class="small">version: {{ Constants::APP_VERSION }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

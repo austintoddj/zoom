@@ -10,7 +10,7 @@
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="mb-5">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">
@@ -35,10 +35,8 @@
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('dashboard') }}" class="dropdown-item"
                            aria-label="Dashboard">Dashboard</a>
-                        <a href="{{ route('profile') }}" class="dropdown-item" aria-label="Your Profile">Your
-                            Profile</a>
-                        <a href="{{ route('security') }}" class="dropdown-item" aria-label="Security">Security</a>
-                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('settings') }}" class="dropdown-item"
+                           aria-label="Settings">Settings</a>
                         <a href="{{ route('logout') }}" class="dropdown-item"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                            aria-label="Log Out">Log Out</a>
@@ -55,18 +53,7 @@
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-8 offset-md-2">
-            @yield('content')
-        </div>
-    </div>
-</div>
-
-<div class="container text-center my-4">
-    <div class="col-md-8 offset-md-2">
-        <footer class="footer">
-            <span class="text-muted">Laravel Zoom is open-sourced software licensed under the <a
-                        href="http://opensource.org/licenses/MIT" aria-label="MIT License">MIT license</a>.</span>
-        </footer>
+        @yield('content')
     </div>
 </div>
 
