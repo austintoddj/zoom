@@ -11,6 +11,7 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
+<div class="top-bar"></div>
 <div class="container my-5 text-center">
     <a href="{{ url('/') }}">
         <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="40">
