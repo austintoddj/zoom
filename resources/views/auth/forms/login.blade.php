@@ -35,7 +35,7 @@
 
     <div class="form-group">
         <label class="form-check-label mt-2">
-            <input type="checkbox" class="form-check-input checkbox-inline"
+            <input type="checkbox"
                    name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
         </label>
         <button type="submit" class="btn btn-primary pull-right">
