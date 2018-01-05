@@ -5,5 +5,5 @@ namespace App\Meta;
 class Constants
 {
     /** @constant(APP_VERSION) */
-    const APP_VERSION = '1.0.37';
+    const APP_VERSION = '1.0.38';
 }
