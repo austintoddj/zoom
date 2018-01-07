@@ -28,7 +28,7 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="{{ Helper::gravatar(Auth::user()->email) }}"
                                      alt="{{ Auth::user()->name }} Profile Image"
-                                     style="border-radius: 50%; width: 24px">
+                                     style="border-radius: 50%; width: 28px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <h6 class="dropdown-header">Signed in as <strong>{{ Auth::user()->name }}</strong></h6>
