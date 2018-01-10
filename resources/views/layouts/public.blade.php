@@ -11,19 +11,8 @@
         <link rel="stylesheet" href="{{ asset('css/public.css') }}">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        @if (config('auth.registration'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        <div class="top-bar"></div>
+        <div class="d-flex justify-content-center text-center my-5">
             @yield('content')
         </div>
         @if(!empty(env('GOOGLE_ANALYTICS')))

@@ -6,13 +6,6 @@
 @import "components/buttons";
 @import "components/cards";
 @import "components/icons";
-@import "components/list-group";
-@import "components/navbar";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
-.top-bar {
-  height: 4px;
-  background-color: lighten($primary, 10%);
-}
