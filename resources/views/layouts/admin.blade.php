@@ -36,7 +36,7 @@
                 <a href="https://github.com/austintoddj/laravel-zoom/releases" target="blank">Releases</a>
             </li>
         </ul>
-        <p>version: {{ Constants::APP_VERSION }}</p>
+        <p>v{{ Constants::APP_VERSION }}</p>
     </div>
 </footer>
 

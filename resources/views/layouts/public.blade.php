@@ -12,9 +12,7 @@
     </head>
     <body>
         <div class="top-bar"></div>
-        <div class="d-flex justify-content-center text-center my-5">
-            @yield('content')
-        </div>
+        @yield('content')
         @if(!empty(env('GOOGLE_ANALYTICS')))
             @include('public.components.analytics.tracking')
         @endif

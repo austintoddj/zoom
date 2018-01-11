@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">
-            <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="21">
+            <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="22">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

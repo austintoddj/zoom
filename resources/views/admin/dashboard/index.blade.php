@@ -8,7 +8,7 @@
 
         <div class="card-body">
             <div class="container">
-                <p class="my-5">Welcome to the Dashboard!</p>
+                <p>Welcome to the Dashboard!</p>
             </div>
         </div>
     </div>
