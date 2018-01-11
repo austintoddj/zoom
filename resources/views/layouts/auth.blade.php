@@ -14,7 +14,7 @@
 <div class="top-bar"></div>
 <div class="container my-5 text-center">
     <a href="{{ url('/') }}">
-        <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="40">
+        <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="35">
     </a>
 </div>
 <div class="container">

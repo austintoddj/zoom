@@ -10,52 +10,35 @@
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
-<body class="mb-5">
+<body>
 <div class="top-bar"></div>
+@include('admin.components.nav.navbar')
 <div class="container">
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col-lg-10 offset-lg-1">
-            <div class="d-flex">
-                <div class="p-2">
-                    <a class="navbar-brand" href="{{ route('dashboard') }}">
-                        <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="33">
-                    </a>
-                </div>
-                <div class="ml-auto p-2">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ Helper::gravatar(Auth::user()->email) }}"
-                                     alt="{{ Auth::user()->name }} Profile Image"
-                                     style="border-radius: 50%; width: 28px">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <h6 class="dropdown-header">Signed in as <strong>{{ Auth::user()->name }}</strong></h6>
-                                <div class="dropdown-divider"></div>
-                                <a href="{{ route('dashboard') }}" class="dropdown-item"
-                                   aria-label="Dashboard">Dashboard</a>
-                                <a href="{{ route('settings') }}" class="dropdown-item"
-                                   aria-label="Settings">Settings</a>
-                                <a href="{{ route('logout') }}" class="dropdown-item"
-                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-                                   aria-label="Log Out">Log Out</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
+            @yield('content')
         </div>
     </div>
-    <div class="row mt-4">
-        @yield('content')
-    </div>
 </div>
+<footer class="my-5 text-center text-muted">
+    <div class="col-lg-10 offset-lg-1">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="https://github.com/austintoddj/laravel-zoom/wiki" target="_blank">Documentation</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/austintoddj/laravel-zoom" target="blank">Github</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/austintoddj/laravel-zoom/blob/master/license" target="blank">License</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/austintoddj/laravel-zoom/releases" target="blank">Releases</a>
+            </li>
+        </ul>
+        <p>v{{ Constants::APP_VERSION }}</p>
+    </div>
+</footer>
 
 <script src="{{ asset('js/admin.js') }}"></script>
 </body>
