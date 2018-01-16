@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">
             <img src="{{ asset('img/laravel-zoom.svg') }}" alt="Laravel Zoom Logo" height="22">
