@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.admin')
 
 @section('title', 'Reset Password')
 
@@ -6,13 +6,11 @@
     <div class="card">
         <div class="card-header">Reset Password</div>
         <div class="card-body">
-            <div class="col-lg-10 offset-lg-1">
-                @include('auth.forms.reset')
-            </div>
+            @include('auth.forms.reset')
         </div>
 
         @if(env('SOCIALITE'))
-            <div class="text-center mt-3">
+            <div class="text-center my-5">
                 @include('auth.components.socialite.links')
             </div>
     @endif

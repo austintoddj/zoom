@@ -11,35 +11,18 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="top-bar"></div>
-@include('admin.components.nav.navbar')
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-lg-10 offset-lg-1">
-            @yield('content')
+    <div class="top-bar"></div>
+    @include('admin.components.nav.navbar')
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-8 offset-lg-2">
+                @yield('content')
+            </div>
         </div>
     </div>
-</div>
-<footer class="my-5 text-center text-muted">
-    <div class="col-lg-10 offset-lg-1">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="https://github.com/austintoddj/laravel-zoom/wiki" target="_blank">Documentation</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://github.com/austintoddj/laravel-zoom" target="blank">Github</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://github.com/austintoddj/laravel-zoom/blob/master/license" target="blank">License</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://github.com/austintoddj/laravel-zoom/releases" target="blank">Releases</a>
-            </li>
-        </ul>
-        <p>v{{ Constants::APP_VERSION }}</p>
-    </div>
-</footer>
 
-<script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>
