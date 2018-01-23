@@ -1,17 +1,25 @@
 <form role="form" method="POST" action="{{ url('/password/email') }}">
     {!! csrf_field() !!}
-    <div class="form-group">
-        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-               name="email" value="{{ old('email') }}" placeholder="E-Mail Address" required>
-        @if ($errors->has('email'))
-            <div class="invalid-feedback">
-                <strong>{{ $errors->first('email') }}</strong>
-            </div>
-        @endif
+
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
+
+        <div class="col-lg-6">
+            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+            @if ($errors->has('email'))
+                <div class="invalid-feedback">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </div>
+            @endif
+        </div>
     </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary pull-right">
-            Send Password Reset Link
-        </button>
+
+    <div class="form-group row">
+        <div class="col-lg-6 offset-lg-4">
+            <button type="submit" class="btn btn-primary">
+                Send Password Reset Link
+            </button>
+        </div>
     </div>
 </form>
