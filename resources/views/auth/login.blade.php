@@ -3,15 +3,16 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="card">
-        <div class="card-header">Login</div>
-        <div class="card-body">
-            @include('auth.forms.login')
+<div class="container">
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Login</div>
+                <div class="card-body">
+                    @include('auth.forms.login')
+                </div>
+            </div>
         </div>
     </div>
-    @if(env('SOCIALITE'))
-        <div class="text-center my-5">
-            @include('auth.components.socialite.links')
-        </div>
-    @endif
+</div>
 @endsection

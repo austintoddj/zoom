@@ -44,7 +44,8 @@
             <input
                     type="password"
                     class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}"
-                    name="password_confirmation">
+                    name="password_confirmation"
+                    required>
 
             @if ($errors->has('password_confirmation'))
                 <div class="invalid-feedback">
