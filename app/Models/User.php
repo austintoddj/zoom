@@ -8,14 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The database table used by the model.
      *
      * @string $table
      */
-    protected $table = 'Users';
-
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
@@ -24,7 +22,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *

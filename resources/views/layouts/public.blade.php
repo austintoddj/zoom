@@ -1,33 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ env('APP_NAME') }}</title>
+    <title>Laravel</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{ asset('css/public.css') }}">
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+    <!-- Styles -->
+    <link href="{{ asset('css/public.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="flex-center position-ref full-height">
+        @if (Route::has('login'))
             <div class="top-right links">
                 @auth
                     <a href="{{ route('dashboard') }}">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    @if (config('auth.registration'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
                 @endauth
             </div>
-
-            <div class="content">
-                @yield('content')
-            </div>
-        </div>
-
-        @if(!empty(env('GOOGLE_ANALYTICS')))
-            @include('public.components.analytics.tracking')
         @endif
-    </body>
+
+        <div class="content">
+            @yield('content')
+        </div>
+    </div>
+
+    @if(!empty(env('GOOGLE_ANALYTICS')))
+        @include('public.components.analytics.tracking')
+    @endif
+</body>
 </html>

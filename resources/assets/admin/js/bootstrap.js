@@ -1,3 +1,4 @@
+
 window._ = require('lodash');
 
 window.Popper = require('popper.js/dist/umd/popper');
@@ -12,8 +13,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {
-}
+} catch (e) {}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
