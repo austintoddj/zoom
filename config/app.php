@@ -181,7 +181,7 @@ return [
          * Custom Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        BladeSvg\BladeSvgServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
 
     ],
 
@@ -235,7 +235,6 @@ return [
         /*
          * Custom Aliases...
          */
-        'Carbon' => \Carbon\Carbon::class,
         'Constants' => \App\Meta\Constants::class,
         'Helper' => \App\Helpers\Helper::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,

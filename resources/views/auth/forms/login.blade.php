@@ -1,6 +1,12 @@
 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
 
+    @if(env('SOCIALITE'))
+        <div class="form-group row">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
+
     <div class="form-group row">
         <label for="email" class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
 
@@ -47,7 +53,8 @@
         <div class="col-lg-6 offset-lg-4">
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                    <input type="checkbox" class="form-check-input"
+                           name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                 </label>
             </div>
         </div>

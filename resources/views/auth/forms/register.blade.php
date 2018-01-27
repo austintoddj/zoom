@@ -1,6 +1,12 @@
 <form role="form" method="POST" action="{{ url('/register') }}">
     {!! csrf_field() !!}
 
+    @if(env('SOCIALITE'))
+        <div class="form-group row">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
+
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">Name</label>
 

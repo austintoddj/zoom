@@ -34,7 +34,6 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
@@ -54,9 +53,9 @@ return [
     ],
 
     'github' => [
-        'client_id' => 'b59140a7c31aea613475',
-        'client_secret' => '6713cead4e1259c745587e22e63a266a9d55950e',
-        'redirect' => 'http://laravel-zoom.dev/login/github/callback',
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_REDIRECT'),
     ],
 
 ];

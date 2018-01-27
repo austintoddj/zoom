@@ -1,27 +1,25 @@
-$body-bg: #ebebeb;
-$font-family-sans-serif: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
-"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-size-base: 0.90rem;
+// Body
+$body-bg: #fff;
 
-$white: #ffffff;
-$black: #000000;
-$muted-white: #FAFBFC;
-$muted: #868e96;
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border-color: $laravel-border-color;
+
+$card-border-color: $laravel-border-color;
+
+// Brands
 $primary: #3097D1;
 $info: #8eb4cb;
-$danger: #bf5329;
 $success: #2ab27b;
 $warning: #cbb956;
+$danger: #bf5329;
 
-$facebook-brand: #3b5998;
-$twitter-brand: #00aced;
-$google-brand: #dd4b39;
-$github-brand: #000000;
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: .875rem; // 14px
+$line-height-base: 1.6;
+$text-color: #636b6f;
 
-$card-border-width: 0;
-$card-inner-border-radius: 5px;
-$card-cap-bg: #fff;
-$card-bg: #fafafa;
-
-$input-box-shadow: 0;
-$input-btn-focus-box-shadow: 0;
+// Inputs
+$input-border-color: lighten($text-color, 40%);
+$input-placeholder-color: lighten($text-color, 30%);
