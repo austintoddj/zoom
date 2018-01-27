@@ -17,4 +17,5 @@ mix.js('resources/assets/public/js/public.js', 'public/js')
 
 // Admin Assets...
 mix.js('resources/assets/admin/js/admin.js', 'public/js')
-    .sass('resources/assets/admin/sass/admin.scss', 'public/css');
+    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
+    .copy('resources/assets/admin/img', 'public/img');
