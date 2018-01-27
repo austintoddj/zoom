@@ -14,14 +14,12 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
     @include('admin.components.nav.navbar')
 
     @yield('content')
-</div>
 
-<!-- Scripts -->
-<script src="{{ asset('js/admin.js') }}"></script>
-@stack('scripts')
+    <!-- Scripts -->
+    <script src="{{ asset('js/admin.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>
