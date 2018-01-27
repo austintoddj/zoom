@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -49,6 +49,7 @@ class LoginController extends Controller
     {
         return Socialite::driver($social)->redirect();
     }
+
     /**
      * Obtain user information from the social login provider.
      *
@@ -61,6 +62,7 @@ class LoginController extends Controller
         $user = User::where(['email' => $userSocial->getEmail()])->first();
         if ($user) {
             Auth::login($user);
+
             return redirect(route('dashboard'));
         } else {
             return view('auth.register', ['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
