@@ -11,12 +11,7 @@
                         <div class="card-header">Forgot Password</div>
 
                         <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-
+                            @include('auth.components.notifications.success')
                             @include('auth.components.forms.email')
                         </div>
                     </div>

@@ -1,16 +1,27 @@
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
+    @if(env('SOCIALITE'))
+        <div class="form-group row">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
+
     <div class="form-group row">
         <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
         <div class="col-md-6">
-            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
+            @if(!empty($name))
+                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
+                   value="{{ $name }}" required autofocus>
+            @else
+                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
+                       value="{{ old('name') }}" required autofocus>
+            @endif
             @if ($errors->has('name'))
                 <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('name') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -19,12 +30,17 @@
         <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
         <div class="col-md-6">
-            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
+            @if(!empty($email))
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                   name="email" value="{{ $email }}" required>
+            @else
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                       name="email" value="{{ old('email') }}" required>
+            @endif
             @if ($errors->has('email'))
                 <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+    <strong>{{ $errors->first('email') }}</strong>
+    </span>
             @endif
         </div>
     </div>
@@ -33,12 +49,13 @@
         <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
         <div class="col-md-6">
-            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                   name="password" required>
 
             @if ($errors->has('password'))
                 <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
             @endif
         </div>
     </div>

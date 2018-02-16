@@ -163,7 +163,7 @@ return [
         /*
          * Custom Service Providers...
          */
-//        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
 
     ],
@@ -220,7 +220,6 @@ return [
          */
         'Constants' => \App\Meta\Constants::class,
         'Helper' => \App\Helpers\Helper::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
