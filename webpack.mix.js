@@ -12,8 +12,7 @@ let mix = require('laravel-mix');
  */
 
 // Public Assets...
-mix.js('resources/assets/public/js/public.js', 'public/js')
-    .sass('resources/assets/public/sass/public.scss', 'public/css');
+mix.sass('resources/assets/public/sass/public.scss', 'public/css');
 
 // Admin Assets...
 mix.js('resources/assets/admin/js/admin.js', 'public/js')
