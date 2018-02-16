@@ -160,6 +160,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Custom Service Providers...
+         */
+//        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
+
     ],
 
     /*
@@ -208,6 +214,13 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Custom Aliases...
+         */
+        'Constants' => \App\Meta\Constants::class,
+        'Helper' => \App\Helpers\Helper::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

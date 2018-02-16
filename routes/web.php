@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Auth Routes...
+Helper::includeRouteFiles(__DIR__.'/auth/');
+
+// Public Routes...
+Helper::includeRouteFiles(__DIR__.'/public/');
+
+// Admin Routes...
+Helper::includeRouteFiles(__DIR__.'/admin/');
