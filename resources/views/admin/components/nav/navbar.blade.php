@@ -23,7 +23,7 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navbarDropdown">
                             <img src="{{ Helper::gravatar(Auth::user()->email) }}"
                                  alt="{{ Auth::user()->name }} Profile Image"
                                  width="20"
