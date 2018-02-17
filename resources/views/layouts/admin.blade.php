@@ -14,9 +14,10 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-    @include('admin.components.nav.navbar')
-
-    @yield('content')
+    <div id="app">
+        @include('admin.components.nav.navbar')
+        @yield('content')
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/admin.js') }}"></script>

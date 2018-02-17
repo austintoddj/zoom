@@ -60,12 +60,13 @@ class LoginController extends Controller
     {
         $userSocial = Socialite::driver($social)->user();
         $user = User::where(['email' => $userSocial->getEmail()])->first();
+
         if ($user) {
             Auth::login($user);
 
             return redirect(route('dashboard'));
         } else {
-            return view('auth.register', ['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
+            return view('auth.register', ['name' => $userSocial->name, 'email' => $userSocial->email]);
         }
     }
 }

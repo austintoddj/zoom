@@ -1,6 +1,6 @@
-<label class="col-lg-4 col-form-label text-lg-right">Connect with</label>
+<label class="col-sm-4 col-form-label text-md-right">Connect With</label>
 
-<div class="col-lg-6">
+<div class="col-md-6">
     @if(env('FACEBOOK_CLIENT_ID') && env('FACEBOOK_CLIENT_SECRET') && env('FACEBOOK_REDIRECT'))
         <a href="{{ url('login/facebook') }}" aria-label="Login with Facebook"><i
                     class="fab fa-fw fa-facebook fa-2x"></i></a>
