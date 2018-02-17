@@ -7,6 +7,7 @@ return [
     | Application Registration
     |--------------------------------------------------------------------------
     */
+
     'registration' => env('APP_REGISTRATION', true),
 
     /*

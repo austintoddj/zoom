@@ -1,5 +1,5 @@
 <form role="form" method="POST" action="{{ route('profile') }}">
-    {!! csrf_field() !!}
+    @csrf
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">Name</label>
         <div class="col-lg-6">
