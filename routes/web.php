@@ -15,7 +15,7 @@
 Helper::includeRouteFiles(__DIR__.'/auth/');
 
 // Frontend Routes...
-Helper::includeRouteFiles(__DIR__ . '/frontend/');
+Helper::includeRouteFiles(__DIR__.'/frontend/');
 
 // Backend Routes...
-Helper::includeRouteFiles(__DIR__ . '/backend/');
+Helper::includeRouteFiles(__DIR__.'/backend/');
