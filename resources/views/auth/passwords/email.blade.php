@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.backend')
 
 @section('title', 'Forgot Password')
 

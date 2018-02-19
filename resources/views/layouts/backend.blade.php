@@ -11,16 +11,16 @@
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        @include('admin.components.nav.navbar')
+        @include('backend.components.nav.navbar')
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/backend.js') }}"></script>
     @stack('scripts')
 </body>
 </html>
