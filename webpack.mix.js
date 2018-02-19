@@ -11,10 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-// Public Assets...
-mix.sass('resources/assets/public/sass/public.scss', 'public/css');
+// Frontend Assets...
+mix.sass('resources/assets/frontend/sass/frontend.scss', 'public/css');
 
-// Admin Assets...
-mix.js('resources/assets/admin/js/admin.js', 'public/js')
-    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
-    .copy('resources/assets/admin/img', 'public/img');
+// Backend Assets...
+mix.js('resources/assets/backend/js/backend.js', 'public/js')
+    .sass('resources/assets/backend/sass/backend.scss', 'public/css')
+    .copy('resources/assets/backend/img', 'public/img');

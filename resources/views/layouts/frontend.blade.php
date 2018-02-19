@@ -8,7 +8,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/public.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
 <body>
@@ -16,7 +16,7 @@
 
     @if(!empty(env('GOOGLE_ANALYTICS')))
         <!-- Google Analytics -->
-        @include('public.components.analytics.tracking')
+        @include('frontend.components.analytics.tracking')
     @endif
 
     <!-- Scripts -->
