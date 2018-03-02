@@ -161,7 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * Custom Service Providers...
+         * Third-Party Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
@@ -216,10 +216,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         /*
-         * Custom Aliases...
+         * Application Aliases...
          */
         'Constants' => \App\Meta\Constants::class,
-        'Helper' => \App\Helpers\Helper::class,
 
     ],
 
