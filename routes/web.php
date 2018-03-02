@@ -12,10 +12,10 @@
 */
 
 // Auth Routes...
-Helper::includeRouteFiles(__DIR__.'/auth/');
+route_files(__DIR__.'/auth/');
 
 // Frontend Routes...
-Helper::includeRouteFiles(__DIR__.'/frontend/');
+route_files(__DIR__.'/frontend/');
 
 // Backend Routes...
-Helper::includeRouteFiles(__DIR__.'/backend/');
+route_files(__DIR__.'/backend/');
