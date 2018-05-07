@@ -1,23 +1,34 @@
 <?php
 
-if (! function_exists('route_files')) {
+namespace App\Helpers\Routes;
+
+use Exception;
+
+class Parser
+{
     /**
-     * Generate a Gravatar URL for the given email address.
-     *
-     * @param $dir
+     * @param $url
      * @return string
      */
-    function route_files($dir)
+    public static function parseUrl($url)
+    {
+        return preg_replace('(^https?://)', '', $url);
+    }
+
+    /**
+     * @param $directory
+     * @return string
+     */
+    public static function parseRouteFiles($directory)
     {
         try {
-            $rdi = new \recursiveDirectoryIterator($dir);
+            $rdi = new \recursiveDirectoryIterator($directory);
             $it = new \recursiveIteratorIterator($rdi);
 
             while ($it->valid()) {
                 if (! $it->isDot() && $it->isFile() && $it->isReadable() && $it->current()->getExtension() === 'php') {
                     require $it->key();
                 }
-
                 $it->next();
             }
         } catch (Exception $e) {

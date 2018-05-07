@@ -30,11 +30,6 @@
         "symfony/thanks": "^1.0"
     },
     "autoload": {
-        "files": [
-            "app/Helpers/image.php",
-            "app/Helpers/route.php",
-            "app/Helpers/url.php"
-        ],
         "classmap": [
             "database/seeds",
             "database/factories"
