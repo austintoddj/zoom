@@ -12,10 +12,10 @@
 */
 
 // Auth Routes...
-route_files(__DIR__.'/auth/');
+App\Helpers\Routes\Parser::parseRouteFiles(__DIR__.'/auth/');
 
 // Frontend Routes...
-route_files(__DIR__.'/frontend/');
+App\Helpers\Routes\Parser::parseRouteFiles(__DIR__.'/frontend/');
 
 // Backend Routes...
-route_files(__DIR__.'/backend/');
+App\Helpers\Routes\Parser::parseRouteFiles(__DIR__.'/backend/');
