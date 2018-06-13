@@ -1,7 +1,6 @@
 <?php
 
 Route::group(['namespace' => 'Auth'], function () {
-
     if (config('auth.registration')) {
         Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
         Route::post('register', 'RegisterController@register');
@@ -16,5 +15,4 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'ResetPasswordController@reset');
-
 });

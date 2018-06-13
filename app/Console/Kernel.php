@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Resource::class
+        Resource::class,
     ];
 
     /**

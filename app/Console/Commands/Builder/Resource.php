@@ -58,7 +58,7 @@ class Resource extends Command
                 'path' => app_path('Repositories/Eloquent'),
                 'stub' => resource_path('stubs/repository.stub'),
                 'suffix' => 'Repository.php',
-            ]
+            ],
         ];
     }
 
@@ -84,13 +84,15 @@ class Resource extends Command
                 $resource_path = $this->pathForResource($resource['path'], $resource['suffix'], $class, $namespace, false);
 
                 if ($this->fileExists($resource_file_path)) {
-                    $this->error($resource_name . ' file already exists, please check your class and namespace');
+                    $this->error($resource_name.' file already exists, please check your class and namespace');
+
                     return;
                 } else {
                     $stub = $this->buildFromStub($resource['stub'], $class, $namespace, $table);
 
                     if (is_null($stub)) {
-                        $this->error('Error building stub for ' . $resource_name);
+                        $this->error('Error building stub for '.$resource_name);
+
                         return;
                     }
 
@@ -113,7 +115,7 @@ class Resource extends Command
      * @param bool $with_file
      * @return string
      */
-    private function pathForResource($path, $suffix = '.php', $class, $namespace, $with_file = true)
+    private function pathForResource($path, $suffix, $class, $namespace, $with_file = true)
     {
         $namespace_as_path = str_replace('\\', '/', $namespace);
 
@@ -154,7 +156,7 @@ class Resource extends Command
 
             return $stub;
         } catch (Exception $exception) {
-            return null;
+            return;
         }
     }
 }
