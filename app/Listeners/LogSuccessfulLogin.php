@@ -2,10 +2,13 @@
 
 namespace App\Listeners;
 
+use App\Helpers\Logs\Logger;
 use Illuminate\Auth\Events\Login;
 
 class LogSuccessfulLogin
 {
+    const LOG = 'user';
+
     /**
      * Create the event listener.
      *
@@ -24,12 +27,10 @@ class LogSuccessfulLogin
      */
     public function handle(Login $event)
     {
-        activity('user')
-            ->causedBy($event->user)
-            ->withProperties([
-                'ip' => $_SERVER['REMOTE_ADDR'],
-                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
-            ])
-            ->log('login');
+        // Log the activity
+        Logger::build(self::LOG, __('Logs/descriptions.login.success'), $event->user, null, [
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+        ]);
     }
 }
