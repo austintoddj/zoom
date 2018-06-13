@@ -150,6 +150,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,10 +163,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * Third-Party Service Providers...
+         * Custom Service Providers...
          */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Spatie\Activitylog\ActivitylogServiceProvider::class,
+        App\Providers\EloquentServiceProvider::class,
 
     ],
 
@@ -214,11 +215,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        /*
-         * Application Aliases...
-         */
-        'Constants' => \App\Meta\Constants::class,
 
     ],
 

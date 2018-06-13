@@ -2,10 +2,13 @@
 
 namespace App\Listeners;
 
+use App\Helpers\Logs\Logger;
 use Illuminate\Auth\Events\Registered;
 
 class LogRegisteredUser
 {
+    const LOG = 'user';
+
     /**
      * Create the event listener.
      *
@@ -24,12 +27,10 @@ class LogRegisteredUser
      */
     public function handle(Registered $event)
     {
-        activity('user')
-            ->performedOn($event->user)
-            ->withProperties([
-                'ip' => $_SERVER['REMOTE_ADDR'],
-                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
-            ])
-            ->log('register');
+        // Log the activity
+        Logger::build(self::LOG, __('Logs/descriptions.register.success'), $event->user, $event->user, [
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+        ]);
     }
 }

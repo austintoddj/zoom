@@ -2,16 +2,32 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Exception;
+use App\Helpers\Logs\Logger;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Interfaces\Users\UserInterface;
 
 class ProfileController extends Controller
 {
+    const LOG = 'profile';
+
     /**
-     * Show the Profile Page.
-     *
-     * @return \Illuminate\Http\Response
+     * @var UserInterface
+     */
+    protected $userInterface;
+
+    /**
+     * ProfileController constructor.
+     * @param UserInterface $userInterface
+     */
+    public function __construct(UserInterface $userInterface)
+    {
+        $this->userInterface = $userInterface;
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -19,37 +35,32 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request)
     {
         // Save original attribute values
-        $oldName = Auth::user()->name;
-        $oldEmail = Auth::user()->email;
+        $oldName = $request->user()->name;
+        $oldEmail = $request->user()->email;
 
         // Validate the request data
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.Auth::user()->id.'|required|email',
+            'email' => 'unique:users,email,'.$request->user()->id.'|required|email',
             'password' => 'nullable|string|min:6|confirmed',
         ]);
 
-        // Update the user profile in the database
-        Auth::user()->name = $request->name;
-        Auth::user()->email = $request->email;
-        if (isset($request->password)) {
-            Auth::user()->password = bcrypt($request->password);
-        }
-        Auth::user()->save();
+        try {
+            // Update the user profile
+            $this->userInterface->update($request->user()->id, [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
+            ]);
 
-        // Log the update activity
-        activity('user')
-            ->causedBy(Auth::user())
-            ->performedOn(Auth::user())
-            ->withProperties([
+            // Log the activity
+            Logger::build(self::LOG, __('logs/descriptions.profile.update.success'), $request->user(), $request->user(), [
                 'attributes' => [
                     'name' => $request->name,
                     'email' => $request->email,
@@ -58,9 +69,16 @@ class ProfileController extends Controller
                     'name' => $oldName,
                     'email' => $oldEmail,
                 ],
-            ])
-            ->log('profile_update');
+            ]);
 
-        return back()->with('success', trans('notifications.update_success', ['entity' => 'Profile']));
+            return back()->with('success', __('profile/notifications.update.success', ['entity' => 'Profile']));
+        } catch (Exception $e) {
+            // Log the error message
+            Logger::build(self::LOG, __('logs/descriptions.profile.update.error'), $request->user(), $request->user(), [
+                $e->getMessage(),
+            ]);
+
+            return back()->with('error', __('profile/notifications.update.error', ['entity' => 'Profile']));
+        }
     }
 }
