@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\ServiceProvider;
 
 class InterfaceServiceProvider extends ServiceProvider
 {
-    CONST APPLICATION_NAMESPACE = 'App';
-    CONST INTERFACE_NAMESPACE = 'Interfaces';
-    CONST REPOSITORY_NAMESPACE = 'Repositories';
+    const APPLICATION_NAMESPACE = 'App';
+    const INTERFACE_NAMESPACE = 'Interfaces';
+    const REPOSITORY_NAMESPACE = 'Repositories';
 
     /**
      * Register any interfaces and repositories.
@@ -46,7 +46,7 @@ class InterfaceServiceProvider extends ServiceProvider
         $file_list = Storage::disk('local')->allFiles($directory);
 
         foreach ($file_list as $file) {
-            if (!in_array($file, $ignored_files)) {
+            if (! in_array($file, $ignored_files)) {
                 $cleaned_name = str_replace('/', '\\', $file);
                 $cleaned_name = str_replace($file_suffix, '', $cleaned_name);
                 $cleaned_name = str_replace($directory, '', $cleaned_name);
