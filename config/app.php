@@ -165,7 +165,7 @@ return [
         /*
          * Custom Service Providers...
          */
-        App\Providers\EloquentServiceProvider::class,
+        App\Providers\InterfaceServiceProvider::class,
 
     ],
 
