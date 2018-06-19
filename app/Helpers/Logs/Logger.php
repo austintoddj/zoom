@@ -26,7 +26,7 @@ class Logger
         }
 
         $handler = new RotatingFileHandler(
-            storage_path($path . $name . '-' . php_sapi_name() . '.log'),
+            storage_path($path.$name.'-'.php_sapi_name().'.log'),
             0,
             MonologLogger::DEBUG,
             false
@@ -43,7 +43,8 @@ class Logger
      * @param array $params
      * @return string
      */
-    public static function smartParse(string $message = '', array $params = []) {
+    public static function smartParse(string $message = '', array $params = [])
+    {
         return vsprintf($message, $params);
     }
 }
