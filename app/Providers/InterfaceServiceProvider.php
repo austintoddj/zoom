@@ -9,7 +9,7 @@ class InterfaceServiceProvider extends ServiceProvider
 {
     const APPLICATION_NAMESPACE = 'App';
     const INTERFACE_NAMESPACE = 'Interfaces';
-    const REPOSITORY_NAMESPACE = 'Repositories';
+    const REPOSITORY_NAMESPACE = 'Repositories\Eloquent';
 
     /**
      * Register any interfaces and repositories.

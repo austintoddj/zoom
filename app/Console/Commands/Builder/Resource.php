@@ -156,7 +156,7 @@ class Resource extends Command
 
             return $stub;
         } catch (Exception $exception) {
-            return;
+            return null;
         }
     }
 }

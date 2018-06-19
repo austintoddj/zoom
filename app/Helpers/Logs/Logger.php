@@ -2,45 +2,48 @@
 
 namespace App\Helpers\Logs;
 
+use Monolog\Formatter\LineFormatter;
+use Monolog\Logger as MonologLogger;
+use Monolog\Handler\RotatingFileHandler;
+
 class Logger
 {
     /**
-     * @param $name
-     * @param $description
-     * @param null $subject
-     * @param null $causer
-     * @param array $properties
+     * @param string $name
+     * @param null $folder
+     * @return MonologLogger
      */
-    public static function build($name, $description, $subject = null, $causer = null, $properties = [])
+    public static function build(string $name = '', $folder = null)
     {
-        switch (true) {
-            case is_null($subject) && is_null($causer):
-                activity($name)
-                    ->withProperties($properties)
-                    ->log($description);
-                break;
+        // Custom logging for debug mode
+        $formatter = new LineFormatter(null, null, true, true);
+        $formatter->includeStacktraces();
 
-            case is_null($subject) && ! is_null($causer):
-                activity($name)
-                    ->causedBy($causer)
-                    ->withProperties($properties)
-                    ->log($description);
-                break;
-
-            case ! is_null($subject) && is_null($causer):
-                activity($name)
-                    ->performedOn($subject)
-                    ->withProperties($properties)
-                    ->log($description);
-                break;
-
-            default:
-                activity($name)
-                    ->performedOn($subject)
-                    ->causedBy($causer)
-                    ->withProperties($properties)
-                    ->log($description);
-                break;
+        if ($folder) {
+            $path = sprintf('/logs/%s/', $folder);
+        } else {
+            $path = '/logs/';
         }
+
+        $handler = new RotatingFileHandler(
+            storage_path($path . $name . '-' . php_sapi_name() . '.log'),
+            0,
+            MonologLogger::DEBUG,
+            false
+        );
+        $handler->setFormatter($formatter);
+
+        $logger = new MonologLogger($name, [$handler]);
+
+        return $logger;
+    }
+
+    /**
+     * @param string $message
+     * @param array $params
+     * @return string
+     */
+    public static function smartParse(string $message = '', array $params = []) {
+        return vsprintf($message, $params);
     }
 }

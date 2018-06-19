@@ -2,23 +2,10 @@
 
 namespace App\Interfaces\Users;
 
-use App\Interfaces\InterfaceAbstract;
+use App\Interfaces\BaseInterface;
 
-interface UserInterface extends InterfaceAbstract
+interface UserInterface extends BaseInterface
 {
-    /**
-     * @param array $data
-     * @return mixed
-     */
-    public function create(array $data = []);
-
-    /**
-     * @param $id
-     * @param array $data
-     * @return mixed
-     */
-    public function update($id, array $data = []);
-
     /**
      * @param $email
      * @return mixed

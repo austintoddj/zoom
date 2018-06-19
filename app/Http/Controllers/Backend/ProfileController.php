@@ -10,12 +10,15 @@ use App\Interfaces\Users\UserInterface;
 
 class ProfileController extends Controller
 {
-    const LOG = 'profile';
-
     /**
      * @var UserInterface
      */
     protected $userInterface;
+
+    /**
+     * @var \Monolog\Logger
+     */
+    protected $log;
 
     /**
      * ProfileController constructor.
@@ -24,6 +27,7 @@ class ProfileController extends Controller
     public function __construct(UserInterface $userInterface)
     {
         $this->userInterface = $userInterface;
+        $this->log = Logger::build('profile', 'user');
     }
 
     /**
@@ -40,10 +44,6 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
-        // Save original attribute values
-        $oldName = $request->user()->name;
-        $oldEmail = $request->user()->email;
-
         // Validate the request data
         $this->validate($request, [
             'name' => 'required',
@@ -59,24 +59,10 @@ class ProfileController extends Controller
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
             ]);
 
-            // Log the activity
-            Logger::build(self::LOG, __('logs/descriptions.profile.update.success'), $request->user(), $request->user(), [
-                'attributes' => [
-                    'name' => $request->name,
-                    'email' => $request->email,
-                ],
-                'old' => [
-                    'name' => $oldName,
-                    'email' => $oldEmail,
-                ],
-            ]);
-
             return back()->with('success', __('profile/notifications.update.success', ['entity' => 'Profile']));
         } catch (Exception $e) {
-            // Log the error message
-            Logger::build(self::LOG, __('logs/descriptions.profile.update.error'), $request->user(), $request->user(), [
-                $e->getMessage(),
-            ]);
+            // Log the error
+            $this->log->error($e->getMessage());
 
             return back()->with('error', __('profile/notifications.update.error', ['entity' => 'Profile']));
         }
