@@ -18,6 +18,7 @@ before_install:
 
 install:
   - cp .env.example .env
+  - composer install --prefer-source --no-interaction --dev
 
 before_script:
   - php artisan key:generate
