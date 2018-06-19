@@ -12,6 +12,7 @@
 
                         <div class="card-body">
                             @include('backend.components.notifications.success')
+                            @include('backend.components.notifications.error')
                             @include('backend.components.forms.profile')
                         </div>
                     </div>

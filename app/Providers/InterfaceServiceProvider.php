@@ -9,7 +9,7 @@ class InterfaceServiceProvider extends ServiceProvider
 {
     const APPLICATION_NAMESPACE = 'App';
     const INTERFACE_NAMESPACE = 'Interfaces';
-    const REPOSITORY_NAMESPACE = 'Repositories';
+    const REPOSITORY_NAMESPACE = 'Repositories\Eloquent';
 
     /**
      * Register any interfaces and repositories.
@@ -43,7 +43,7 @@ class InterfaceServiceProvider extends ServiceProvider
     private function generateListForDirectory($directory, $file_suffix = '.php', $ignored_files = [])
     {
         $discovered_files = [];
-        $file_list = Storage::disk('local')->allFiles($directory);
+        $file_list = Storage::disk('app')->allFiles($directory);
 
         foreach ($file_list as $file) {
             if (! in_array($file, $ignored_files)) {
