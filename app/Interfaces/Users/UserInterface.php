@@ -2,9 +2,9 @@
 
 namespace App\Interfaces\Users;
 
-use App\Interfaces\BaseInterface;
+use App\Interfaces\InterfaceAbstract;
 
-interface UserInterface extends BaseInterface
+interface UserInterface extends InterfaceAbstract
 {
     /**
      * @param $email

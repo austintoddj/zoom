@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-interface BaseInterface
+interface InterfaceAbstract
 {
     /**
      * @param $id

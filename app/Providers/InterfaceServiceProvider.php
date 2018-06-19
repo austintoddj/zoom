@@ -43,7 +43,7 @@ class InterfaceServiceProvider extends ServiceProvider
     private function generateListForDirectory($directory, $file_suffix = '.php', $ignored_files = [])
     {
         $discovered_files = [];
-        $file_list = Storage::disk('local')->allFiles($directory);
+        $file_list = Storage::disk('app')->allFiles($directory);
 
         foreach ($file_list as $file) {
             if (! in_array($file, $ignored_files)) {
