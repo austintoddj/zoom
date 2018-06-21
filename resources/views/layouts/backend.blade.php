@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        @include('backend.components.nav.navbar')
+        @include('backend.components.layout.navbar')
         @yield('content')
     </div>
 

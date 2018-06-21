@@ -103,7 +103,7 @@ class Resource extends Command
                 }
             }
 
-            $this->info('Entity, interface, and repository generated successfully.');
+            $this->info('Entity, interface, and repository generated successfully');
         }
     }
 
@@ -155,8 +155,8 @@ class Resource extends Command
             $stub = str_replace('{{table}}', $table, $stub);
 
             return $stub;
-        } catch (Exception $exception) {
-            return;
+        } catch (Exception $e) {
+            return null;
         }
     }
 }
