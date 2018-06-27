@@ -14,7 +14,7 @@
 <body>
     @yield('content')
 
-    @if(!empty(env('GOOGLE_ANALYTICS')))
+    @if(!empty(config('analytics.google.tracking')))
         <!-- Google Analytics -->
         @include('frontend.components.analytics.tracking')
     @endif

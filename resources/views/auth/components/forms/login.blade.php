@@ -1,7 +1,7 @@
 <form method="POST" action="{{ route('login') }}">
     @csrf
 
-    @if(env('SOCIALITE'))
+    @if(config('socialite.enabled'))
         <div class="form-group row">
             @include('auth.components.socialite.links')
         </div>
