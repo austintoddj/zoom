@@ -27,7 +27,7 @@ class ProfileController extends Controller
     public function __construct(UserInterface $userInterface)
     {
         $this->userInterface = $userInterface;
-        $this->log = Logger::build('profile', 'user');
+        $this->log = Logger::build('user');
     }
 
     /**
@@ -44,16 +44,18 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+        $user = $this->userInterface->find($request->user()->id);
+
         // Validate the request data
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'unique:users,email,'.$request->user()->id.'|required|email',
+            'email' => 'unique:users,email,'.$user->id.'|required|email',
             'password' => 'nullable|string|min:6|confirmed',
         ]);
 
         try {
             // Update the user profile
-            $this->userInterface->update($request->user()->id, [
+            $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
@@ -61,7 +63,7 @@ class ProfileController extends Controller
 
             return back()->with('success', __('profile/notifications.update.success', ['entity' => 'Profile']));
         } catch (Exception $e) {
-            // Log the error
+            // Log the error message
             $this->log->error($e->getMessage());
 
             return back()->with('error', __('profile/notifications.update.error', ['entity' => 'Profile']));

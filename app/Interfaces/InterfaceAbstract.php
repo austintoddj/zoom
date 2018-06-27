@@ -5,6 +5,11 @@ namespace App\Interfaces;
 interface InterfaceAbstract
 {
     /**
+     * @return mixed
+     */
+    public function all();
+
+    /**
      * @param $id
      * @return mixed
      */
@@ -22,4 +27,10 @@ interface InterfaceAbstract
      * @return mixed
      */
     public function update($id, array $data = []);
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function delete($id);
 }

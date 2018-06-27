@@ -23,16 +23,6 @@ class UserRepository extends EloquentAbstract implements UserInterface
     }
 
     /**
-     * @param $id
-     * @param array $data
-     * @return mixed
-     */
-    public function update($id, array $data = [])
-    {
-        return $this->model->where('id', $id)->update($data);
-    }
-
-    /**
      * @param $email
      * @return mixed
      */
