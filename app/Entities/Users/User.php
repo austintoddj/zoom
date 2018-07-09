@@ -6,11 +6,13 @@ use App\Entities\BaseEntity;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends BaseEntity implements AuthenticatableContract
+class User extends BaseEntity implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, Notifiable, SoftDeletes;
+    use Authenticatable, CanResetPassword, Notifiable, SoftDeletes;
 
     /**
      * @var bool

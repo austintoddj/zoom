@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.admin')
 
 @section('title', 'Profile')
 
@@ -11,9 +11,9 @@
                         <div class="card-header">Profile</div>
 
                         <div class="card-body">
-                            @include('backend.components.notifications.success')
-                            @include('backend.components.notifications.error')
-                            @include('backend.components.forms.profile')
+                            @include('admin.components.notifications.success')
+                            @include('admin.components.notifications.error')
+                            @include('admin.components.forms.profile')
                         </div>
                     </div>
                 </div>

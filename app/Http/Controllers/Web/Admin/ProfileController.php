@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Web\Admin;
 
 use Exception;
 use App\Helpers\Logs\Logger;
@@ -35,7 +35,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('backend.profile.index');
+        return view('admin.profile.index');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Web\Admin;
 
 use App\Http\Controllers\Controller;
 
@@ -13,6 +13,6 @@ class DashboardController extends Controller
      */
     public function __invoke()
     {
-        return view('backend.dashboard.index');
+        return view('admin.dashboard.index');
     }
 }
