@@ -3,6 +3,16 @@
 return [
 
     /*
+     * Server
+     *
+     * Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server
+     *
+     * Note: when server is empty string, it will not add to response header
+     */
+
+    'server' => '',
+
+    /*
      * X-Content-Type-Options
      *
      * Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
@@ -64,6 +74,26 @@ return [
     'referrer-policy' => 'no-referrer',
 
     /*
+     * Clear-Site-Data
+     *
+     * Reference: https://w3c.github.io/webappsec-clear-site-data/
+     */
+
+    'clear-site-data' => [
+        'enable' => false,
+
+        'all' => false,
+
+        'cache' => true,
+
+        'cookies' => true,
+
+        'storage' => true,
+
+        'executionContexts' => true,
+    ],
+
+    /*
      * HTTP Strict Transport Security
      *
      * Reference: https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security
@@ -80,6 +110,22 @@ return [
     ],
 
     /*
+     * Expect-CT
+     *
+     * Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT
+     */
+
+    'expect-ct' => [
+        'enable' => false,
+
+        'max-age' => 2147483648,
+
+        'enforce' => false,
+
+        'report-uri' => null,
+    ],
+
+    /*
      * Public Key Pinning
      *
      * Reference: https://developer.mozilla.org/en-US/docs/Web/Security/Public_Key_Pinning
@@ -89,10 +135,7 @@ return [
 
     'hpkp' => [
         'hashes' => [
-            // [
-            //     'algo' => 'sha256',
-            //     'hash' => 'hash-value',
-            // ],
+            // 'sha256-hash-value',
         ],
 
         'include-sub-domains' => false,
@@ -121,34 +164,34 @@ return [
 
         'report-uri' => null,
 
+        'block-all-mixed-content' => false,
+
         'upgrade-insecure-requests' => false,
 
-        // enable or disable the automatic conversion of sources to https
-        'https-transform-on-https-connections' => true,
-
-        'base-uri' => [
-            //
-        ],
-
-        'default-src' => [
-            //
-        ],
-
-        'child-src' => [
-            //
-        ],
+        /*
+         * Please references script-src directive for available values, only `script-src` and `style-src`
+         * supports `add-generated-nonce`.
+         *
+         * Note: when directive value is empty, it will use `none` for that directive.
+         */
 
         'script-src' => [
             'allow' => [
-                //
+                // 'url',
             ],
 
             'hashes' => [
-                // ['sha256' => 'hash-value'],
+                // 'sha256' => [
+                //     'hash-value',
+                // ],
             ],
 
             'nonces' => [
-                //
+                // 'base64-encoded',
+            ],
+
+            'schemes' => [
+                // 'https:',
             ],
 
             'self' => false,
@@ -156,6 +199,12 @@ return [
             'unsafe-inline' => false,
 
             'unsafe-eval' => false,
+
+            'strict-dynamic' => false,
+
+            'unsafe-hashed-attributes' => false,
+
+            'add-generated-nonce' => false,
         ],
 
         'style-src' => [
@@ -163,36 +212,44 @@ return [
                 //
             ],
 
+            'hashes' => [
+                // 'sha256' => [
+                //     'hash-value',
+                // ],
+            ],
+
+            'nonces' => [
+                //
+            ],
+
+            'schemes' => [
+                // 'https:',
+            ],
+
             'self' => false,
 
             'unsafe-inline' => false,
+
+            'add-generated-nonce' => false,
         ],
 
         'img-src' => [
-            'allow' => [
-                //
-            ],
-
-            'types' => [
-                //
-            ],
-
-            'self' => false,
-
-            'data' => false,
+            //
         ],
 
-        /*
-         * The following directives are all use 'allow' and 'self' flag.
-         *
-         * Note: default value of 'self' flag is false.
-         */
+        'default-src' => [
+            //
+        ],
 
-        'font-src' => [
+        'base-uri' => [
             //
         ],
 
         'connect-src' => [
+            //
+        ],
+
+        'font-src' => [
             //
         ],
 
@@ -204,6 +261,14 @@ return [
             //
         ],
 
+        'frame-src' => [
+            //
+        ],
+
+        'manifest-src' => [
+            //
+        ],
+
         'media-src' => [
             //
         ],
@@ -212,13 +277,18 @@ return [
             //
         ],
 
-        /*
-         * plugin-types only support 'allow'.
-         */
-
-        'plugin-types' => [
+        'worker-src' => [
             //
         ],
+
+        'plugin-types' => [
+            // 'application/x-shockwave-flash',
+        ],
+
+        'require-sri-for' => '',
+
+        'sandbox' => '',
+
     ],
 
 ];
