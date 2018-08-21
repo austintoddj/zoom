@@ -3,7 +3,7 @@
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">Name</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ Auth::user()->name }}" required>
+            <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" title="Name" value="{{ Auth::user()->name }}" required>
             @if ($errors->has('name'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -14,7 +14,7 @@
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
         <div class="col-lg-6">
-            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ Auth::user()->email }}" required>
+            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" title="Email" value="{{ Auth::user()->email }}" required>
             @if ($errors->has('email'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -25,7 +25,7 @@
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">New Password</label>
         <div class="col-lg-6">
-            <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
+            <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" title="Password">
             @if ($errors->has('password'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('password') }}</strong>
@@ -36,7 +36,7 @@
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">Confirm Password</label>
         <div class="col-lg-6">
-            <input type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation">
+            <input type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" title="Password Confirmation">
             @if ($errors->has('password_confirmation'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('password_confirmation') }}</strong>

@@ -15,11 +15,6 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
     use Authenticatable, CanResetPassword, Notifiable, SoftDeletes;
 
     /**
-     * @var bool
-     */
-    public $timestamps = true;
-
-    /**
      * @var string
      */
     protected $table = 'users';
@@ -32,6 +27,11 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
         'email',
         'password',
     ];
+
+    /**
+     * @var bool
+     */
+    public $timestamps = true;
 
     /**
      * @var array
