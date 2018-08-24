@@ -25,7 +25,7 @@ class UpdateUser extends RequestAbstract
     {
         return [
             'name'     => 'required',
-            'email'    => 'required|email|unique:users,email,' . $this->user,
+            'email'    => 'required|email|unique:users,email,'.$this->user,
             'password' => isset($this->password) ? 'string|min:6|confirmed' : '',
         ];
     }
