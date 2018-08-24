@@ -37,7 +37,7 @@ class UserController extends Controller
     public function index()
     {
         $data = [
-            'users' => $this->userInterface->all()
+            'users' => $this->userInterface->all(),
         ];
 
         return view('admin.users.index', compact('data'));
@@ -80,7 +80,7 @@ class UserController extends Controller
     public function show($id)
     {
         $data = [
-            'user' => $this->userInterface->find($id)
+            'user' => $this->userInterface->find($id),
         ];
 
         return view('admin.users.show', compact('data'));
