@@ -46,9 +46,19 @@ Route::middleware('web')->namespace('Web')->group(function () {
             Route::get('/', 'DashboardController')->name('dashboard');
         });
 
-        Route::prefix('profile')->group(function () {
-            Route::get('/', 'ProfileController@index')->name('profile');
-            Route::post('/', 'ProfileController@update')->name('profile.update');
+        Route::resource('users', 'UserController', [
+            'names' => [
+                'index'   => 'users',
+                'create'  => 'users.create',
+                'store'   => 'users.store',
+                'show'    => 'users.show',
+                'update'  => 'users.update',
+                'destroy' => 'users.destroy',
+            ],
+        ]);
+
+        Route::prefix('settings')->group(function () {
+            Route::get('/', 'SettingsController@index')->name('settings');
         });
     });
 });

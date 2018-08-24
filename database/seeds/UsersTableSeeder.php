@@ -2,6 +2,7 @@
 
 use App\Entities\Users\User;
 use Illuminate\Database\Seeder;
+use App\Interfaces\Users\UserInterface;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,6 +13,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 1)->create();
+        $userContract = resolve(UserInterface::class);
+        $userContract->create([
+            'name'           => 'Todd Austin',
+            'email'          => 'austin.todd.j@gmail.com',
+            'password'       => bcrypt('password'),
+            'remember_token' => str_random(10),
+        ]);
+
+        factory(User::class, 10)->create();
     }
 }

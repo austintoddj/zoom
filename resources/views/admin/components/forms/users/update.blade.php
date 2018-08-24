@@ -1,9 +1,22 @@
-<form role="form" method="POST" action="{{ route('profile.update') }}">
+<form role="form" method="POST" action="{{ route('users.update', $data['user']->id) }}">
+    @method('put')
     @csrf
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label text-lg-right">ID</label>
+        <div class="col-lg-6">
+            <input type="text" class="form-control-plaintext" name="id" title="ID" value="{{ $data['user']->id }}" readonly>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label text-lg-right">Avatar</label>
+        <div class="col-lg-6">
+            <img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl($data['user']->email) }}" alt="{{ $data['user']->name }}" class="rounded w-50">
+        </div>
+    </div>
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">Name</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" title="Name" value="{{ Auth::user()->name }}" required>
+            <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" title="Name" value="{{ $data['user']->name }}" required>
             @if ($errors->has('name'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -14,7 +27,7 @@
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
         <div class="col-lg-6">
-            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" title="Email" value="{{ Auth::user()->email }}" required>
+            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" title="Email" value="{{ $data['user']->email }}" required>
             @if ($errors->has('email'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -46,9 +59,8 @@
     </div>
     <div class="form-group row">
         <div class="col-lg-6 offset-lg-4">
-            <p class="small">Your password must be a minimum of 6 characters.</p>
             <button type="submit" class="btn btn-primary">
-                Update Profile
+                Update
             </button>
         </div>
     </div>

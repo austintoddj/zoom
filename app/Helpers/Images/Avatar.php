@@ -14,7 +14,7 @@ class Avatar
      * @param string $connection
      * @return string
      */
-    public static function generateGravatar($email, $connection = 'default')
+    public static function generateGravatarUrl($email, $connection = 'default')
     {
         $config = array_filter(config("gravatar.$connection", []));
         $url = Arr::pull($config, 'url', self::GRAVATAR_URL);
