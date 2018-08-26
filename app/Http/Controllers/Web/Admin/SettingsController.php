@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Web\Admin;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SettingsController extends Controller
 {
@@ -13,7 +13,7 @@ class SettingsController extends Controller
     public function index()
     {
         $data = [
-            'user' => Auth::user()
+            'user' => Auth::user(),
         ];
 
         return view('admin.settings.index', compact('data'));
