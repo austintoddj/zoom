@@ -17,7 +17,7 @@
                    aria-label="Delete User">Delete</a>
 
                 {{--TODO: Method and CSRF inputs are being generated outside the form--}}
-                <form id="user-delete" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none">
+                <form id="user-delete-{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none">
                     @method('DELETE')
                     @csrf
                 </form>
