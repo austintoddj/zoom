@@ -7,8 +7,8 @@ use App\Helpers\Logs\Logger;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Interfaces\Meta\RoleInterface;
-use App\Interfaces\Users\UserInterface;
 use App\Http\Requests\Users\UpdateUser;
+use App\Interfaces\Users\UserInterface;
 
 class SettingsController extends Controller
 {

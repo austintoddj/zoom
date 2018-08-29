@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Web\Admin;
 
-use App\Entities\Meta\Permission;
-use App\Interfaces\Meta\RoleInterface;
 use Exception;
 use App\Helpers\Logs\Logger;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\StoreUser;
+use App\Interfaces\Meta\RoleInterface;
 use App\Http\Requests\Users\UpdateUser;
 use App\Interfaces\Users\UserInterface;
 
