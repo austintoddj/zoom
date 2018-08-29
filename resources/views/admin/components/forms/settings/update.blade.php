@@ -1,5 +1,4 @@
-<form role="form" method="POST" action="{{ route('users.update', $data['user']->id) }}">
-    @method('put')
+<form role="form" method="POST" action="{{ route('settings.update', $data['user']->id) }}">
     @csrf
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">ID</label>
@@ -16,9 +15,9 @@
     <div class="form-group row">
         <label class="col-lg-4 col-form-label text-lg-right">Role</label>
         <div class="col-lg-6">
-            <select class="custom-select" name="role" @if(auth()->user()->id == $data['user']->id) disabled @endif>
+            <select class="custom-select" name="role" @hasanyrole('User|Admin') disabled @endhasanyrole>
                 @foreach($data['roles'] as $role)
-                    <option value="{{ $role->name }}" @if($role->name == $data['user']->getRoleNames()->first()) selected @endif>{{ $role->name }}</option>
+                    <option value="{{ $role->id }}" @if($role->name == $data['user']->getRoleNames()->first()) selected @endif>{{ $role->name }}</option>
                 @endforeach
             </select>
         </div>

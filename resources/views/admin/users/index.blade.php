@@ -7,9 +7,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card card-default">
+                    <div class="card card-default shadow-sm rounded">
                         <div class="card-header">Users</div>
-
                         <div class="card-body">
                             @include('admin.components.tables.users.index')
                         </div>

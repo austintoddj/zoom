@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light navbar-laravel mb-4">
+<nav class="navbar navbar-expand-md navbar-light mt-2">
     <div class="container">
         <a class="navbar-brand" href="@guest {{ url('/') }} @else {{ route('dashboard') }} @endguest">
             {{ config('app.name', 'Laravel') }}
@@ -15,18 +15,9 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="resourceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Resources
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="resourceDropdown">
-                            <a class="dropdown-item" href="{{ route('users') }}">Users</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl(Auth::user()->email) }}" class="rounded-circle" width="20">
-                            {{ Auth::user()->name }}
+                            <img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl(auth()->user()->email) }}" class="rounded-circle" width="20">
+                            {{ auth()->user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a href="{{ route('settings') }}" class="dropdown-item {{ Route::is('settings*') ? 'bg-light' : '' }}" aria-label="Settings">Settings</a>

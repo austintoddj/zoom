@@ -12,16 +12,12 @@
     @foreach($data['users'] as $user)
         <tr>
             <th scope="row">{{ $user->id }}</th>
-            <th scope="row"><img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl($user->email) }}"
-                                 class="rounded-circle" width="30"></th>
+            <th scope="row"><img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl($user->email) }}" class="rounded-circle" width="30"></th>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>
                 <a href="{{ route('users.show', $user->id) }}"><i class="far fa-fw fa-edit"></i></a>
-                <a href="#"
-                   data-toggle="modal"
-                   data-target="#modal-delete-{{ $user->id }}"
-                   class="btn @if($user->id == Auth::user()->id) disabled @endif">
+                <a href="#" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}" class="btn @if($user->id == auth()->user()->id) disabled @endif">
                     <i class="far fa-fw fa-trash-alt"></i>
                 </a>
             </td>

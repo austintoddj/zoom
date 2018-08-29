@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Web\Admin;
 
+use App\Entities\Meta\Permission;
+use App\Interfaces\Meta\RoleInterface;
 use Exception;
 use App\Helpers\Logs\Logger;
 use App\Http\Controllers\Controller;
@@ -23,6 +25,7 @@ class UserController extends Controller
 
     /**
      * ProfileController constructor.
+     *
      * @param UserInterface $userInterface
      */
     public function __construct(UserInterface $userInterface)
@@ -59,8 +62,8 @@ class UserController extends Controller
     {
         try {
             $this->userInterface->create([
-                'name' => $request->name,
-                'email' => $request->email,
+                'name'     => $request->name,
+                'email'    => $request->email,
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
             ]);
 
@@ -79,8 +82,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $roleContract = resolve(RoleInterface::class);
+
         $data = [
-            'user' => $this->userInterface->find($id),
+            'user'  => $this->userInterface->find($id),
+            'roles' => $roleContract->all(),
         ];
 
         return view('admin.users.show', compact('data'));
@@ -98,10 +104,11 @@ class UserController extends Controller
         try {
             // Update the user
             $user->update([
-                'name' => $request->name,
-                'email' => $request->email,
+                'name'     => $request->name,
+                'email'    => $request->email,
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
             ]);
+            $user->syncRoles($request->role);
 
             return back()->with('success', 'User has been updated');
         } catch (Exception $e) {

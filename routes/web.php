@@ -46,7 +46,7 @@ Route::middleware('web')->namespace('Web')->group(function () {
             Route::get('/', 'DashboardController')->name('dashboard');
         });
 
-        Route::resource('users', 'UserController', [
+        Route::middleware('role:Super Admin')->resource('users', 'UserController', [
             'names' => [
                 'index'   => 'users',
                 'create'  => 'users.create',
@@ -59,6 +59,7 @@ Route::middleware('web')->namespace('Web')->group(function () {
 
         Route::prefix('settings')->group(function () {
             Route::get('/', 'SettingsController@index')->name('settings');
+            Route::post('/{user}', 'SettingsController@update')->name('settings.update');
         });
     });
 });

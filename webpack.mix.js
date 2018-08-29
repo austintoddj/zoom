@@ -12,9 +12,9 @@ let mix = require('laravel-mix');
  */
 
 // Public Assets...
-mix.sass('resources/assets/public/sass/public.scss', 'public/css');
+mix.sass('resources/assets/public/scss/public.scss', 'public/css');
 
 // Admin Assets...
 mix.js('resources/assets/admin/js/app.js', 'public/js')
-    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
+    .sass('resources/assets/admin/scss/admin.scss', 'public/css')
     .copy('resources/assets/admin/img', 'public/img');
