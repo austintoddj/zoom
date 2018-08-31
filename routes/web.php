@@ -41,7 +41,7 @@ Route::middleware('web')->namespace('Web')->group(function () {
         });
     });
 
-    Route::namespace('Admin')->group(function () {
+    Route::middleware('auth')->namespace('Admin')->group(function () {
         Route::prefix('dashboard')->group(function () {
             Route::get('/', 'DashboardController')->name('dashboard');
         });

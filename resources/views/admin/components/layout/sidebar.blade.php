@@ -2,14 +2,14 @@
     <div class="sidebar-header">
         <button class="nav-toggler nav-toggler-md sidebar-toggler" data-target="#nav-toggleable-md" data-toggle="collapse" type="button"><span class="sr-only">Toggle nav</span></button>
         <a class="sidebar-brand img-responsive" href="{{ route('dashboard') }}">
-            <span class="icon icon-flash sidebar-brand-icon"></span>
+            <i class="fas fa-bolt fa-fw sidebar-brand-icon"></i>
         </a>
     </div>
     <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
         <form class="sidebar-form">
             <input class="form-control" placeholder="Search..." type="text">
             <button class="btn-link" type="submit">
-                <span class="icon icon-magnifying-glass"></span>
+                <i class="fas fa-search fa-fw"></i>
             </button>
         </form>
         <ul class="nav nav-pills nav-stacked flex-column">

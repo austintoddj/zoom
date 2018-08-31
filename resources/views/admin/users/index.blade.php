@@ -8,6 +8,11 @@
             <h6 class="dashhead-subtitle">Users</h6>
             <h2 class="dashhead-title">All Users</h2>
         </div>
+        <div class="btn-toolbar dashhead-toolbar">
+            <div class="btn-toolbar-item">
+                <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fas fa-fw fa-user-plus"></i></a>
+            </div>
+        </div>
     </div>
     <hr class="mt-3">
 

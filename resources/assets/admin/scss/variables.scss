@@ -28,11 +28,6 @@ $nav-tabs-active-link-hover-bg: $body-bg !default;
 //
 // Custom and override variables for this toolkit.
 
-// icons
-$icon-font-path: "../fonts/";
-$icon-font-name: "toolkit-entypo";
-
-
 // States
 //
 // Overrides Bootstrap defaults.
@@ -58,7 +53,7 @@ $grid-gutter-width: $spacer;
 // Overrides Bootstrap defaults.
 
 // Fonts
-$font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  Nunito, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-base:        $font-family-sans-serif;
 
 // Body
