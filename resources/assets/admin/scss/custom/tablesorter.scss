@@ -1,0 +1,37 @@
+.table .header {
+  padding-right: 20px;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.headerSortUp,
+.headerSortDown {
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 700 !important;
+  color: theme-color("primary") !important;
+  border-bottom-color: theme-color("primary") !important;
+
+  &:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    content: "";
+    margin-right: -10px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    border-right: 5px solid transparent;
+    border-left:  5px solid transparent;
+  }
+}
+
+.headerSortUp:after {
+  border-top: 5px solid;
+}
+
+.headerSortDown:after {
+  border-bottom: 5px solid;
+}

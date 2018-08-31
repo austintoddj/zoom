@@ -14,16 +14,20 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @include('admin.components.layout.navbar')
-        @yield('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                @include('admin.components.layout.sidebar')
+            </div>
+            <div class="col-md-9 content">
+                @yield('content')
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script defer src="{{ url('https://use.fontawesome.com/releases/v5.2.0/js/all.js') }}"
-            integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
-            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
+    <script defer src="{{ url('https://use.fontawesome.com/releases/v5.2.0/js/all.js') }}" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     @stack('scripts')
 </body>
 </html>

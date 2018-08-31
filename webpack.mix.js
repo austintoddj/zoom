@@ -15,6 +15,6 @@ let mix = require('laravel-mix');
 mix.sass('resources/assets/public/scss/public.scss', 'public/css');
 
 // Admin Assets...
-mix.js('resources/assets/admin/js/app.js', 'public/js')
+mix.js('resources/assets/admin/js/admin.js', 'public/js')
     .sass('resources/assets/admin/scss/admin.scss', 'public/css')
     .copy('resources/assets/admin/img', 'public/img');

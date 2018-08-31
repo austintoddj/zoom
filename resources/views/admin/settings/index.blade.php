@@ -3,20 +3,15 @@
 @section('title', 'Settings')
 
 @section('content')
-    <main class="py-4">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card card-default shadow-sm rounded">
-                        <div class="card-header">Settings</div>
-                        <div class="card-body">
-                            @include('admin.components.notifications.success')
-                            @include('admin.components.notifications.error')
-                            @include('admin.components.forms.settings.update')
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="dashhead">
+        <div class="dashhead-titles">
+            <h6 class="dashhead-subtitle">Account</h6>
+            <h2 class="dashhead-title">Settings</h2>
         </div>
-    </main>
+    </div>
+    <hr class="mt-3">
+
+    @include('admin.components.notifications.success')
+    @include('admin.components.notifications.error')
+    @include('admin.components.forms.settings.update')
 @endsection

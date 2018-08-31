@@ -3,21 +3,15 @@
 @section('title', 'Create User')
 
 @section('content')
-    <main class="py-4">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card card-default shadow-sm rounded">
-                        <div class="card-header">Create User</div>
-
-                        <div class="card-body">
-                            @include('admin.components.notifications.success')
-                            @include('admin.components.notifications.error')
-                            @include('admin.components.forms.users.create')
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="dashhead">
+        <div class="dashhead-titles">
+            <h6 class="dashhead-subtitle">Users</h6>
+            <h2 class="dashhead-title">Add User</h2>
         </div>
-    </main>
+    </div>
+    <hr class="mt-3">
+
+    @include('admin.components.notifications.success')
+    @include('admin.components.notifications.error')
+    @include('admin.components.forms.users.create')
 @endsection
