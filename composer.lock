@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48276cb725be1bab3f36f17802eb87b6",
+    "content-hash": "85ce7b16c56e863b077ed510cadbfa9e",
     "packages": [
         {
             "name": "bepsvpt/secure-headers",
@@ -962,6 +962,74 @@
             "time": "2018-05-17T13:42:07+00:00"
         },
         {
+            "name": "laravelcollective/html",
+            "version": "v5.6.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "974605fcd22a7e4d19f0b2ef635a0d1d7400387d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/974605fcd22a7e4d19f0b2ef635a0d1d7400387d",
+                "reference": "974605fcd22a7e4d19f0b2ef635a0d1d7400387d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.6.*",
+                "illuminate/routing": "5.6.*",
+                "illuminate/session": "5.6.*",
+                "illuminate/support": "5.6.*",
+                "illuminate/view": "5.6.*",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "illuminate/database": "5.6.*",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.6-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "time": "2018-06-18T15:04:16+00:00"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.46",
             "source": {
@@ -1046,6 +1114,70 @@
             "time": "2018-08-22T07:45:22+00:00"
         },
         {
+            "name": "league/fractal",
+            "version": "0.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "a0b350824f22fc2fdde2500ce9d6851a3f275b0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/a0b350824f22fc2fdde2500ce9d6851a3f275b0e",
+                "reference": "a0b350824f22fc2fdde2500ce9d6851a3f275b0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.5",
+                "illuminate/contracts": "~5.0",
+                "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for API output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2017-06-12T11:04:56+00:00"
+        },
+        {
             "name": "league/oauth1-client",
             "version": "1.7.0",
             "source": {
@@ -1107,6 +1239,165 @@
                 "twitter"
             ],
             "time": "2016-08-17T00:36:58+00:00"
+        },
+        {
+            "name": "maatwebsite/excel",
+            "version": "3.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
+                "reference": "ad847be7df3519cdf6604eba0175fa6db1823340"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/ad847be7df3519cdf6604eba0175fa6db1823340",
+                "reference": "ad847be7df3519cdf6604eba0175fa6db1823340",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5",
+                "php": "^7.0",
+                "phpoffice/phpspreadsheet": "^1.2"
+            },
+            "require-dev": {
+                "orchestra/database": "^3.6",
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maatwebsite\\Excel\\ExcelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Excel": "Maatwebsite\\Excel\\Facades\\Excel"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Maatwebsite\\Excel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Brouwers",
+                    "email": "patrick@maatwebsite.nl"
+                }
+            ],
+            "description": "An eloquent way of importing and exporting Excel and CSV",
+            "keywords": [
+                "PHPExcel",
+                "batch",
+                "csv",
+                "excel",
+                "export",
+                "import",
+                "laravel",
+                "php",
+                "phpspreadsheet"
+            ],
+            "time": "2018-08-26T09:50:19+00:00"
+        },
+        {
+            "name": "markbaker/complex",
+            "version": "1.4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPComplex.git",
+                "reference": "a78d82ae4e682c3809fc3023d1b0ce654f6ab12b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/a78d82ae4e682c3809fc3023d1b0ce654f6ab12b",
+                "reference": "a78d82ae4e682c3809fc3023d1b0ce654f6ab12b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6.0|^7.0.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+                "phpcompatibility/php-compatibility": "^8.0",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phploc/phploc": "2.*",
+                "phpmd/phpmd": "2.*",
+                "phpunit/phpunit": "^4.8.35|^5.4.0",
+                "sebastian/phpcpd": "2.*",
+                "squizlabs/php_codesniffer": "^3.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Complex\\": "classes/src/"
+                },
+                "files": [
+                    "classes/src/functions/abs.php",
+                    "classes/src/functions/acos.php",
+                    "classes/src/functions/acosh.php",
+                    "classes/src/functions/acot.php",
+                    "classes/src/functions/acoth.php",
+                    "classes/src/functions/acsc.php",
+                    "classes/src/functions/acsch.php",
+                    "classes/src/functions/argument.php",
+                    "classes/src/functions/asec.php",
+                    "classes/src/functions/asech.php",
+                    "classes/src/functions/asin.php",
+                    "classes/src/functions/asinh.php",
+                    "classes/src/functions/atan.php",
+                    "classes/src/functions/atanh.php",
+                    "classes/src/functions/conjugate.php",
+                    "classes/src/functions/cos.php",
+                    "classes/src/functions/cosh.php",
+                    "classes/src/functions/cot.php",
+                    "classes/src/functions/coth.php",
+                    "classes/src/functions/csc.php",
+                    "classes/src/functions/csch.php",
+                    "classes/src/functions/exp.php",
+                    "classes/src/functions/inverse.php",
+                    "classes/src/functions/ln.php",
+                    "classes/src/functions/log2.php",
+                    "classes/src/functions/log10.php",
+                    "classes/src/functions/negative.php",
+                    "classes/src/functions/pow.php",
+                    "classes/src/functions/rho.php",
+                    "classes/src/functions/sec.php",
+                    "classes/src/functions/sech.php",
+                    "classes/src/functions/sin.php",
+                    "classes/src/functions/sinh.php",
+                    "classes/src/functions/sqrt.php",
+                    "classes/src/functions/tan.php",
+                    "classes/src/functions/tanh.php",
+                    "classes/src/functions/theta.php",
+                    "classes/src/operations/add.php",
+                    "classes/src/operations/subtract.php",
+                    "classes/src/operations/multiply.php",
+                    "classes/src/operations/divideby.php",
+                    "classes/src/operations/divideinto.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@lange.demon.co.uk"
+                }
+            ],
+            "description": "PHP Class for working with complex numbers",
+            "homepage": "https://github.com/MarkBaker/PHPComplex",
+            "keywords": [
+                "complex",
+                "mathematics"
+            ],
+            "time": "2018-07-31T08:38:40+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1334,6 +1625,93 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "phpoffice/phpspreadsheet",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
+                "reference": "125f462a718956f37d81305ca0df4f17cef0f3b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/125f462a718956f37d81305ca0df4f17cef0f3b9",
+                "reference": "125f462a718956f37d81305ca0df4f17cef0f3b9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-dom": "*",
+                "ext-gd": "*",
+                "ext-iconv": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "ext-xml": "*",
+                "ext-xmlreader": "*",
+                "ext-xmlwriter": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*",
+                "markbaker/complex": "^1.4.1",
+                "php": "^5.6|^7.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "require-dev": {
+                "dompdf/dompdf": "^0.8.0",
+                "friendsofphp/php-cs-fixer": "@stable",
+                "jpgraph/jpgraph": "^4.0",
+                "mpdf/mpdf": "^7.0.0",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.3",
+                "tecnickcom/tcpdf": "^6.2"
+            },
+            "suggest": {
+                "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
+                "jpgraph/jpgraph": "Option for rendering charts, or including charts with PDF or HTML Writers",
+                "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
+                "tecnick.com/tcpdf": "Option for rendering PDF with PDF Writer"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Erik Tilt"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://rootslabs.net"
+                },
+                {
+                    "name": "Mark Baker",
+                    "homepage": "http://markbakeruk.net"
+                }
+            ],
+            "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "gnumeric",
+                "ods",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2018-08-06T02:58:06+00:00"
         },
         {
             "name": "psr/container",
@@ -2773,6 +3151,303 @@
                 "environment"
             ],
             "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/datatables.git",
+                "reference": "a5e2eaac3d7bc155502a37ab490cbcf0dee63e06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/datatables/zipball/a5e2eaac3d7bc155502a37ab490cbcf0dee63e06",
+                "reference": "a5e2eaac3d7bc155502a37ab490cbcf0dee63e06",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "yajra/laravel-datatables-buttons": "3.*|4.*",
+                "yajra/laravel-datatables-fractal": "1.*",
+                "yajra/laravel-datatables-html": "3.*",
+                "yajra/laravel-datatables-oracle": "8.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "Laravel DataTables Complete Package.",
+            "keywords": [
+                "datatables",
+                "jquery",
+                "laravel"
+            ],
+            "time": "2018-08-15T12:31:12+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables-buttons",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables-buttons.git",
+                "reference": "e94760f59827a7c3dc4b8ea6e48499857fb28719"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/e94760f59827a7c3dc4b8ea6e48499857fb28719",
+                "reference": "e94760f59827a7c3dc4b8ea6e48499857fb28719",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.5.*|5.6.*",
+                "maatwebsite/excel": "^3.0",
+                "php": ">=7.0",
+                "yajra/laravel-datatables-html": "3.*",
+                "yajra/laravel-datatables-oracle": "8.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~7.0"
+            },
+            "suggest": {
+                "barryvdh/laravel-snappy": "Allows exporting of dataTable to PDF using the print view.",
+                "dompdf/dompdf": "Allows exporting of dataTable to PDF using the DomPDF."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Yajra\\DataTables\\ButtonsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yajra\\DataTables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "Laravel DataTables Buttons Plugin.",
+            "keywords": [
+                "buttons",
+                "datatables",
+                "jquery",
+                "laravel"
+            ],
+            "time": "2018-08-15T12:26:00+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables-fractal",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables-fractal.git",
+                "reference": "23804250ce32ddba216295ce47f713f551dba45c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-fractal/zipball/23804250ce32ddba216295ce47f713f551dba45c",
+                "reference": "23804250ce32ddba216295ce47f713f551dba45c",
+                "shasum": ""
+            },
+            "require": {
+                "league/fractal": "^0.17.0",
+                "php": ">=7.0",
+                "yajra/laravel-datatables-oracle": "8.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Yajra\\DataTables\\FractalServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yajra\\DataTables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "Laravel DataTables Fractal Plugin.",
+            "keywords": [
+                "api",
+                "datatables",
+                "fractal",
+                "laravel"
+            ],
+            "time": "2018-06-12T06:23:13+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables-html",
+            "version": "v3.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables-html.git",
+                "reference": "55e9b088429c5b5d727085b7081113b831d2b2bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/55e9b088429c5b5d727085b7081113b831d2b2bb",
+                "reference": "55e9b088429c5b5d727085b7081113b831d2b2bb",
+                "shasum": ""
+            },
+            "require": {
+                "laravelcollective/html": "5.4.*|5.5.*|5.6.*",
+                "php": ">=7.0",
+                "yajra/laravel-datatables-oracle": "8.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Yajra\\DataTables\\HtmlServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yajra\\DataTables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "Laravel DataTables HTML builder plugin for Laravel 5.4+.",
+            "keywords": [
+                "JS",
+                "datatables",
+                "html",
+                "jquery",
+                "laravel"
+            ],
+            "time": "2018-07-06T01:59:07+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables-oracle",
+            "version": "v8.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables.git",
+                "reference": "1643ba54cf9c7556ac7bba90564f5900cc2473fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/1643ba54cf9c7556ac7bba90564f5900cc2473fe",
+                "reference": "1643ba54cf9c7556ac7bba90564f5900cc2473fe",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.4.*|5.5.*|5.6.*",
+                "illuminate/filesystem": "5.4.*|5.5.*|5.6.*",
+                "illuminate/http": "5.4.*|5.5.*|5.6.*",
+                "illuminate/support": "5.4.*|5.5.*|5.6.*",
+                "illuminate/view": "5.4.*|5.5.*|5.6.*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5"
+            },
+            "suggest": {
+                "yajra/laravel-datatables-buttons": "Plugin for server-side exporting of dataTable.",
+                "yajra/laravel-datatables-editor": "Plugin to use Datatables Editor (requires a license).",
+                "yajra/laravel-datatables-fractal": "Plugin for server-side response using Fractal.",
+                "yajra/laravel-datatables-html": "Plugin for server-side HTML builder of dataTable."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Yajra\\DataTables\\DataTablesServiceProvider"
+                    ],
+                    "aliases": {
+                        "DataTables": "Yajra\\DataTables\\Facades\\DataTables"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yajra\\DataTables\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "jQuery DataTables API for Laravel 4|5",
+            "keywords": [
+                "datatables",
+                "jquery",
+                "laravel"
+            ],
+            "time": "2018-07-06T01:19:37+00:00"
         }
     ],
     "packages-dev": [
