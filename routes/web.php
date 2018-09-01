@@ -46,16 +46,22 @@ Route::middleware('web')->namespace('Web')->group(function () {
             Route::get('/', 'DashboardController')->name('dashboard');
         });
 
-        Route::middleware('role:Super Admin')->resource('users', 'UserController', [
-            'names' => [
-                'index'   => 'users',
-                'create'  => 'users.create',
-                'store'   => 'users.store',
-                'show'    => 'users.show',
-                'update'  => 'users.update',
-                'destroy' => 'users.destroy',
-            ],
-        ]);
+        Route::middleware('role:Super Admin')->group(function () {
+            Route::resource('users', 'UserController', [
+                'names' => [
+                    'index'   => 'users',
+                    'create'  => 'users.create',
+                    'store'   => 'users.store',
+                    'show'    => 'users.show',
+                    'update'  => 'users.update',
+                    'destroy' => 'users.destroy',
+                ],
+            ]);
+
+            Route::prefix('datatables')->namespace('Datatables')->group(function () {
+                Route::get('user', 'UserController@index')->name('users.datatable');
+            });
+        });
 
         Route::prefix('settings')->group(function () {
             Route::get('/', 'SettingsController@index')->name('settings');

@@ -16,10 +16,9 @@
     </div>
     <hr class="mt-3">
 
-    {{--@include('admin.components.tables.users.index')--}}
     @component('components.datatable', [
         'table_id' => 'user-datatable',
-        'route_name' => 'datatables.user',
+        'route_name' => 'users.datatable',
         'columns' => [
                 ['data' => 'name', 'name' => 'name', 'header' => 'Name'],
                 ['data' => 'email', 'name' => 'email', 'header' => 'E-mail'],

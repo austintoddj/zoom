@@ -13,7 +13,7 @@ class UserController extends Controller
      * @return mixed
      * @throws Exception
      */
-    public function __invoke()
+    public function index()
     {
         return Datatables::of(User::query())->make(true);
     }
