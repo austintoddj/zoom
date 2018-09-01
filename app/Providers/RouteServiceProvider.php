@@ -82,7 +82,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('datatables')
             ->middleware('web')
-            ->namespace($this->namespace . '\Web\Admin\Datatables')
+            ->namespace($this->namespace.'\Web\Admin\Datatables')
             ->as('datatables.')
             ->group(base_path('routes/datatable.php'));
     }
