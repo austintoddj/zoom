@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Web\Auth;
 
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
