@@ -5,8 +5,8 @@
 @section('content')
     <div class="dashhead">
         <div class="dashhead-titles">
-            <h6 class="dashhead-subtitle">Users</h6>
-            <h2 class="dashhead-title">All Users</h2>
+            <h6 class="dashhead-subtitle">Resources</h6>
+            <h2 class="dashhead-title">Users</h2>
         </div>
         <div class="btn-toolbar dashhead-toolbar">
             <div class="btn-toolbar-item">
@@ -16,13 +16,10 @@
     </div>
     <hr class="mt-3">
 
-    @component('components.datatable', [
-        'table_id' => 'user-datatable',
-        'route_name' => 'users.datatable',
-        'columns' => [
-                ['data' => 'name', 'name' => 'name', 'header' => 'Name'],
-                ['data' => 'email', 'name' => 'email', 'header' => 'E-mail'],
-            ]
-        ])
-    @endcomponent
+    @include('admin.components.notifications.success')
+    @include('admin.components.notifications.error')
+
+    <div class="table-responsive">
+        @include('admin.components.tables.users.index')
+    </div>
 @endsection

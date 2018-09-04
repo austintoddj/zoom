@@ -57,10 +57,6 @@ Route::middleware('web')->namespace('Web')->group(function () {
                     'destroy' => 'users.destroy',
                 ],
             ]);
-
-            Route::prefix('datatables')->namespace('Datatables')->group(function () {
-                Route::get('user', 'UserController@index')->name('users.datatable');
-            });
         });
 
         Route::prefix('settings')->group(function () {
