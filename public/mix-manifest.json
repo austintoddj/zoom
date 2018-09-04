@@ -1,5 +1,7 @@
 {
     "/js/admin.js": "/js/admin.js",
+    "/js/auth.js": "/js/auth.js",
     "/css/public.css": "/css/public.css",
+    "/css/auth.css": "/css/auth.css",
     "/css/admin.css": "/css/admin.css"
 }
