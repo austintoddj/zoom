@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
+@push('scripts')
+    @if(!empty(config('analytics.google.tracking')))
+        @include('public.components.analytics.tracking')
+    @endif
     <script src="{{ asset('js/auth.js') }}" defer></script>
-    @stack('scripts')
+@endpush
 
-    <!-- Styles -->
+@push('fonts')
+    <link rel="dns-prefetch" href="{{ url('https://fonts.gstatic.com') }}">
+    <link href="{{ url('https://fonts.googleapis.com/css?family=Nunito:200,600') }}" rel="stylesheet" type="text/css">
+@endpush
+
+@push('styles')
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
-</head>
-<body>
+@endpush
+
+@section('body')
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -71,10 +70,4 @@
             @yield('content')
         </main>
     </div>
-
-    <!-- Google Analytics -->
-    @if(!empty(config('analytics.google.tracking')))
-        @include('public.components.analytics.tracking')
-    @endif
-</body>
-</html>
+@endsection

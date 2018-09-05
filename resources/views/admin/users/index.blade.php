@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('admin.layout')
 
-@section('title', 'Users')
+@section('title', sprintf('%s - %s', config('app.name', 'Laravel'), 'Users'))
 
 @section('content')
     <div class="dashhead">
