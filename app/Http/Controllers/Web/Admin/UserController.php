@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Web\Admin;
 
 use Exception;
 use App\Entities\Users\User;
-use App\Helpers\Logs\Logger;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\StoreUser;
 use App\Interfaces\Meta\RoleInterface;
@@ -13,15 +12,12 @@ use App\Interfaces\Users\UserInterface;
 
 class UserController extends Controller
 {
+    const LOG = 'user';
+
     /**
      * @var UserInterface
      */
     protected $userInterface;
-
-    /**
-     * @var \Monolog\Logger
-     */
-    protected $log;
 
     /**
      * ProfileController constructor.
@@ -31,7 +27,6 @@ class UserController extends Controller
     public function __construct(UserInterface $userInterface)
     {
         $this->userInterface = $userInterface;
-        $this->log = Logger::build('user');
     }
 
     /**
@@ -61,16 +56,18 @@ class UserController extends Controller
     public function store(StoreUser $request)
     {
         try {
-            $this->userInterface->create([
+            $new_user = $this->userInterface->create([
                 'name'     => $request->name,
                 'email'    => $request->email,
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
             ]);
 
+            activity(self::LOG)->performedOn($new_user)->causedBy(auth()->user())->log('create');
+
             return back()->with('success', 'User has been created');
         } catch (Exception $e) {
             // Log the error message
-            $this->log->error($e->getMessage());
+            activity(self::LOG)->causedBy(auth()->user())->withProperties([$e->getMessage()])->log('create_failed');
 
             return back()->with('error', 'User has not been created');
         }
@@ -112,10 +109,12 @@ class UserController extends Controller
                 $user->syncRoles($request->role);
             }
 
+            activity(self::LOG)->performedOn($user)->causedBy(auth()->user())->log('update');
+
             return back()->with('success', 'User has been updated');
         } catch (Exception $e) {
             // Log the error message
-            $this->log->error($e->getMessage());
+            activity(self::LOG)->causedBy(auth()->user())->withProperties([$e->getMessage()])->log('update_failed');
 
             return back()->with('error', 'User has not been updated');
         }
@@ -131,10 +130,12 @@ class UserController extends Controller
 
         try {
             $user->delete();
+            activity(self::LOG)->performedOn($user)->causedBy(auth()->user())->log('destroy');
 
             return redirect(route('users'))->with('success', 'User has been deleted');
         } catch (Exception $e) {
-            $this->log->error($e->getMessage());
+            // Log the error message
+            activity(self::LOG)->causedBy(auth()->user())->withProperties([$e->getMessage()])->log('destroy_failed');
 
             return redirect(route('users'))->with('error', 'User has not been deleted');
         }

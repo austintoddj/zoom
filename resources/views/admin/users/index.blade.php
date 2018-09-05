@@ -14,7 +14,6 @@
             </div>
         </div>
     </div>
-    {{--<hr class="mt-3">--}}
 
     @include('admin.components.notifications.success')
     @include('admin.components.notifications.error')

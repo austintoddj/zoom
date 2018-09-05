@@ -39,7 +39,5 @@ class UsersTableSeeder extends Seeder
             'remember_token' => str_random(10),
         ]);
         $super_admin->assignRole('Super Admin');
-
-        factory(\App\Entities\Users\User::class, 100)->create();
     }
 }

@@ -151,6 +151,7 @@ return [
          * Package Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
 
         /*
          * Application Service Providers...
