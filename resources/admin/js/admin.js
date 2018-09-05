@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6,7 +5,7 @@
  */
 
 require('./bootstrap');
-
+require('./bootstrap');
 require('./bootstrap/alert');
 require('./bootstrap/carousel');
 require('./bootstrap/collapse');
@@ -17,6 +16,5 @@ require('./bootstrap/scrollspy');
 require('./bootstrap/tab');
 require('./bootstrap/tooltip');
 require('./bootstrap/util');
-
 require('./custom/affix');
 require('./custom/datepicker');
