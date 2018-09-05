@@ -9,9 +9,11 @@
             <h2 class="dashhead-title">Settings</h2>
         </div>
     </div>
-    <hr class="mt-3">
 
     @include('admin.components.notifications.success')
     @include('admin.components.notifications.error')
+
+    <hr class="mt-3">
+
     @include('admin.components.forms.settings.update')
 @endsection

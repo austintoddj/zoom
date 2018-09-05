@@ -17,5 +17,5 @@
         </div>
     @endif
 
-    <p>Welcome back!</p>
+    <p>Welcome to Zoom! Get familiar with Zoom and explore it's features in the documentation:</p>
 @endsection

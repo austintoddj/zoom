@@ -1,10 +1,10 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col" class="header"></th>
+        <th scope="col" class="header">Avatar</th>
         <th scope="col" class="header">Name</th>
         <th scope="col" class="header">Email</th>
-        <th scope="col" class="header">Actions</th>
+        <th scope="col" class="header"></th>
     </tr>
     </thead>
     <tbody>
@@ -20,3 +20,5 @@
     @endforeach
     </tbody>
 </table>
+
+{{ $data['users']->links() }}

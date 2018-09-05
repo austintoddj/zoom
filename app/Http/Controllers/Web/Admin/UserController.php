@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Admin;
 
 use Exception;
 use App\Helpers\Logs\Logger;
+use App\Entities\Users\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\StoreUser;
 use App\Interfaces\Meta\RoleInterface;
@@ -39,7 +40,7 @@ class UserController extends Controller
     public function index()
     {
         $data = [
-            'users' => $this->userInterface->all(),
+            'users' => User::paginate(15),
         ];
 
         return view('admin.users.index', compact('data'));

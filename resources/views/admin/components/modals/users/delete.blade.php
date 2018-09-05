@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure you want to permanently delete {{ $data['user']->name }} from the system?
+                Are you sure you want to delete this user? This cannot be undone.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>

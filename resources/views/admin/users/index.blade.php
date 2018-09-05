@@ -14,12 +14,12 @@
             </div>
         </div>
     </div>
-    <hr class="mt-3">
+    {{--<hr class="mt-3">--}}
 
     @include('admin.components.notifications.success')
     @include('admin.components.notifications.error')
 
-    <div class="table-responsive">
+    <div class="table-responsive mt-3">
         @include('admin.components.tables.users.index')
     </div>
 @endsection
