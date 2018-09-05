@@ -29,7 +29,7 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         Failed::class => [
-            LogFailedLogin::class
+            LogFailedLogin::class,
         ],
     ];
 
