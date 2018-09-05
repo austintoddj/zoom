@@ -1,6 +1,12 @@
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
+    @if(config('socialite.enabled'))
+        <div class="form-group row">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
+
     <div class="form-group row">
         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
