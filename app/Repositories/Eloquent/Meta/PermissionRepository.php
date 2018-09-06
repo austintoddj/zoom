@@ -15,6 +15,7 @@ class PermissionRepository extends EloquentAbstract implements PermissionInterfa
 
     /**
      * PermissionRepository constructor.
+     *
      * @param Model $model
      */
     public function __construct(Model $model)

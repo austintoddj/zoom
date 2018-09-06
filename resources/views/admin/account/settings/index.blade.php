@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'Settings')
+@section('title', sprintf('%s - %s', config('app.name', 'Laravel'), 'Settings'))
 
 @section('content')
     <div class="dashhead">
@@ -11,7 +11,9 @@
     </div>
     <hr class="mt-3">
 
-    @include('admin.components.notifications.success')
-    @include('admin.components.notifications.error')
-    @include('admin.components.forms.settings.update')
+    <div class="row text-left m-t-md">
+        <div class="col-lg-8">
+            @include('admin.components.forms.account.settings.update')
+        </div>
+    </div>
 @endsection

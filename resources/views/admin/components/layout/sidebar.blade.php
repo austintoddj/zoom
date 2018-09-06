@@ -15,7 +15,10 @@
         <ul class="nav nav-pills nav-stacked flex-column">
             <li class="nav-header">Account</li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::is('settings*') ? 'active' : '' }}" href="{{ route('settings') }}">Settings</a>
+                <a class="nav-link {{ Route::is('settings') ? 'active' : '' }}" href="{{ route('settings') }}">Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::is('security') ? 'active' : '' }}" href="{{ route('security') }}">Security</a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-label="Logout">Logout</a>

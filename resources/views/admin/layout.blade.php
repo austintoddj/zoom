@@ -11,6 +11,9 @@
 @endpush
 
 @section('body')
+    @include('admin.components.notifications.success')
+    @include('admin.components.notifications.error')
+
     <div class="container">
         <div class="row">
             <div class="col-md-3 sidebar">

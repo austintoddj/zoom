@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Web\Admin;
+namespace App\Http\Controllers\Web\Admin\Account;
 
 use Exception;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Interfaces\Meta\RoleInterface;
-use App\Http\Requests\Users\UpdateUser;
 use App\Interfaces\Users\UserInterface;
+use App\Http\Requests\Resources\Users\UpdateUser;
 
 class SettingsController extends Controller
 {
-    const LOG = 'settings';
-
     /**
      * @var UserInterface
      */
@@ -41,11 +38,11 @@ class SettingsController extends Controller
     public function index()
     {
         $data = [
-            'user'  => Auth::user(),
-            'roles' => $this->roleInterface->all(),
+            'user'    => auth()->user(),
+            'roles'   => $this->roleInterface->all(),
         ];
 
-        return view('admin.settings.index', compact('data'));
+        return view('admin.account.settings.index', compact('data'));
     }
 
     /**
@@ -58,10 +55,6 @@ class SettingsController extends Controller
         // Find the user
         $user = $this->userInterface->find($id);
 
-        // Save original attribute values
-        $oldName = $user->name;
-        $oldEmail = $user->email;
-
         try {
             // Update the user
             $user->update([
@@ -71,22 +64,10 @@ class SettingsController extends Controller
             ]);
             $user->syncRoles($request->role);
 
-            // Log the activity
-            activity(self::LOG)->performedOn($user)->causedBy($user)->withProperties([
-                'attributes' => [
-                    'name'  => $request->name,
-                    'email' => $request->email,
-                ],
-                'old'        => [
-                    'name'  => $oldName,
-                    'email' => $oldEmail,
-                ],
-            ])->log('update');
-
             return back()->with('success', 'Settings have been updated');
         } catch (Exception $e) {
             // Log the error message
-            activity(self::LOG)->performedOn($user)->causedBy($user)->withProperties([$e->getMessage()])->log('update_failed');
+            activity()->log($e->getMessage());
 
             return back()->with('error', 'Settings have not been updated');
         }

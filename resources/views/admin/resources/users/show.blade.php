@@ -11,8 +11,9 @@
     </div>
     <hr class="mt-3">
 
-    @include('admin.components.notifications.success')
-    @include('admin.components.notifications.error')
-    @include('admin.components.forms.users.update')
-    @include('admin.components.modals.users.delete')
+    <div class="col-lg-8">
+        @include('admin.components.forms.resources.users.update')
+    </div>
+
+    @include('admin.components.modals.resources.users.delete')
 @endsection

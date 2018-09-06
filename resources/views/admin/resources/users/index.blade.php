@@ -15,10 +15,7 @@
         </div>
     </div>
 
-    @include('admin.components.notifications.success')
-    @include('admin.components.notifications.error')
-
     <div class="table-responsive mt-3">
-        @include('admin.components.tables.users.index')
+        @include('admin.components.tables.resources.users.index')
     </div>
 @endsection

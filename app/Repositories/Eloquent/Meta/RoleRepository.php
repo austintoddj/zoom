@@ -15,6 +15,7 @@ class RoleRepository extends EloquentAbstract implements RoleInterface
 
     /**
      * RoleRepository constructor.
+     *
      * @param Model $model
      */
     public function __construct(Model $model)

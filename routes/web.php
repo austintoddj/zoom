@@ -59,9 +59,13 @@ Route::middleware('web')->namespace('Web')->group(function () {
             ]);
         });
 
-        Route::prefix('settings')->group(function () {
+        Route::prefix('settings')->namespace('Account')->group(function () {
             Route::get('/', 'SettingsController@index')->name('settings');
             Route::post('/{user}', 'SettingsController@update')->name('settings.update');
+        });
+
+        Route::prefix('security')->namespace('Account')->group(function () {
+            Route::get('/', 'SecurityController')->name('security');
         });
     });
 });

@@ -13,5 +13,5 @@
 
     @include('admin.components.notifications.success')
     @include('admin.components.notifications.error')
-    @include('admin.components.forms.users.create')
+    @include('admin.components.forms.resources.users.create')
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Users;
+namespace App\Http\Requests\Resources\Users;
 
 use App\Http\Requests\RequestAbstract;
 
