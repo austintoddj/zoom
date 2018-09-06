@@ -24,8 +24,9 @@ class StoreUser extends RequestAbstract
     public function rules()
     {
         return [
-            'name'  => 'required',
-            'email' => 'unique:users|required|email',
+            'name'     => 'required',
+            'email'    => 'unique:users|required|email',
+            'password' => 'string|min:6|confirmed',
         ];
     }
 }

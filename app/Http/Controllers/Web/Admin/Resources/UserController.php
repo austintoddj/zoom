@@ -18,13 +18,20 @@ class UserController extends Controller
     protected $userInterface;
 
     /**
+     * @var RoleInterface
+     */
+    protected $roleInterface;
+
+    /**
      * UserController constructor.
      *
      * @param UserInterface $userInterface
+     * @param RoleInterface $roleInterface
      */
-    public function __construct(UserInterface $userInterface)
+    public function __construct(UserInterface $userInterface, RoleInterface $roleInterface)
     {
         $this->userInterface = $userInterface;
+        $this->roleInterface = $roleInterface;
     }
 
     /**
@@ -44,7 +51,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.resources.users.create');
+        $data = [
+            'roles' => $this->roleInterface->all(),
+        ];
+
+        return view('admin.resources.users.create', compact('data'));
     }
 
     /**
@@ -75,11 +86,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $roleContract = resolve(RoleInterface::class);
-
         $data = [
             'user'  => $this->userInterface->find($id),
-            'roles' => $roleContract->all(),
+            'roles' => $this->roleInterface->all(),
         ];
 
         return view('admin.resources.users.show', compact('data'));

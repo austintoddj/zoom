@@ -11,7 +11,7 @@
     </div>
     <hr class="mt-3">
 
-    @include('admin.components.notifications.success')
-    @include('admin.components.notifications.error')
-    @include('admin.components.forms.resources.users.create')
+    <div class="col-lg-8">
+        @include('admin.components.forms.resources.users.create')
+    </div>
 @endsection
