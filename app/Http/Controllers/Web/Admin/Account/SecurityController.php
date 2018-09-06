@@ -13,8 +13,7 @@ class SecurityController extends Controller
     public function __invoke()
     {
         $data = [
-            'actions' => Activity::with('subject', 'causer')
-                ->where('causer_id', auth()->user()->id)
+            'actions' => Activity::where('causer_id', auth()->user()->id)
                 ->orderByDesc('created_at')
                 ->paginate(10),
         ];

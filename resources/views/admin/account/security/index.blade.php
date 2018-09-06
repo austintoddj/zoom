@@ -9,11 +9,15 @@
             <h2 class="dashhead-title">Security</h2>
         </div>
     </div>
-    <hr class="mt-3">
 
-    <div class="row text-left m-t-md">
-        <div class="col-lg-12">
-            @include('admin.components.tables.account.security.index')
-        </div>
-    </div>
+    <ul class="list-group mt-3" style="margin-bottom: 20px">
+        @foreach($data['actions'] as $action)
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ sprintf('%s.%s', $action->log_name, $action->description) }}
+                <span class="text-muted">{{ \Carbon\Carbon::parse($action->created_at)->diffForHumans() }}</span>
+            </li>
+        @endforeach
+    </ul>
+
+    {{ $data['actions']->links() }}
 @endsection

@@ -58,16 +58,16 @@
         },
         {
             "name": "bepsvpt/secure-headers",
-            "version": "5.3.0",
+            "version": "5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BePsvPT/secure-headers.git",
-                "reference": "37959847d0d18f41a1a9fcf51041b976fbde4a2f"
+                "reference": "487f3291df89fb703720d5e287ec1331540342d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BePsvPT/secure-headers/zipball/37959847d0d18f41a1a9fcf51041b976fbde4a2f",
-                "reference": "37959847d0d18f41a1a9fcf51041b976fbde4a2f",
+                "url": "https://api.github.com/repos/BePsvPT/secure-headers/zipball/487f3291df89fb703720d5e287ec1331540342d3",
+                "reference": "487f3291df89fb703720d5e287ec1331540342d3",
                 "shasum": ""
             },
             "require": {
@@ -75,8 +75,7 @@
                 "php": "^7.0"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "0.4.*",
-                "doctrine/instantiator": "1.0.*",
+                "ext-xdebug": "*",
                 "orchestra/testbench": "3.5.*",
                 "phpunit/phpunit": "6.5.*"
             },
@@ -116,7 +115,7 @@
                 "https",
                 "laravel"
             ],
-            "time": "2018-08-05T11:10:43+00:00"
+            "time": "2018-09-06T14:13:03+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -748,16 +747,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.1",
+            "version": "v5.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4a5955e325faa2054420eeb7320cc2c81111a2f2"
+                "reference": "86e1f98a6d2aab018e0257a7cb2ef2110d64a873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4a5955e325faa2054420eeb7320cc2c81111a2f2",
-                "reference": "4a5955e325faa2054420eeb7320cc2c81111a2f2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/86e1f98a6d2aab018e0257a7cb2ef2110d64a873",
+                "reference": "86e1f98a6d2aab018e0257a7cb2ef2110d64a873",
                 "shasum": ""
             },
             "require": {
@@ -845,6 +844,7 @@
                 "league/flysystem-cached-adapter": "Required to use the Flysystem cache (^1.0).",
                 "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (^1.0).",
                 "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
+                "moontoast/math": "Required to use ordered UUIDs (^1.1).",
                 "nexmo/client": "Required to use the Nexmo transport (^1.0).",
                 "pda/pheanstalk": "Required to use the beanstalk queue driver (^3.0).",
                 "predis/predis": "Required to use the redis cache and queue drivers (^1.0).",
@@ -884,7 +884,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-04T18:28:50+00:00"
+            "time": "2018-09-06T14:01:05+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -1869,16 +1869,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "2.17.1",
+            "version": "2.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "a0e05fd4f5729d96be20dfc768c5b1a4d2586838"
+                "reference": "0319fefd54319e7a1155ded3c9a754ef3f7f58d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/a0e05fd4f5729d96be20dfc768c5b1a4d2586838",
-                "reference": "a0e05fd4f5729d96be20dfc768c5b1a4d2586838",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/0319fefd54319e7a1155ded3c9a754ef3f7f58d8",
+                "reference": "0319fefd54319e7a1155ded3c9a754ef3f7f58d8",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.3.0|~3.4.2|^3.5.0",
+                "orchestra/testbench": "~3.4.2|~3.5.0|~3.6.0|~3.7.0",
                 "phpunit/phpunit": "^5.7|6.2|^7.0"
             },
             "type": "library",
@@ -1926,7 +1926,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2018-08-28T14:20:07+00:00"
+            "time": "2018-09-06T14:30:14+00:00"
         },
         {
             "name": "spatie/string",
@@ -3081,16 +3081,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "09db8c9a76711e98c61af0795934fb15955223fb"
+                "reference": "7db1843473e1562d8e0490b51db847d3a1415140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/09db8c9a76711e98c61af0795934fb15955223fb",
-                "reference": "09db8c9a76711e98c61af0795934fb15955223fb",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/7db1843473e1562d8e0490b51db847d3a1415140",
+                "reference": "7db1843473e1562d8e0490b51db847d3a1415140",
                 "shasum": ""
             },
             "require": {
@@ -3151,7 +3151,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2018-08-31T13:28:09+00:00"
+            "time": "2018-09-06T18:41:09+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",
