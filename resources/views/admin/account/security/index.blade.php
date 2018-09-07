@@ -10,14 +10,18 @@
         </div>
     </div>
 
-    <ul class="list-group mt-3" style="margin-bottom: 20px">
+    <div class="list-group mt-3 shadow-sm rounded" style="margin-bottom: 20px">
         @foreach($data['actions'] as $action)
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+               data-toggle="modal" data-target="#modal-{{ $action->id }}" aria-controls="collapse-{{ $action->id }}"
+               aria-expanded="false">
                 {{ sprintf('%s.%s', $action->log_name, $action->description) }}
                 <span class="text-muted">{{ \Carbon\Carbon::parse($action->created_at)->diffForHumans() }}</span>
-            </li>
+            </a>
+
+            @include('admin.components.modals.account.security.actions')
         @endforeach
-    </ul>
+    </div>
 
     {{ $data['actions']->links() }}
 @endsection

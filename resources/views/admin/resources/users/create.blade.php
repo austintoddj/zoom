@@ -11,7 +11,7 @@
     </div>
 
     <form role="form" method="POST" action="{{ route('users.store') }}">
-        <div class="card mt-3">
+        <div class="card mt-3 shadow-sm rounded">
             <div class="card-body">
                 @csrf
                 <div class="form-group row">

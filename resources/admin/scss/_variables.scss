@@ -16,8 +16,8 @@ $theme-colors: (
   dark: darken(#252830, 5%)
 );
 
-@import "bootstrap/functions";
-@import "bootstrap/variables";
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
 
 // deleted bs.4 vars
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
