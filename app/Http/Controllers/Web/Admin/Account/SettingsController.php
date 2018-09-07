@@ -62,7 +62,9 @@ class SettingsController extends Controller
                 'email'    => $request->email,
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
             ]);
-            $user->syncRoles($request->role);
+            if (isset($request->role)) {
+                $user->syncRoles($request->role);
+            }
 
             return back()->with('success', 'Settings have been updated');
         } catch (Exception $e) {

@@ -11,7 +11,7 @@
     </div>
 
     <form role="form" method="POST" action="{{ route('settings.update', $data['user']->id) }}">
-        <div class="card mt-3 shadow-sm rounded">
+        <div class="card mt-3 shadow-sm">
             <div class="card-body">
                 @csrf
                 <div class="form-group row">
