@@ -11,7 +11,6 @@ body {
   }
 }
 
-
 /* global spacing overrides */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -25,4 +24,8 @@ hr {
 .navbar-fixed-top,
 .navbar-static-top {
   border-bottom: 0;
+}
+
+.page-item.disabled .page-link {
+  border-color: rgb(222, 226, 230);
 }

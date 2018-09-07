@@ -14,14 +14,18 @@
                         <th scope="row">Action</th>
                         <td>{{ sprintf('%s.%s', $action->log_name, $action->description) }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">Subject ID</th>
-                        <td>{{ $action->subject_id }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Subject Type</th>
-                        <td>{{ $action->subject_type }}</td>
-                    </tr>
+                    @if(isset($action->subject_id))
+                        <tr>
+                            <th scope="row">Subject ID</th>
+                            <td>{{ $action->subject_id }}</td>
+                        </tr>
+                    @endif
+                    @if(isset($action->subject_type))
+                        <tr>
+                            <th scope="row">Subject Type</th>
+                            <td>{{ $action->subject_type }}</td>
+                        </tr>
+                    @endif
                     <tr>
                         <th scope="row">Properties</th>
                         <td>{{ $action->properties }}</td>
