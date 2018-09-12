@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="list-group mt-3 shadow-lg" style="margin-bottom: 20px; border-bottom-right-radius: .25em; border-bottom-left-radius: .25em">
+    <div class="list-group mt-3 shadow-sm" style="margin-bottom: 20px; border-bottom-right-radius: .25em; border-bottom-left-radius: .25em">
         @foreach($data['actions'] as $action)
             <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                data-toggle="modal" data-target="#modal-{{ $action->id }}" aria-controls="collapse-{{ $action->id }}"
