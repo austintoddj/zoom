@@ -3,13 +3,14 @@
 @section('title', 'Forgot Password')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Reset Password') }}</div>
-
+            <div class="col-md-4">
+                <div class="card shadow-sm">
                     <div class="card-body">
+                        <h4 class="mt-4 text-center">{{ __('Forgot Password') }}</h4>
+                        <hr class="w-25 mb-5">
+
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
