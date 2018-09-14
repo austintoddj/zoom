@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'name'           => $faker->name,
             'email'          => $faker->safeEmail,
             'password'       => bcrypt('password'),
-            'remember_token' => str_random(10),
+            'remember_token' => str_random(60),
         ]);
         $user->assignRole('User');
 
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             'name'           => $faker->name,
             'email'          => $faker->safeEmail,
             'password'       => bcrypt('password'),
-            'remember_token' => str_random(10),
+            'remember_token' => str_random(60),
         ]);
         $admin->assignRole('Admin');
 
@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
             'name'           => 'Todd Austin',
             'email'          => 'austin.todd.j@gmail.com',
             'password'       => bcrypt('password'),
-            'remember_token' => str_random(10),
+            'remember_token' => str_random(60),
         ]);
         $super_admin->assignRole('Super Admin');
     }

@@ -57,4 +57,11 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
      * @var bool
      */
     protected static $logOnlyDirty = true;
+
+    /**
+     * @var array
+     */
+    protected $ignoreChangedAttributes = [
+        'updated_at',
+    ];
 }
