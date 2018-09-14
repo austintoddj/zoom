@@ -1,12 +1,6 @@
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
-    @if(config('socialite.enabled'))
-        <div class="form-group row">
-            @include('auth.components.socialite.links')
-        </div>
-    @endif
-
     <div class="form-group row">
         <div class="col-md-12">
             <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -53,4 +47,11 @@
             </button>
         </div>
     </div>
+
+    @if(config('socialite.enabled'))
+        <hr class="w-25 my-4">
+        <div class="form-group row mt-3">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
 </form>

@@ -1,12 +1,6 @@
 <form method="POST" action="{{ route('login') }}">
     @csrf
 
-    @if(config('socialite.enabled'))
-        <div class="form-group row">
-            @include('auth.components.socialite.links')
-        </div>
-    @endif
-
     <div class="form-group row">
         <div class="col-md-12">
             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" required autofocus>
@@ -48,4 +42,11 @@
             </button>
         </div>
     </div>
+
+    @if(config('socialite.enabled'))
+        <hr class="w-25 my-4">
+        <div class="form-group row mt-3">
+            @include('auth.components.socialite.links')
+        </div>
+    @endif
 </form>
