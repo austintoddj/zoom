@@ -10,7 +10,9 @@
                     <a href="{{ url('/dashboard') }}">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    @if(config('auth.registration'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
                 @endauth
             </div>
         @endif
