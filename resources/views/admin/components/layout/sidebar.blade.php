@@ -33,6 +33,9 @@
             <li class="nav-item">
                 <a class="nav-link {{ Route::is('users*') ? 'active' : '' }}" href="{{ route('users') }}">Users</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::is('backups*') ? 'active' : '' }}" href="{{ route('backups') }}">Backups</a>
+            </li>
             @endrole
         </ul>
         <hr class="visible-xs mt-3">

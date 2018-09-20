@@ -46,17 +46,32 @@ Route::middleware('web')->namespace('Web')->group(function () {
             Route::get('/', 'DashboardController')->name('dashboard');
         });
 
-        Route::middleware('role:Super Admin')->group(function () {
-            Route::resource('users', 'UserController', [
-                'names' => [
-                    'index'   => 'users',
-                    'create'  => 'users.create',
-                    'store'   => 'users.store',
-                    'show'    => 'users.show',
-                    'update'  => 'users.update',
-                    'destroy' => 'users.destroy',
-                ],
-            ]);
+        Route::middleware('role:Super Admin')->namespace('Resources')->group(function () {
+            Route::namespace('Users')->group(function () {
+                Route::resource('users', 'UserController', [
+                    'names' => [
+                        'index'   => 'users',
+                        'create'  => 'users.create',
+                        'store'   => 'users.store',
+                        'show'    => 'users.show',
+                        'update'  => 'users.update',
+                        'destroy' => 'users.destroy',
+                    ],
+                ]);
+            });
+
+            Route::namespace('Backups')->group(function () {
+                Route::resource('backups', 'BackupController', [
+                    'names' => [
+                        'index'   => 'backups',
+                        'create'  => 'backups.create',
+                        'store'   => 'backups.store',
+                        'show'    => 'backups.show',
+                        'update'  => 'backups.update',
+                        'destroy' => 'backups.destroy',
+                    ],
+                ]);
+            });
         });
 
         Route::prefix('settings')->namespace('Account')->group(function () {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web\Admin;
+namespace App\Http\Controllers\Web\Admin\Resources\Users;
 
 use Exception;
 use App\Entities\Users\User;
