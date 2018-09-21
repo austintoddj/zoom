@@ -65,11 +65,12 @@ class UserController extends Controller
     public function store(StoreUser $request)
     {
         try {
-            $this->userInterface->create([
+            $user = $this->userInterface->create([
                 'name'     => $request->name,
                 'email'    => $request->email,
                 'password' => isset($request->password) ? bcrypt($request->password) : $request->user()->password,
             ]);
+            $user->assignRole($request->role);
 
             return back()->with('success', 'User has been created');
         } catch (Exception $e) {

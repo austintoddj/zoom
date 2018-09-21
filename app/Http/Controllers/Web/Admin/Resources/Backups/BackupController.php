@@ -38,16 +38,6 @@ class BackupController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -67,7 +57,10 @@ class BackupController extends Controller
     public function show($disk)
     {
         $backups = BackupDestination::create($disk, config('backup.backup.name'))->backups()->map(function (Backup $backup) {
+
             return [
+                'file' => str_replace(str_replace(' ', '-', config('backup.backup.name')).'/', '', $backup->path()),
+                'slug' => str_slug($backup->path()),
                 'path' => $backup->path(),
                 'date' => $backup->date()->format('Y-m-d H:i:s'),
                 'size' => Format::humanReadableSize($backup->size()),
@@ -75,39 +68,5 @@ class BackupController extends Controller
         });
 
         return view('admin.resources.backups.show')->with(compact('backups'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

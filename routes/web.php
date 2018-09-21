@@ -62,13 +62,11 @@ Route::middleware('web')->namespace('Web')->group(function () {
 
             Route::namespace('Backups')->group(function () {
                 Route::resource('backups', 'BackupController', [
+                    'except' => ['create', 'edit', 'update', 'destroy'],
                     'names' => [
                         'index'   => 'backups',
-                        'create'  => 'backups.create',
                         'store'   => 'backups.store',
                         'show'    => 'backups.show',
-                        'update'  => 'backups.update',
-                        'destroy' => 'backups.destroy',
                     ],
                 ]);
             });

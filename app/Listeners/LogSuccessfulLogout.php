@@ -25,6 +25,7 @@ class LogSuccessfulLogout
     public function handle(Logout $event)
     {
         activity('user')
+            ->performedOn($event->user)
             ->causedBy($event->user)
             ->withProperties([
                 'ip'         => $_SERVER['REMOTE_ADDR'],

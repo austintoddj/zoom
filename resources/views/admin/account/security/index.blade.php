@@ -13,8 +13,7 @@
     <div class="list-group mt-3 shadow-sm" style="margin-bottom: 20px; border-bottom-right-radius: .25em; border-bottom-left-radius: .25em">
         @foreach($data['actions'] as $action)
             <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-               data-toggle="modal" data-target="#modal-{{ $action->id }}" aria-controls="collapse-{{ $action->id }}"
-               aria-expanded="false">
+               data-toggle="modal" data-target="#modal-{{ $action->id }}">
                 {{ sprintf('%s.%s', $action->log_name, $action->description) }}
                 <span class="text-muted">{{ \Carbon\Carbon::parse($action->created_at)->diffForHumans() }}</span>
             </a>

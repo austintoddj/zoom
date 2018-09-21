@@ -36,6 +36,11 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
     public $timestamps = true;
 
     /**
+     * @var string
+     */
+    protected $with = 'activity';
+
+    /**
      * @var array
      */
     protected $hidden = [

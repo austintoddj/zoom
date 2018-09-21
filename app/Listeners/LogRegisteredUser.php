@@ -25,6 +25,7 @@ class LogRegisteredUser
     public function handle(Registered $event)
     {
         activity('user')
+            ->performedOn($event->user)
             ->causedBy($event->user)
             ->withProperties([
                 'ip'         => $_SERVER['REMOTE_ADDR'],

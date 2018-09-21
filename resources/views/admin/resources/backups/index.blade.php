@@ -10,7 +10,7 @@
         </div>
         <div class="btn-toolbar dashhead-toolbar">
             <div class="btn-toolbar-item">
-                <a href="{{ route('backups.create') }}" class="btn btn-primary">Create Backup</a>
+                <a href="{{ route('backups.store') }}" class="btn btn-primary">Create Backup</a>
             </div>
         </div>
     </div>

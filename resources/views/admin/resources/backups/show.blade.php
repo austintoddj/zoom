@@ -17,7 +17,6 @@
                 <th scope="col" style="border-top-left-radius: .1875rem">Path</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Size</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -27,10 +26,6 @@
                         <td>{{ $backup['path'] }}</td>
                         <td>{{ $backup['date'] }}</td>
                         <td>{{ $backup['size'] }}</td>
-                        <td>
-                            <a href="#" class="btn btn-link py-0"><i class="fas fa-download"></i></a>
-                            <a href="#" class="btn btn-link py-0"><i class="fas fa-trash"></i></a>
-                        </td>
                     </tr>
                 @endforeach
             @else
