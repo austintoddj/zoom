@@ -57,7 +57,6 @@ class BackupController extends Controller
     public function show($disk)
     {
         $backups = BackupDestination::create($disk, config('backup.backup.name'))->backups()->map(function (Backup $backup) {
-
             return [
                 'file' => str_replace(str_replace(' ', '-', config('backup.backup.name')).'/', '', $backup->path()),
                 'slug' => str_slug($backup->path()),
