@@ -1,4 +1,4 @@
-# Zoom
+# <img src="https://github.com/austintoddj/zoom/blob/develop/resources/assets/admin/img/zoom.svg" height="46"> Zoom
 
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/zoom"><img src="https://travis-ci.org/austintoddj/zoom.svg" alt="Build Status"></a>
