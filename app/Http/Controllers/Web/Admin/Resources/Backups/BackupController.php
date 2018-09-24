@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Web\Admin\Resources\Backups;
 
+use Exception;
 use Illuminate\Http\Request;
 use Spatie\Backup\Helpers\Format;
 use App\Http\Controllers\Controller;
+use App\Jobs\Backups\CreateBackupJob;
 use Spatie\Backup\BackupDestination\Backup;
 use Spatie\Backup\BackupDestination\BackupDestination;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
@@ -41,11 +43,18 @@ class BackupController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function store(Request $request)
     {
-        //
+        try {
+            dispatch(new CreateBackupJob());
+
+            return back()->with('success', 'Backup has been completed');
+        } catch (Exception $e) {
+            // Log the error message
+            activity()->log($e->getMessage());
+        }
     }
 
     /**

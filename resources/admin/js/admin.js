@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap');
-require('./bootstrap');
 require('./bootstrap/alert');
 require('./bootstrap/carousel');
 require('./bootstrap/collapse');
@@ -18,3 +17,4 @@ require('./bootstrap/tooltip');
 require('./bootstrap/util');
 require('./custom/affix');
 require('./custom/datepicker');
+require('./custom/spinner');

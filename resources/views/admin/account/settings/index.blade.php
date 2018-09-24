@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="card-footer text-right border-0">
-                <button type="submit" class="btn btn-primary">Update Settings</button>
+                <button type="submit" class="btn btn-primary btn-load">Update Settings</button>
             </div>
         </div>
     </form>

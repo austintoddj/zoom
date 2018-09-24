@@ -10,7 +10,13 @@
         </div>
         <div class="btn-toolbar dashhead-toolbar">
             <div class="btn-toolbar-item">
-                <a href="{{ route('backups.store') }}" class="btn btn-primary">Create Backup</a>
+                <a href="{{ route('backups.store') }}" class="btn btn-primary btn-load"
+                   onclick="event.preventDefault();document.getElementById('create-backup').submit();"
+                   aria-label='Create Backup'>Create Backup</a>
+                <form id="create-backup" action="{{ route('backups.store') }}" method="POST"
+                      style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
     </div>
@@ -30,7 +36,8 @@
             @foreach($backups as $backup)
                 <tr>
                     <td><a href="{{ route('backups.show', $backup['disk']) }}">{{ $backup['disk'] }}</a></td>
-                    <td>@if($backup['healthy']) <i class="far fa-fw fa-check-circle text-success"></i> @else <i class="far fa-fw fa-times-circle text-danger"></i> @endif</td>
+                    <td>@if($backup['healthy']) <i class="far fa-fw fa-check-circle text-success"></i> @else <i
+                                class="far fa-fw fa-times-circle text-danger"></i> @endif</td>
                     <td>{{ $backup['amount'] }}</td>
                     <td>{{ $backup['newest'] }}</td>
                     <td>{{ $backup['usedStorage'] }}</td>
