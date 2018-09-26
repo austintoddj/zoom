@@ -49,6 +49,7 @@ class BackupController extends Controller
     {
         try {
             dispatch(new CreateBackupJob());
+            activity('backup')->causedBy($request->user())->log('created');
 
             return back()->with('success', 'Backup has been completed');
         } catch (Exception $e) {

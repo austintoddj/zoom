@@ -1981,16 +1981,16 @@
         },
         {
             "name": "spatie/db-dumper",
-            "version": "2.10.1",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/db-dumper.git",
-                "reference": "1192bb0df9f49ee1f0bdecb7aa921d2647b4c7c7"
+                "reference": "b751552fb26a6b90e89d938f6bed8bb34c859963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/1192bb0df9f49ee1f0bdecb7aa921d2647b4c7c7",
-                "reference": "1192bb0df9f49ee1f0bdecb7aa921d2647b4c7c7",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/b751552fb26a6b90e89d938f6bed8bb34c859963",
+                "reference": "b751552fb26a6b90e89d938f6bed8bb34c859963",
                 "shasum": ""
             },
             "require": {
@@ -2027,7 +2027,7 @@
                 "mysqldump",
                 "spatie"
             ],
-            "time": "2018-08-30T12:10:16+00:00"
+            "time": "2018-09-26T07:11:09+00:00"
         },
         {
             "name": "spatie/laravel-activitylog",

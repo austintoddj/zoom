@@ -69,6 +69,7 @@ Route::middleware('web')->namespace('Web')->group(function () {
                         'show'    => 'backups.show',
                     ],
                 ]);
+                Route::get('backups/download', 'DownloadBackupController')->name('backups.download');
             });
         });
 
