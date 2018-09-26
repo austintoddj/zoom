@@ -17,7 +17,7 @@
                 <th scope="col" style="border-top-left-radius: .1875rem">Path</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Size</th>
-                <th scope="col"></th>
+                <th scope="col" style="border-top-right-radius: .1875rem"></th>
             </tr>
             </thead>
             <tbody>
