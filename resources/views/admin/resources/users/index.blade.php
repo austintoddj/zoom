@@ -15,31 +15,29 @@
         </div>
     </div>
 
-    <div class="card mt-3 shadow-sm border-0" style="margin-bottom: 20px">
-        <div class="table-responsive">
-            <table class="table table-borderless mb-0">
-                <thead class="thead-light">
+    <div class="table-responsive mt-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">E-mail Address</th>
+                <th scope="col">Role</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($data['users'] as $user)
                 <tr>
-                    <th scope="col" style="border-top-left-radius: .1875rem">Name</th>
-                    <th scope="col">E-mail Address</th>
-                    <th scope="col" style="border-top-right-radius: .1875rem">Role</th>
+                    <td>
+                        <img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl($user->email) }}" class="rounded-circle mr-2" style="width: 25px">
+                        <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
+                        <span class="small text-muted">Last seen {{ \Carbon\Carbon::parse($user->activity->last()->created_at)->diffForHumans() }}</span>
+                    </td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->getRoleNames()->first() }}</td>
                 </tr>
-                </thead>
-                <tbody>
-                @foreach($data['users'] as $user)
-                    <tr>
-                        <td>
-                            <img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl($user->email) }}" class="rounded-circle mr-2" style="width: 25px">
-                            <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
-                            <span class="small text-muted">Last seen {{ \Carbon\Carbon::parse($user->activity->last()->created_at)->diffForHumans() }}</span>
-                        </td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->getRoleNames()->first() }}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 
     {{ $data['users']->links() }}

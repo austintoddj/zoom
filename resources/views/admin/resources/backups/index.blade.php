@@ -21,15 +21,15 @@
         </div>
     </div>
 
-    <div class="card mt-3 shadow-sm border-0">
-        <table class="table table-borderless mb-0">
-            <thead class="thead-light">
+    <div class="table-responsive mt-3">
+        <table class="table">
+            <thead>
             <tr>
-                <th scope="col" style="border-top-left-radius: .1875rem">Disk</th>
+                <th scope="col">Disk</th>
                 <th scope="col">Healthy</th>
                 <th scope="col">Amount of Backups</th>
                 <th scope="col">Latest Backup</th>
-                <th scope="col" style="border-top-right-radius: .1875rem">Used Storage</th>
+                <th scope="col">Used Storage</th>
             </tr>
             </thead>
             <tbody>
