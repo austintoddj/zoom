@@ -10,15 +10,28 @@
         </div>
     </div>
 
-    <div class="list-group mt-3 shadow-sm" style="margin-bottom: 20px; border-bottom-right-radius: .25em; border-bottom-left-radius: .25em">
-        @foreach($data['actions'] as $action)
-            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-               data-toggle="modal" data-target="#modal-{{ $action->id }}">
-                {{ sprintf('%s.%s', $action->log_name, $action->description) }}
-                <span class="text-muted">{{ \Carbon\Carbon::parse($action->created_at)->diffForHumans() }}</span>
-            </a>
-            @include('admin.components.modals.account.security.actions')
-        @endforeach
+    <div class="table-responsive mt-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Action</th>
+                <th scope="col">Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($data['actions'] as $action)
+                <tr>
+                    <td>
+                        <a href="#" data-toggle="modal" data-target="#modal-{{ $action->id }}">
+                            {{ sprintf('%s.%s', $action->log_name, $action->description) }}
+                        </a>
+                        @include('admin.components.modals.account.security.actions')
+                    </td>
+                    <td>{{ \Carbon\Carbon::parse($action->created_at)->diffForHumans() }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 
     {{ $data['actions']->links() }}
