@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Admin\Resources\Users;
 
 use Exception;
 use App\Entities\Users\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Interfaces\Meta\RoleInterface;
 use App\Interfaces\Users\UserInterface;
@@ -35,9 +36,10 @@ class UserController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = [
             'users' => User::paginate(10),
@@ -47,9 +49,10 @@ class UserController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
         $data = [
             'roles' => $this->roleInterface->all(),
@@ -82,10 +85,11 @@ class UserController extends Controller
     }
 
     /**
+     * @param Request $request
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $data = [
             'user'  => $this->userInterface->find($id),

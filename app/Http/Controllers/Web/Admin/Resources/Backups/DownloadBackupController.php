@@ -43,7 +43,7 @@ class DownloadBackupController extends Controller
      * @param Backup $backup
      * @return StreamedResponse
      */
-    public function respondWithBackupStream(Backup $backup): StreamedResponse
+    protected function respondWithBackupStream(Backup $backup): StreamedResponse
     {
         $fileName = pathinfo($backup->path(), PATHINFO_BASENAME);
 

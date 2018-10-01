@@ -17,9 +17,10 @@ class BackupController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $backups = BackupDestinationStatusFactory::createForMonitorConfig(config('backup.monitorBackups'))
             ->map(function (BackupDestinationStatus $backupDestinationStatus) {
@@ -61,10 +62,11 @@ class BackupController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param Request $request
      * @param  string $disk
      * @return \Illuminate\Http\Response
      */
-    public function show($disk)
+    public function show(Request $request, $disk)
     {
         $backups = BackupDestination::create($disk, config('backup.backup.name'))->backups()->map(function (Backup $backup) {
             return [
