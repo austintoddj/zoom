@@ -28,7 +28,9 @@
                         <td>{{ $backup['date'] }}</td>
                         <td>{{ $backup['size'] }}</td>
                         <td>
-                            <a href="{{ route('backups.download') }}" class="btn btn-link py-0"><i class="fas fa-fw fa-download"></i></a>
+                            <a href="{{ route('backups.download') }}" class="btn btn-link py-0">
+                                <i class="fas fa-fw fa-download"></i>
+                            </a>
                             <a href="#" class="btn btn-link py-0"><i class="fas fa-fw fa-trash"></i></a>
                         </td>
                     </tr>

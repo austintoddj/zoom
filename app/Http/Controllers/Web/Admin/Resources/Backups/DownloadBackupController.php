@@ -24,8 +24,6 @@ class DownloadBackupController extends Controller
             'path' => ['required', new PathToZip()],
         ]);
 
-        dd($validated);
-
         $backupDestination = BackupDestination::create($validated['disk'], config('backup.backup.name'));
 
         $backup = $backupDestination->backups()->first(function (Backup $backup) use ($validated) {

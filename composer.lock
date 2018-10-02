@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.67.22",
+            "version": "3.68.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0d05816beeaf187a3897c28aaa68d683974818d9"
+                "reference": "86fe79d78ea28a8b914b83e9ea919b01b0bfbdcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0d05816beeaf187a3897c28aaa68d683974818d9",
-                "reference": "0d05816beeaf187a3897c28aaa68d683974818d9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/86fe79d78ea28a8b914b83e9ea919b01b0bfbdcf",
+                "reference": "86fe79d78ea28a8b914b83e9ea919b01b0bfbdcf",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-28T18:46:40+00:00"
+            "time": "2018-10-01T22:08:44+00:00"
         },
         {
             "name": "bepsvpt/secure-headers",
