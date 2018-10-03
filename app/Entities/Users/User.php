@@ -77,6 +77,6 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
     {
         $hash = md5(strtolower(trim($this->attributes['email'])));
 
-        return 'https://www.gravatar.com/avatar/' . $hash;
+        return 'https://www.gravatar.com/avatar/'.$hash;
     }
 }
