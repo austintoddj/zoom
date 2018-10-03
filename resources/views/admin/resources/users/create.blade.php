@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', sprintf('%s - %s', config('app.name', 'Laravel'), 'Add User'))
+@section('title', sprintf('%s - %s', config('app.name', 'Laravel'), 'New User'))
 
 @section('content')
     <div class="dashhead">

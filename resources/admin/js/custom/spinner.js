@@ -1,8 +1,8 @@
 $(function() {
-    let $btn = $('.btn-load');
+    let button = $('.btn-load');
 
-    $btn.on('click', function () {
-        $btn.addClass('disabled');
-        $btn.html("<i class='fas fa-fw fa-circle-notch fa-spin'></i> " + $btn.text());
+    button.on('click', function () {
+        button.addClass('disabled');
+        button.html("<i class='fas fa-fw fa-circle-notch fa-spin'></i> " + button.text());
     });
 });
