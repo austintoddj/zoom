@@ -33,6 +33,10 @@
             <li class="nav-item">
                 <a class="nav-link {{ Route::is('users*') ? 'active' : '' }}" href="{{ route('users') }}">Users</a>
             </li>
+            @endrole
+
+            @role('Super Admin')
+            <li class="nav-header">Tools</li>
             <li class="nav-item">
                 <a class="nav-link {{ Route::is('backups*') ? 'active' : '' }}" href="{{ route('backups') }}">Backups</a>
             </li>

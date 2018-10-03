@@ -5,7 +5,7 @@
 @section('content')
     <div class="dashhead">
         <div class="dashhead-titles">
-            <h6 class="dashhead-subtitle">Resources</h6>
+            <h6 class="dashhead-subtitle">Tools</h6>
             <h2 class="dashhead-title">Backup Details</h2>
         </div>
     </div>

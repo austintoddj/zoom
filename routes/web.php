@@ -59,7 +59,9 @@ Route::middleware('web')->namespace('Web')->group(function () {
                     ],
                 ]);
             });
+        });
 
+        Route::middleware('role:Super Admin')->namespace('Tools')->group(function () {
             Route::namespace('Backups')->group(function () {
                 Route::resource('backups', 'BackupController', [
                     'except' => ['create', 'edit', 'update', 'destroy'],

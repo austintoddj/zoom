@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web\Admin\Resources\Backups;
+namespace App\Http\Controllers\Web\Admin\Tools\Backups;
 
 use Exception;
 use Illuminate\Http\Request;
@@ -37,7 +37,7 @@ class BackupController extends Controller
                 ];
             });
 
-        return view('admin.resources.backups.index')->with(compact('backups'));
+        return view('admin.tools.backups.index')->with(compact('backups'));
     }
 
     /**
@@ -78,6 +78,6 @@ class BackupController extends Controller
             ];
         });
 
-        return view('admin.resources.backups.show')->with(compact('backups'));
+        return view('admin.tools.backups.show')->with(compact('backups'));
     }
 }
