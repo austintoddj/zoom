@@ -10,7 +10,7 @@
         </div>
         <div class="btn-toolbar dashhead-toolbar">
             <div class="btn-toolbar-item">
-                <a href="{{ route('backups.store') }}" class="btn btn-primary btn-load"
+                <a href="{{ route('backups.store') }}" class="btn btn-primary btn-spin"
                    onclick="event.preventDefault();document.getElementById('create-backup').submit();"
                    aria-label='Create Backup'>Create Backup</a>
                 <form id="create-backup" action="{{ route('backups.store') }}" method="POST"

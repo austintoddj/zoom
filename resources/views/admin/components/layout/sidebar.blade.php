@@ -7,7 +7,7 @@
     </div>
     <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
         <form class="sidebar-form">
-            <input class="form-control form" placeholder="Search..." type="text">
+            <input class="form-control form" placeholder="Search" type="text">
             <button class="btn-link" type="submit">
                 <i class="fas fa-search fa-fw"></i>
             </button>

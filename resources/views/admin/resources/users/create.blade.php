@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="card-footer text-right">
-                <button type="submit" class="btn btn-primary btn-load">Create User</button>
+                <button type="submit" class="btn btn-primary btn-spin">Create User</button>
             </div>
         </div>
     </form>

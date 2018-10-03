@@ -1,5 +1,5 @@
 $(function() {
-    let button = $('.btn-load');
+    let button = $('.btn-spin');
 
     button.on('click', function () {
         button.addClass('disabled');

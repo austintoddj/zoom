@@ -84,7 +84,7 @@
             </div>
             <div class="card-footer text-right">
                 <a href="#" class="btn btn-link @if(auth()->user()->id == $data['user']->id) disabled @endif" data-toggle="modal" data-target="#modal-delete-{{ $data['user']->id }}">Delete</a>
-                <button type="submit" class="btn btn-primary btn-load">Update User</button>
+                <button type="submit" class="btn btn-primary btn-spin">Update User</button>
             </div>
         </div>
     </form>
