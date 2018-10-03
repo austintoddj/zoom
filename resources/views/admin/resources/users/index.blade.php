@@ -28,7 +28,7 @@
             @foreach($data['users'] as $user)
                 <tr>
                     <td>
-                        <img src="{{ \App\Helpers\Images\Avatar::generateGravatarUrl($user->email) }}" class="rounded-circle mr-2" style="width: 25px">
+                        <img src="{{ $user->gravatar }}" class="rounded-circle mr-2" style="width: 25px">
                         <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
                         <span class="small text-muted">Last seen {{ \Carbon\Carbon::parse($user->activity->last()->created_at)->diffForHumans() }}</span>
                     </td>

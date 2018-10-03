@@ -4,10 +4,10 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class BaseTest extends TestCase
+class ExampleTest extends TestCase
 {
     /** @test */
-    public function it_can_access_the_public_index_page()
+    public function example_feature_test()
     {
         $response = $this->get('/');
 

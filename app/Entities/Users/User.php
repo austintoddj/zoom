@@ -38,7 +38,7 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
     /**
      * @var string
      */
-    protected $with = 'activity';
+//    protected $with = 'activity';
 
     /**
      * @var array
@@ -69,4 +69,14 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
     protected $ignoreChangedAttributes = [
         'updated_at',
     ];
+
+    /**
+     * @return string
+     */
+    public function getGravatarAttribute() : string
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+
+        return 'https://www.gravatar.com/avatar/' . $hash;
+    }
 }
