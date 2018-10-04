@@ -2,7 +2,15 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
+use App\Listeners\LogFailedLogin;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Failed;
+use Illuminate\Auth\Events\Logout;
+use App\Listeners\LogRegisteredUser;
+use App\Listeners\LogSuccessfulLogin;
+use App\Listeners\LogSuccessfulLogout;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider
@@ -13,8 +21,21 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+            LogRegisteredUser::class,
+        ],
+
+        Login::class => [
+            LogSuccessfulLogin::class,
+        ],
+
+        Failed::class => [
+            LogFailedLogin::class,
+        ],
+
+        Logout::class => [
+            LogSuccessfulLogout::class,
         ],
     ];
 

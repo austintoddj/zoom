@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,9 +12,13 @@ let mix = require('laravel-mix');
  */
 
 // Public Assets...
-mix.sass('resources/assets/public/sass/public.scss', 'public/css');
+mix.sass('resources/public/scss/public.scss', 'public/css');
+
+// Auth Assets...
+mix.js('resources/auth/js/auth.js', 'public/js')
+    .sass('resources/auth/scss/auth.scss', 'public/css');
 
 // Admin Assets...
-mix.js('resources/assets/admin/js/app.js', 'public/js')
-    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
-    .copy('resources/assets/admin/img', 'public/img');
+mix.js('resources/admin/js/admin.js', 'public/js')
+    .sass('resources/admin/scss/admin.scss', 'public/css');
+

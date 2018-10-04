@@ -41,14 +41,46 @@ Route::middleware('web')->namespace('Web')->group(function () {
         });
     });
 
-    Route::namespace('Admin')->group(function () {
+    Route::middleware('auth')->namespace('Admin')->group(function () {
         Route::prefix('dashboard')->group(function () {
             Route::get('/', 'DashboardController')->name('dashboard');
         });
 
-        Route::prefix('profile')->group(function () {
-            Route::get('/', 'ProfileController@index')->name('profile');
-            Route::post('/', 'ProfileController@update')->name('profile.update');
+        Route::middleware('role:Super Admin')->namespace('Resources')->group(function () {
+            Route::namespace('Users')->group(function () {
+                Route::resource('users', 'UserController', [
+                    'names' => [
+                        'index'   => 'users',
+                        'create'  => 'users.create',
+                        'store'   => 'users.store',
+                        'show'    => 'users.show',
+                        'update'  => 'users.update',
+                        'destroy' => 'users.destroy',
+                    ],
+                ]);
+            });
+        });
+
+        Route::middleware('role:Super Admin')->namespace('Tools')->group(function () {
+            Route::namespace('Backups')->group(function () {
+                Route::resource('backups', 'BackupController', [
+                    'except' => ['create', 'edit', 'update', 'destroy'],
+                    'names' => [
+                        'index'   => 'backups',
+                        'store'   => 'backups.store',
+                        'show'    => 'backups.show',
+                    ],
+                ]);
+            });
+        });
+
+        Route::prefix('settings')->namespace('Account')->group(function () {
+            Route::get('/', 'SettingsController@index')->name('settings');
+            Route::post('/{user}', 'SettingsController@update')->name('settings.update');
+        });
+
+        Route::prefix('security')->namespace('Account')->group(function () {
+            Route::get('/', 'SecurityController')->name('security');
         });
     });
 });

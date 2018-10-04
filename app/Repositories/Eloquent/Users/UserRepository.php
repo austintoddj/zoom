@@ -15,6 +15,7 @@ class UserRepository extends EloquentAbstract implements UserInterface
 
     /**
      * UserRepository constructor.
+     *
      * @param User $user
      */
     public function __construct(User $user)

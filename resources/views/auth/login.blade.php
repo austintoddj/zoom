@@ -1,21 +1,20 @@
-@extends('layouts.admin')
+@extends('auth.layout')
 
 @section('title', 'Login')
 
 @section('content')
-    <main class="py-4">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card card-default">
-                        <div class="card-header">Login</div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="card shadow-sm px-3 py-3">
+                    <div class="card-body">
+                        <h4 class="mt-4 text-center">Welcome Back!</h4>
+                        <hr class="w-25 pb-4">
 
-                        <div class="card-body">
-                            @include('auth.components.forms.login')
-                        </div>
+                        @include('auth.components.forms.login')
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 @endsection

@@ -103,7 +103,7 @@ class Resource extends Command
                 }
             }
 
-            $this->info('Entity, interface, and repository generated successfully');
+            $this->info('✔ Entity, interface, and repository generated successfully!');
         }
     }
 
