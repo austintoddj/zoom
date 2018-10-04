@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="50">
+<img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="65">
 </p>
 
 <p align="center">
