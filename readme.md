@@ -1,6 +1,6 @@
-<h2 align="center">
+<h1 align="center">
 <img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="40"> Zoom
-</h2>
+</h1>
 
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/zoom"><img src="https://travis-ci.org/austintoddj/zoom.svg" alt="Build Status"></a>
