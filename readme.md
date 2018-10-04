@@ -1,4 +1,6 @@
-# <img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="46"> Zoom
+<p align="center">
+<img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="46"> Zoom
+</p>
 
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/zoom"><img src="https://travis-ci.org/austintoddj/zoom.svg" alt="Build Status"></a>

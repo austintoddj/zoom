@@ -30,7 +30,6 @@
                     <td>
                         <img src="{{ $user->gravatar }}" class="rounded-circle mr-2" style="width: 25px">
                         <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
-                        <span class="small text-muted">Last seen {{ \Carbon\Carbon::parse($user->activity->last()->created_at)->diffForHumans() }}</span>
                     </td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->getRoleNames()->first() }}</td>

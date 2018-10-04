@@ -38,6 +38,11 @@ class User extends BaseEntity implements AuthenticatableContract, CanResetPasswo
     /**
      * @var array
      */
+    protected $with = ['roles'];
+
+    /**
+     * @var array
+     */
     protected $hidden = [
         'password',
         'remember_token',
