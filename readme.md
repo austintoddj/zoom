@@ -1,6 +1,6 @@
-<h1 align="center">
-<img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="40"> Zoom
-</h1>
+<p align="center">
+<img src="https://github.com/austintoddj/zoom/blob/develop/resources/admin/img/zoom.png" height="50">
+</p>
 
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/zoom"><img src="https://travis-ci.org/austintoddj/zoom.svg" alt="Build Status"></a>
@@ -11,10 +11,6 @@
 ## Introduction
 
 Zoom is a boilerplate meant to standardize much of the setup that almost every web application needs. Reclaim your first few hours of development on every new project by allowing Zoom to give you a little speed boost.
-
-## Official Documentation
-
-Documentation for Zoom can be found on the [Wiki](https://github.com/austintoddj/zoom/wiki).
 
 ## License
 
