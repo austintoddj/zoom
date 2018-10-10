@@ -5,7 +5,7 @@
 <p align="center">
 <a href="https://travis-ci.org/austintoddj/zoom"><img src="https://travis-ci.org/austintoddj/zoom.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/austintoddj/zoom"><img src="https://poser.pugx.org/austintoddj/zoom/downloads" alt="Total Downloads"></a>
-<a href="https://github.com/austintoddj/zoom/license"><img src="https://poser.pugx.org/austintoddj/zoom/license" alt="License"></a>
+<a href="https://github.com/austintoddj/zoom/blob/master/license"><img src="https://poser.pugx.org/austintoddj/zoom/license" alt="License"></a>
 </p>
 
 ## Introduction
