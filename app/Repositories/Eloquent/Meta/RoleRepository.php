@@ -4,9 +4,9 @@ namespace App\Repositories\Eloquent\Meta;
 
 use App\Entities\Meta\Role as Model;
 use App\Interfaces\Meta\RoleInterface;
-use App\Repositories\Eloquent\EloquentAbstract;
+use App\Repositories\Eloquent\RepositoryAbstract;
 
-class RoleRepository extends EloquentAbstract implements RoleInterface
+class RoleRepository extends RepositoryAbstract implements RoleInterface
 {
     /**
      * @var Model

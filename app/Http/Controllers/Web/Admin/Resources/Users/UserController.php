@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Web\Admin\Resources\Users;
 
 use Exception;
+use Illuminate\View\View;
 use App\Entities\Users\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use App\Interfaces\Meta\RoleInterface;
 use App\Interfaces\Users\UserInterface;
 use App\Http\Requests\Resources\Users\StoreUser;
@@ -37,9 +39,9 @@ class UserController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function index(Request $request)
+    public function index(Request $request): View
     {
         $data = [
             'users' => User::paginate(10),
@@ -50,9 +52,9 @@ class UserController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function create(Request $request)
+    public function create(Request $request): View
     {
         $data = [
             'roles' => $this->roleInterface->all(),
@@ -63,9 +65,9 @@ class UserController extends Controller
 
     /**
      * @param StoreUser $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function store(StoreUser $request)
+    public function store(StoreUser $request): RedirectResponse
     {
         try {
             $user = $this->userInterface->create([
@@ -87,9 +89,9 @@ class UserController extends Controller
     /**
      * @param Request $request
      * @param $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function show(Request $request, $id)
+    public function show(Request $request, $id): View
     {
         $data = [
             'user'  => $this->userInterface->find($id),
@@ -102,9 +104,9 @@ class UserController extends Controller
     /**
      * @param UpdateUser $request
      * @param $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function update(UpdateUser $request, $id)
+    public function update(UpdateUser $request, $id): RedirectResponse
     {
         $user = $this->userInterface->find($id);
 
@@ -130,9 +132,9 @@ class UserController extends Controller
 
     /**
      * @param $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($id): RedirectResponse
     {
         $user = $this->userInterface->find($id);
 

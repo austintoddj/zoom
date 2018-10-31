@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Web\Admin\Tools\Backups;
 
 use Exception;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Spatie\Backup\Helpers\Format;
 use App\Http\Controllers\Controller;
 use App\Jobs\Backups\CreateBackupJob;
+use Illuminate\Http\RedirectResponse;
 use Spatie\Backup\BackupDestination\Backup;
 use Spatie\Backup\BackupDestination\BackupDestination;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
@@ -18,9 +20,9 @@ class BackupController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function index(Request $request)
+    public function index(Request $request): View
     {
         $backups = BackupDestinationStatusFactory::createForMonitorConfig(config('backup.monitorBackups'))
             ->map(function (BackupDestinationStatus $backupDestinationStatus) {
@@ -44,9 +46,9 @@ class BackupController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return mixed
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         try {
             dispatch(new CreateBackupJob());
@@ -64,9 +66,9 @@ class BackupController extends Controller
      *
      * @param Request $request
      * @param  string $disk
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function show(Request $request, $disk)
+    public function show(Request $request, $disk): View
     {
         $backups = BackupDestination::create($disk, config('backup.backup.name'))->backups()->map(function (Backup $backup) {
             return [

@@ -4,9 +4,9 @@ namespace App\Repositories\Eloquent\Meta;
 
 use App\Entities\Meta\Permission as Model;
 use App\Interfaces\Meta\PermissionInterface;
-use App\Repositories\Eloquent\EloquentAbstract;
+use App\Repositories\Eloquent\RepositoryAbstract;
 
-class PermissionRepository extends EloquentAbstract implements PermissionInterface
+class PermissionRepository extends RepositoryAbstract implements PermissionInterface
 {
     /**
      * @var Model

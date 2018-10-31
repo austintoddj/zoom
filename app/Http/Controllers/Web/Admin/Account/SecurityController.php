@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Web\Admin\Account;
 
+use Illuminate\View\View;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
 class SecurityController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function __invoke()
+    public function __invoke(): View
     {
         $data = [
             'actions' => Activity::where('causer_id', auth()->user()->id)

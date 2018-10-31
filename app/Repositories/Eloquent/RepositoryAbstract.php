@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
-abstract class EloquentAbstract
+abstract class RepositoryAbstract
 {
     protected $model;
 
