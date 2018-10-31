@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Web\Admin\Account;
 
 use Exception;
+use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use App\Interfaces\Meta\RoleInterface;
 use App\Interfaces\Users\UserInterface;
 use App\Http\Requests\Resources\Users\UpdateUser;
@@ -35,7 +37,7 @@ class SettingsController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(): View
     {
         $data = [
             'user'    => auth()->user(),
@@ -48,9 +50,9 @@ class SettingsController extends Controller
     /**
      * @param UpdateUser $request
      * @param $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function update(UpdateUser $request, $id)
+    public function update(UpdateUser $request, $id): RedirectResponse
     {
         // Find the user
         $user = $this->userInterface->find($id);

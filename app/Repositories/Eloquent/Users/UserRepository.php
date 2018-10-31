@@ -4,9 +4,9 @@ namespace App\Repositories\Eloquent\Users;
 
 use App\Entities\Users\User;
 use App\Interfaces\Users\UserInterface;
-use App\Repositories\Eloquent\EloquentAbstract;
+use App\Repositories\Eloquent\RepositoryAbstract;
 
-class UserRepository extends EloquentAbstract implements UserInterface
+class UserRepository extends RepositoryAbstract implements UserInterface
 {
     /**
      * @var User
@@ -25,9 +25,9 @@ class UserRepository extends EloquentAbstract implements UserInterface
 
     /**
      * @param $email
-     * @return mixed
+     * @return User
      */
-    public function findByEmail($email)
+    public function findByEmail($email): User
     {
         return $this->model->where('email', $email)->first();
     }
