@@ -1,27 +1,14 @@
 language: php
 
-env:
-  global:
-    - setup=stable
-
-matrix:
-  fast_finish: true
-  include:
-    - php: 7.1
-    - php: 7.2
+php:
+- 7.1
+- 7.2
 
 sudo: false
 
 before_install:
-  - phpenv config-rm xdebug.ini || true
-  - travis_retry composer self-update
+- phpenv config-rm xdebug.ini
 
-install:
-  - cp .env.example .env
-  - composer install --prefer-source --no-interaction --dev
+install: travis_retry composer install --no-interaction --prefer-dist --no-suggest
 
-before_script:
-  - php artisan key:generate
-
-script:
-   - phpunit
+script: vendor/bin/phpunit --verbose
