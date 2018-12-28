@@ -12,6 +12,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('@fortawesome/fontawesome-free');
 } catch (e) {}
 
 /**
