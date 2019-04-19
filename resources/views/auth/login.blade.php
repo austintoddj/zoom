@@ -1,20 +1,30 @@
-@extends('auth.layout')
+@extends('layouts.app')
 
 @section('title', 'Login')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-4">
-                <div class="card shadow-sm px-3 py-3">
-                    <div class="card-body">
-                        <h4 class="mt-4 text-center">Welcome Back!</h4>
-                        <hr class="w-25 pb-4">
+<div class="login__block active" id="l-login">
+    <div class="login__block__header">
+        <i class="fas fa-user-circle"></i>
+        Sign in to {{ config('app.name') }}
 
-                        @include('auth.components.forms.login')
-                    </div>
+        <div class="actions actions--inverse login__block__actions">
+            <div class="dropdown">
+                <i data-toggle="dropdown" class="fas fa-ellipsis-v actions__item"></i>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{{ route('register') }}">Create an account</a>
+                    <a class="dropdown-item" href="{{ route('password.request') }}">Forgot password?</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <p class="text-center pt-3 font-weight-bold">
+        <span class="font-italic text-danger"><i class="fas fa-exclamation-circle"></i> For testing purposes only</span><br>
+        <code style="cursor: pointer;" class="text-muted">{{ App\User::all()->random()->email }}</code>
+    </p>
+
+    @include('auth.components.forms.login')
+</div>
 @endsection

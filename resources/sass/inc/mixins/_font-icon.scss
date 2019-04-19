@@ -1,0 +1,6 @@
+// Font Icon (for before/after content)
+@mixin font-icon($content, $font-size) {
+  font-family: $font-family-icon;
+  content: $content;
+  font-size: $font-size;
+}

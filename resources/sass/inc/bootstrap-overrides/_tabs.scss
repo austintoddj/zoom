@@ -1,0 +1,59 @@
+.nav-tabs {
+  .nav-link {
+    border: 0;
+    text-transform: uppercase;
+    color: $text-muted;
+    position: relative;
+    font-size: 0.95rem;
+    transition: color 400ms;
+
+    &:before {
+      content: "";
+      height: 2px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background-color: $light-blue;
+      transform: scaleX(0);
+      transition: transform 400ms;
+    }
+
+    &.active {
+      &:before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &:not([class*="nav-tabs--"]) {
+    .nav-link {
+      &.active {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.tab-content {
+  padding: 1.5rem 0;
+}
+
+
+// Theming
+@mixin nav-tabs-color($color) {
+  .nav-link {
+    &.active {
+      color: $color;
+    }
+
+    &:before {
+      background-color: $color;
+    }
+  }
+}
+
+.nav-tabs--red { @include nav-tabs-color($red); }
+.nav-tabs--green { @include nav-tabs-color($green); }
+.nav-tabs--amber { @include nav-tabs-color($orange); }
+.nav-tabs--black { @include nav-tabs-color($black); }

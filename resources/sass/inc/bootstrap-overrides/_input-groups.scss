@@ -1,0 +1,19 @@
+.input-group {
+  margin-bottom: $form-group-margin-bottom;
+
+  .form-control {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.input-group-text {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+  line-height: 100%;
+
+  & > .zmdi {
+    position: relative;
+    top: 1px;
+  }
+}

@@ -1,0 +1,34 @@
+.footer {
+  text-align: center;
+  padding: 4rem 1rem 1rem;
+  font-weight: $font-weight-base;
+
+  & > p {
+    color: lighten($body-color, 20%);
+    margin-bottom: 0;
+  }
+}
+
+.footer__nav {
+  justify-content: center;
+
+  .nav-link {
+    color: lighten($body-color, 20%);
+    @include transition(color 300ms);
+
+    &:hover,
+    &:focus {
+      color: lighten($body-color, 5%);
+    }
+
+    & + .nav-link {
+      &:before {
+        @include font-icon('\f111', 4px);
+        position: relative;
+        left: -1.2rem;
+        top: -0.2rem;
+        color: lighten($body-color, 20%);
+      }
+    }
+  }
+}

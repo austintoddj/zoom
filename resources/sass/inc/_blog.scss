@@ -1,0 +1,42 @@
+.blog__tags {
+  text-align: center;
+  background-color: $gray-50;
+  padding: 2rem 1rem 1.5rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.blog__arthur {
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.blog__arthur-img {
+  margin-bottom: 1.5rem;
+
+  & > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
+
+.blog__arthur-social {
+  margin: 2rem 0 0 0;
+
+  & > a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 36px;
+    color: $white;
+    font-size: 1.2rem;
+    margin: 0 1px;
+    transition: opacity 300ms, background-color 300ms;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

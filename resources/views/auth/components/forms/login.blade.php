@@ -1,52 +1,31 @@
 <form method="POST" action="{{ route('login') }}">
     @csrf
 
-    <div class="form-group row">
-        <div class="col-md-12">
-            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" required autofocus>
+    <div class="login__block__body">
+        <div class="form-group form-group--float form-group--centered">
+            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
             @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
             @endif
+            <label>Email Address</label>
+            <i class="form-group__bar"></i>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="col-md-12">
-            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" name="password" required>
+        <div class="form-group form-group--float form-group--centered">
+            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
             @if ($errors->has('password'))
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
             @endif
+            <label>Password</label>
+            <i class="form-group__bar"></i>
         </div>
-    </div>
 
-    <div class="form-group d-flex justify-content-between">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-            <label class="form-check-label" for="remember">
-                {{ __('Remember Me') }}
-            </label>
-        </div>
-        <a class="btn btn-link pr-0" href="{{ route('password.request') }}">
-            {{ __('Forgot Your Password?') }}
-        </a>
+        <button type="submit" class="btn btn--icon login__block__btn"><i class="fas fa-arrow-right"></i></button>
     </div>
-
-    <div class="form-group row mb-0">
-        <div class="col-md-12">
-            <button type="submit" class="btn btn-primary btn-block">
-                {{ __('Login') }}
-            </button>
-        </div>
-    </div>
-
-    @if(config('socialite.enabled'))
-        <hr class="w-25 my-4">
-        <div class="form-group row mt-3">
-            @include('auth.components.socialite.links')
-        </div>
-    @endif
 </form>

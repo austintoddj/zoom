@@ -1,0 +1,26 @@
+.todo__item {
+  padding-left: 60px;
+  display: block;
+  position: relative;
+
+  & > .checkbox__char {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  small {
+    display: block;
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
+  }
+
+  & > input[type=checkbox] {
+    &:checked {
+      & ~ .listview__content,
+      & ~ .listview__attrs {
+        text-decoration: line-through;
+      }
+    }
+  }
+}

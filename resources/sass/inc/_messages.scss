@@ -1,0 +1,148 @@
+$message-sidebar-width: 23rem;
+
+.messages {
+  display: flex;
+  flex-direction: row;
+  @include card();
+  height: calc(100vh - 180px);
+}
+
+.messages__sidebar {
+  width: $message-sidebar-width;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    border-right: 1px solid $gray-100;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  .listview {
+    height: calc(100% - 130px);
+    overflow-y: auto;
+  }
+}
+
+.messages__search {
+  padding: 0 2.2rem;
+  position: relative;
+
+  .form-group {
+    &:before {
+      @include font-icon('\f1c3', 1.3rem);
+      position: absolute;
+      left: 0;
+      bottom: 0.15rem;
+    }
+  }
+
+  .form-control {
+    padding-left: 2rem;
+  }
+}
+
+.messages__body {
+  flex: 2;
+  flex-direction: column;
+  display: flex;
+}
+
+.messages__header,
+.messages__reply {
+  flex: 0 0 auto;
+}
+
+.messages__content {
+  position: relative;
+  flex: 1 1 auto;
+  overflow: hidden;
+  height: 100%;
+
+  @include media-breakpoint-up(md) {
+    padding: 2.5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 1.5rem;
+  }
+}
+
+.messages__item {
+  display: flex;
+  margin-bottom: 2rem;
+
+  &:not(.messages__item--right) {
+    flex-direction: row;
+
+    .messages__details {
+      padding-left: 1rem;
+    }
+  }
+}
+
+.messages__details {
+  max-width: 500px;
+
+  & > p {
+    border-radius: $border-radius;
+    padding: 1rem 1.3rem;
+    margin-bottom: 0;
+    display: inline-block;
+    text-align: left;
+
+    & + p {
+      margin-top: 2px;
+    }
+  }
+
+  & > small {
+    display: block;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    color: $text-muted;
+    font-size: 0.9rem;
+
+    & > .zmdi {
+      font-size: 1.2rem;
+      vertical-align: middle;
+      margin-right: 0.3rem;
+    }
+  }
+
+  &:not(.messages__details--highlight) > p {
+    background-color: $gray-50;
+  }
+}
+
+.messages__item--right {
+  flex-direction: row-reverse;
+
+  .messages__details {
+    text-align: right;
+
+    & > p {
+      background-color: $blue;
+      color: $white;
+      margin-left: auto;
+    }
+  }
+}
+
+.messages__reply {
+  border-top: 1px solid $gray-100;
+  position: relative;
+}
+
+.messages__reply__text {
+  height: 50px;
+  width: 100%;
+  margin-bottom: -5px;
+  border: 0;
+  border-radius: $border-radius;
+  padding: 1rem 1.5rem;
+  resize: none;
+  background-color: transparent;
+  color: $input-color;
+}

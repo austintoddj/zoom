@@ -1,57 +1,61 @@
 <form method="POST" action="{{ route('register') }}">
     @csrf
 
-    <div class="form-group row">
-        <div class="col-md-12">
-            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}" required autofocus>
-            @if ($errors->has('name'))
+    <div class="login__block__body">
+        <div class="form-group form-group--float form-group--centered">
+            <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required>
+
+            @if ($errors->has('first_name'))
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('name') }}</strong>
+                    <strong>{{ $errors->first('first_name') }}</strong>
                 </span>
             @endif
+            <label>First Name</label>
+            <i class="form-group__bar"></i>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="col-md-12">
-            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}" required>
+        <div class="form-group form-group--float form-group--centered">
+            <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required>
+
+            @if ($errors->has('last_name'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('last_name') }}</strong>
+                </span>
+            @endif
+            <label>Last Name</label>
+            <i class="form-group__bar"></i>
+        </div>
+
+        <div class="form-group form-group--float form-group--centered">
+            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
             @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('email') }}</strong>
                 </span>
             @endif
+            <label>Email Address</label>
+            <i class="form-group__bar"></i>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="col-md-12">
-            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" name="password" required>
+        <div class="form-group form-group--float form-group--centered">
+            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
             @if ($errors->has('password'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
             @endif
+            <label>Password</label>
+            <i class="form-group__bar"></i>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="col-md-12">
-            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ __('Password Confirmation') }}" required>
+        <div class="form-group form-group--float form-group--centered">
+            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+            <label>Confirm Password</label>
+            <i class="form-group__bar"></i>
         </div>
-    </div>
 
-    <div class="form-group row mb-0">
-        <div class="col-md-12">
-            <button type="submit" class="btn btn-primary btn-block">
-                {{ __('Register') }}
-            </button>
-        </div>
+        <button type="submit" class="btn btn--icon login__block__btn"><i class="fas fa-arrow-right"></i></button>
     </div>
-
-    @if(config('socialite.enabled'))
-        <hr class="w-25 my-4">
-        <div class="form-group row mt-3">
-            @include('auth.components.socialite.links')
-        </div>
-    @endif
 </form>

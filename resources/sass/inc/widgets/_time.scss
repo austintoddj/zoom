@@ -1,0 +1,27 @@
+.widget-time {
+  padding: 2rem;
+  border-radius: $card-border-radius;
+  box-shadow: $card-shadow;
+  margin-bottom: $grid-gutter-width;
+
+  .time {
+    font-size: 2rem;
+    text-align: center;
+
+    & > span {
+      padding: 1rem 1.5rem;
+      background-color: rgba($white, 0.2);
+      border-radius: $border-radius;
+      display: inline-block;
+      margin: 0 0.25rem;
+      position: relative;
+      color: $white;
+
+      &:after {
+        position: absolute;
+        right: -13px;
+        top: 10px;
+      }
+    }
+  }
+}

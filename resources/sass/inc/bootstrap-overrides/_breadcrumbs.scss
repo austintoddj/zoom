@@ -1,0 +1,24 @@
+.breadcrumb {
+  border-bottom: 1px solid $gray-200;
+  border-radius: 0;
+}
+
+.breadcrumb-item {
+  + .breadcrumb-item {
+    &:before {
+      font-family: $font-family-icon;
+      position: relative;
+      top: 1px;
+      color: $text-muted;
+    }
+  }
+}
+
+.breadcrumb-item > a,
+a.breadcrumb-item {
+  color: $body-color;
+
+  &:hover {
+    color: darken($body-color, 10%);
+  }
+}

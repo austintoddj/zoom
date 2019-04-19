@@ -1,0 +1,10 @@
+// Generate background color and color classes
+@each $current-color in $colors {
+  .bg-#{nth($current-color, 1)} {
+    background-color: #{nth($current-color, 2)} !important;
+  }
+
+  .text-#{nth($current-color, 1)} {
+    color: #{nth($current-color, 2)} !important;
+  }
+}

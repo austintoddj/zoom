@@ -1,26 +1,25 @@
-@extends('auth.layout')
+@extends('layouts.app')
 
-@section('title', 'Forgot Password')
+@section('title', 'Forgot password')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card shadow-sm px-3 py-3">
-                    <div class="card-body">
-                        <h4 class="mt-4 text-center">{{ __('Forgot Password') }}</h4>
-                        <hr class="w-25 mb-5">
+    <div class="login__block active" id="l-forget-password">
+        <div class="login__block__header palette-Purple bg">
+            <i class="fas fa-user-circle"></i>
+            Reset your password
 
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+            <div class="actions actions--inverse login__block__actions">
+                <div class="dropdown">
+                    <i data-toggle="dropdown" class="fas fa-ellipsis-v actions__item"></i>
 
-                        @include('auth.components.forms.email')
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{{ route('login') }}">Sign in</a>
+                        <a class="dropdown-item" href="{{ route('register') }}">Create an account</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        @include('auth.components.forms.email')
     </div>
 @endsection

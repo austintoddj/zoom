@@ -1,0 +1,27 @@
+.accordion {
+
+}
+
+.accordion__item {
+  border: 1px solid $accordion-border-color;
+
+  & + .accordion__item {
+    margin-top: -1px;
+  }
+}
+
+.accordion__title {
+  display: block;
+  cursor: pointer;
+  padding: $accordion-padding;
+  color: $headings-color;
+  transition: background-color 500ms;
+
+  &:hover {
+    background-color: $gray-50;
+  }
+}
+
+.accordion__content {
+  padding: $accordion-padding;
+}

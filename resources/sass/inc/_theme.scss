@@ -1,0 +1,41 @@
+// Theming
+@mixin ma-theme($color) {
+  .header,
+  .login__block__header,
+  .login__block__btn,
+  .top-menu {
+    background-color: $color;
+  }
+
+  .navigation__sub--active > a,
+  .navigation__active > a,
+  .navigation__active:before {
+    color: $color;
+  }
+}
+
+$themes: (
+  "red": $red,
+  "purple": $purple,
+  "indigo": $indigo,
+  "blue": $blue,
+  "cyan": $cyan,
+  "teal": $teal,
+  "green": $green,
+  "brown": $brown,
+  "orange": $orange,
+  "blue-grey": $blue-grey
+);
+
+@each $theme, $value in $themes {
+  [data-ma-theme="#{$theme}"] {
+    @include ma-theme($value);
+  }
+}
+
+.theme-switch {
+  .btn-group--colors {
+    display: block;
+    margin-top: 0.75rem;
+  }
+}

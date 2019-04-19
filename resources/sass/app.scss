@@ -1,0 +1,107 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+// Variables
+@import "inc/variables";
+
+// Mixins
+@import "inc/mixins/mixins";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Select2
+@import "~select2/src/scss/core";
+
+// Bootstrap overrides
+@import "inc/bootstrap-overrides/dropdown";
+@import "inc/bootstrap-overrides/progress";
+@import "inc/bootstrap-overrides/card";
+@import "inc/bootstrap-overrides/buttons";
+@import "inc/bootstrap-overrides/tables";
+@import "inc/bootstrap-overrides/forms";
+@import "inc/bootstrap-overrides/input-groups";
+@import "inc/bootstrap-overrides/custom-forms";
+@import "inc/bootstrap-overrides/pagination";
+@import "inc/bootstrap-overrides/alerts";
+@import "inc/bootstrap-overrides/close";
+@import "inc/bootstrap-overrides/breadcrumbs";
+@import "inc/bootstrap-overrides/collapse";
+@import "inc/bootstrap-overrides/carousel";
+@import "inc/bootstrap-overrides/modal";
+@import "inc/bootstrap-overrides/popovers";
+@import "inc/bootstrap-overrides/tabs";
+@import "inc/bootstrap-overrides/tooltip";
+
+// Core styles
+@import "inc/generics";
+@import "inc/utilities";
+@import "inc/base";
+@import "inc/list";
+@import "inc/layout";
+@import "inc/misc";
+@import "inc/header";
+@import "inc/footer";
+@import "inc/sidebar";
+@import "inc/chat";
+@import "inc/charts";
+@import "inc/toggle-switch";
+@import "inc/listview";
+@import "inc/toolbars";
+@import "inc/page-loader";
+@import "inc/profile";
+@import "inc/photos";
+@import "inc/contacts";
+@import "inc/groups";
+@import "inc/messages";
+@import "inc/pricing-table";
+@import "inc/invoice";
+@import "inc/login";
+@import "inc/todo";
+@import "inc/notes";
+@import "inc/theme";
+@import "inc/ie-warning";
+@import "inc/error";
+@import "inc/results";
+@import "inc/issue-tracker";
+@import "inc/team";
+@import "inc/blog";
+@import "inc/q-a";
+
+// Widgets
+@import "inc/widgets/past-days";
+@import "inc/widgets/visitors";
+@import "inc/widgets/pie-charts";
+@import "inc/widgets/quick-stats";
+@import "inc/widgets/photos";
+@import "inc/widgets/ratings";
+@import "inc/widgets/profile";
+@import "inc/widgets/contact";
+@import "inc/widgets/signups";
+@import "inc/widgets/time";
+@import "inc/widgets/search";
+
+// Vendor overrides
+@import "inc/vendor-overrides/flot";
+@import "inc/vendor-overrides/sparklines";
+@import "inc/vendor-overrides/select2";
+@import "inc/vendor-overrides/dropzone";
+@import "inc/vendor-overrides/nouislider";
+@import "inc/vendor-overrides/easy-pie-charts";
+@import "inc/vendor-overrides/data-tables";
+@import "inc/vendor-overrides/flatpickr";
+@import "inc/vendor-overrides/bootstrap-colorpicker";
+@import "inc/vendor-overrides/trumbowyg";
+@import "inc/vendor-overrides/fullcalendar";
+@import "inc/vendor-overrides/sweetalert2";
+@import "inc/vendor-overrides/lightgallery";
+@import "inc/vendor-overrides/jquery.scrollbar";
+@import "inc/vendor-overrides/Waves";
+@import "inc/vendor-overrides/jqTree";
+@import "inc/vendor-overrides/rateYo";
+@import "inc/vendor-overrides/jquery-text-counter";

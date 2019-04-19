@@ -1,0 +1,47 @@
+.team {
+  margin-top: 7rem;
+}
+
+.team__item {
+  text-align: center;
+  margin-bottom: 7rem;
+
+  @include media-breakpoint-down(sm) {
+    max-width: 365px;
+    margin: 0 auto 80px;
+  }
+
+  .card-subtitle {
+    margin-bottom: 1rem;
+  }
+}
+
+.team__img {
+  display: inline-block;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 7px solid $white;
+  margin: -4rem auto -0.5rem;
+}
+
+.team__social {
+  margin-top: 2rem;
+
+  & > a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 36px;
+    color: $white;
+    background-color: $gray-50;
+    font-size: 1.2rem;
+    margin: 0 1px;
+    transition: opacity 300ms, background-color 300ms;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

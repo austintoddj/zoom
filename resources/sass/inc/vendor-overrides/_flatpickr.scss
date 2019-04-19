@@ -1,0 +1,143 @@
+.flatpickr-calendar {
+  border-radius: $border-radius;
+  border: 0;
+  box-shadow: $dropdown-box-shadow;
+  width: auto;
+  margin-top: -2px;
+  user-select: none;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.flatpickr-months {
+  background-color: $teal;
+  border-radius: $border-radius $border-radius 0 0;
+
+  .flatpickr-month {
+    height: 60px;
+  }
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $white;
+    top: 13px;
+    transition: background-color 300ms;
+
+    &:hover {
+      color: $white;
+      background-color: rgba($white, 0.2);
+    }
+  }
+
+  .flatpickr-prev-month {
+    margin-left: 15px;
+  }
+
+  .flatpickr-next-month {
+    margin-right: 15px;
+  }
+}
+
+.flatpickr-current-month {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: $white;
+  padding-top: 18px;
+
+  span.cur-month,
+  input.cur-year {
+    font-weight: $font-weight-bold;
+  }
+
+  span.cur-month:hover {
+    background-color: transparent;
+  }
+
+  .numInputWrapper {
+    &:hover {
+      background-color: transparent;
+    }
+
+    span {
+      border: 0;
+      right: -5px;
+      padding: 0;
+
+      &:after {
+        left: 3px;
+      }
+
+      &.arrowUp:after {
+        border-bottom-color: $white;
+      }
+
+      &.arrowDown:after {
+        border-top-color: $white;
+      }
+    }
+  }
+}
+
+span.flatpickr-weekday {
+  font-weight: $font-weight-base;
+  color: $headings-color;
+}
+
+.flatpickr-day {
+  font-size: 0.92rem;
+  border: 0;
+  color: $body-color;
+
+  &.selected {
+    &, &:hover {
+      background-color: $teal !important;
+      color: $white !important;
+    }
+  }
+
+  &.today {
+    &, &:hover {
+      background-color: $gray-100;
+      color: $headings-color;
+    }
+  }
+
+  &:hover {
+    background-color: $gray-100;
+  }
+}
+
+.numInputWrapper {
+  span {
+    &:hover {
+      background-color: $white;
+    }
+  }
+}
+
+.flatpickr-time {
+  border: 0 !important;
+  background-color: $gray-50;
+
+  .numInputWrapper,
+  .flatpickr-am-pm {
+    &:hover {
+      background-color: $gray-50;
+    }
+  }
+}
+
+.flatpickr-innerContainer {
+  padding: 15px;
+}

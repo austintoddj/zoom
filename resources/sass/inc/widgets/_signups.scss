@@ -1,0 +1,23 @@
+.widget-signups {
+  background-color: $blue-grey;
+}
+
+.widget-signups__list {
+  text-align: center;
+
+  & > a {
+    vertical-align: top;
+    margin: 4px 2px;
+    display: inline-block;
+  }
+
+  .avatar-char {
+    background-color: rgba($white, 0.1);
+    color: $white;
+  }
+
+  .avatar-char,
+  .avatar-img {
+    margin: 0;
+  }
+}

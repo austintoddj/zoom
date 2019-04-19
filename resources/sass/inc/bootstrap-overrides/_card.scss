@@ -1,0 +1,109 @@
+.card {
+  box-shadow: $card-shadow;
+  margin-bottom: $card-columns-margin;
+
+  &:not([class*="border-"]) {
+    border: 0;
+  }
+}
+
+.card--inverse {
+  &, .card-title {
+    color: $white;
+  }
+  
+  .card-subtitle {
+    color: rgba($white, 0.75);
+  }
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: $font-weight-base;
+  line-height: 140%;
+  margin-top: -0.35rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card-subtitle {
+  color: $text-muted;
+  font-size: 1rem;
+  font-weight: $font-weight-base;
+  margin-top: -1.5rem;
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.card > .actions,
+.card-body > .actions {
+  position: absolute;
+  right: 15px;
+  z-index: 2;
+  top: 18px;
+}
+
+[class*="card-img"] {
+  width: 100%;
+}
+
+.card-link {
+  text-transform: uppercase;
+  font-size: 0.98rem;
+  color: $headings-color;
+  display: inline-block;
+  margin-top: 1rem;
+  @include transition(color 300ms);
+
+  &:hover {
+    color: lighten($headings-color, 20%);
+  }
+}
+
+.card-body {
+  .card-body {
+    margin-bottom: 0;
+  }
+
+  & + .listview {
+    margin-top: -0.9rem;
+  }
+}
+
+.card-body__title {
+  font-size: 1.1rem;
+  color: $headings-color;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.card--fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: $header-z-index - 1;
+  padding-top: $header-height;
+  overflow: auto;
+}
+
+.card-header,
+.card-footer {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  background-color: $card-header-bg;
+}
+
+.card-header {
+  margin-bottom: -0.35rem;
+}
+
+.card-footer {
+  margin-top: -0.35rem; 
+}

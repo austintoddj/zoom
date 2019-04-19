@@ -11,14 +11,19 @@ const mix = require('laravel-mix');
  |
  */
 
-// Public Assets...
-mix.sass('resources/public/scss/public.scss', 'public/css');
-
-// Auth Assets...
-mix.js('resources/auth/js/auth.js', 'public/js')
-    .sass('resources/auth/scss/auth.scss', 'public/css');
-
-// Admin Assets...
-mix.js('resources/admin/js/admin.js', 'public/js')
-    .sass('resources/admin/scss/admin.scss', 'public/css');
-
+mix
+    .options({
+        uglify: {
+            uglifyOptions: {
+                compress: {
+                    drop_console: true,
+                }
+            }
+        }
+    })
+    .setPublicPath('public')
+    .setResourceRoot('../')
+    .js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .sourceMaps()
+    .version();

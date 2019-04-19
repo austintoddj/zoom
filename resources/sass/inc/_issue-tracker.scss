@@ -1,0 +1,36 @@
+.issue-tracker {
+  .listview__item {
+    position: relative;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+}
+
+.issue-tracker__item {
+  &:not(.actions) {
+    margin-left: 2rem;
+  }
+
+  & > .zmdi {
+    font-size: 1.15rem;
+    vertical-align: top;
+    position: relative;
+    top: 0.25rem;
+    margin-right: 0.5rem;
+  }
+
+  &.actions {
+    margin: 0 -1rem 0 1rem;
+  }
+}
+
+.issue-tracker__tag {
+  padding: 0.3rem 0.75rem 0.4rem;
+  line-height: 100%;
+  font-size: 0.95rem;
+  border-radius: $border-radius;
+  color: $white;
+}

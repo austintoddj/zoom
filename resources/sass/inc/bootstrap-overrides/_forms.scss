@@ -1,0 +1,240 @@
+// Fields
+.form-control {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  resize: none;
+  appearance: none;
+  -ms-overflow-style: none;
+
+  &:not(:disabled):not([readonly]) {
+    &:focus {
+      & ~ .form-group__bar {
+        &:before,
+        &:after {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &:disabled,
+  &[readonly]{
+    opacity: 0.6;
+  }
+
+  &.is-valid,
+  &.is-invalid {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Form Group
+.form-group {
+  position: relative;
+}
+
+.form-group__bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    @include transition(all 350ms);
+    transition-timing-function: ease;
+    background-color: $light-blue;
+  }
+
+  &:before {
+    left: 50%;
+  }
+
+  &:after {
+    right: 50%;
+  }
+}
+
+
+// Select
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  @include select-bg();
+}
+
+select.form-control {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+
+// Floating labels
+@mixin form-group-float($bottom-offset-active, $active-font-size) {
+  &:focus ~ label,
+  &.form-control--active ~ label {
+    bottom: $bottom-offset-active;
+    font-size: $active-font-size;
+  }
+}
+
+.form-group--float {
+  margin-top: 2.5rem;
+
+  .form-control {
+    @include form-group-float(2.25rem, $font-size-sm);
+
+    & ~ label {
+      font-size: $font-size-base;
+      bottom: $input-padding-y;
+      width: 100%;
+    }
+    
+    &:focus {
+      & ~ label {
+        color: $light-blue;
+      }
+    }
+  }
+
+  .form-control-sm {
+    @include form-group-float(1.75rem, $font-size-sm - 0.1rem);
+
+    & ~ label {
+      font-size: $font-size-sm;
+      bottom: 0.5rem;
+    }
+  }
+
+  .form-control-lg {
+    @include form-group-float(2.65rem, $font-size-base);
+
+    & ~ label {
+      font-size: $font-size-lg;
+      bottom: $input-padding-y-lg;
+    }
+  }
+
+  & > label {
+    color: $input-placeholder-color;
+    pointer-events: none;
+    left: $input-padding-x;
+    position: absolute;
+    margin: 0;
+    transition: bottom 200ms ease-out, color 200ms ease-out, font-size 200ms ease-out, color 300ms;
+  }
+}
+
+
+// Center aligned fields
+.form-group--centered {
+  &,
+  .form-control {
+    text-align: center;
+  }
+}
+
+
+// Validation stats
+.invalid-feedback,
+.valid-feedback {
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+}
+
+.is-valid {
+  & ~ .form-group__bar {
+    &:before,
+    &:after {
+      background-color: $green;
+    }
+  }
+}
+
+.is-invalid {
+  & ~ .form-group__bar {
+    &:before,
+    &:after {
+      background-color: $red;
+    }
+  }
+}
+
+.valid-tooltip,
+.invalid-tooltip {
+  margin-top: 0;
+  border-radius: 0;
+  padding: 0.25rem 0.5rem 0.35rem;
+}
+
+// Icon toggles
+.icon-toggle {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .zmdi {
+    z-index: 2;
+    font-size: 1.5rem;
+    color: $gray-400;
+    transition: color 300ms;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+
+    &:checked {
+      & ~ .zmdi {
+        color: $teal;
+      }
+    }
+  }
+
+  &:hover {
+    .zmdi {
+      color: $gray-500;
+    }
+  }
+}
+
+$icon-toggle-colors: (
+  "red": $red,
+  "blue": $blue,
+  "green": $green,
+  "amber": $amber,
+  "blue-grey": $blue-grey
+);
+
+@each $color, $value in $icon-toggle-colors {
+  .icon-toggle--#{$color} {
+    input[type="checkbox"] {
+      &:checked {
+        & ~ .zmdi {
+          color: $value;
+        }
+      }
+    }
+  }
+}

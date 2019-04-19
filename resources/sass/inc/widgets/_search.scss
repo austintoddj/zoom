@@ -1,0 +1,39 @@
+.widget-search {
+  border-radius: $card-border-radius;
+  margin-bottom: $grid-gutter-width;
+  box-shadow: $card-shadow;
+  position: relative;
+
+  & > i {
+    top: 1.3rem;
+    left: 1.5rem;
+    position: absolute;
+    font-size: 1.5rem;
+  }
+
+  &:not(.widget-search__inverse) {
+    background-color: $white;
+  }
+}
+
+.widget-search--inverse {
+  color: $white;
+
+  .widget-search__input {
+    color: $white;
+    
+    @include placeholder {
+      color: rgba($white, 0.75);
+    }
+  }
+}
+
+.widget-search__input {
+  border: 0;
+  background-color: transparent;
+  padding: 0 2rem 0 3.75rem;
+  width: 100%;
+  height: 4rem;
+  font-size: 1.15rem;
+}
+

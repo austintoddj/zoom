@@ -1,0 +1,245 @@
+.dataTables_wrapper {
+  margin-top: 20px;
+
+  .table {
+    margin: 40px 0 20px;
+
+    & > thead {
+      & > tr {
+        & > th {
+          cursor: pointer;
+          font-weight: $font-weight-base;
+
+          &:hover {
+            background-color: lighten($gray-100, 2%);
+          }
+
+          &.sorting_asc,
+          &.sorting_desc {
+            position: relative;
+
+            &:after {
+              font-family: $font-family-icon;
+              position: absolute;
+              top: 0.75rem;
+              right: 1rem;
+              font-size: 1.4rem;
+            }
+          }
+
+          &.sorting_asc {
+            &:after {
+              content: '\f0dd';
+            }
+          }
+
+          &.sorting_desc {
+            &:after {
+              content: '\f0de';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dataTables_length,
+.dataTables_filter {
+  font-size: 0;
+  position: relative;
+
+  &:after {
+    font-family: $font-family-icon;
+    position: absolute;
+    left: 1px;
+    bottom: 9px;
+    font-size: .9rem;
+    color: $headings-color;
+  }
+
+  & > label {
+    margin: 0;
+    width: 100%;
+
+    select,
+    input[type=search] {
+      font-weight: $font-weight-base;
+      padding-left: 25px;
+      font-size: $font-size-base;
+      background: none;
+      border: 0;
+      height: 35px;
+      border-radius: 0;
+      width: 100%;
+      border-bottom: 1px solid $input-border-color;
+    }
+  }
+}
+
+.dataTables_length {
+  float: right;
+  @include select-bg();
+  margin-left: 20px;
+
+  @include media-breakpoint-up(sm) {
+    min-width: 150px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+
+  &:after {
+    content: '\f039';
+  }
+
+  select {
+    appearance: none;
+  }
+}
+
+.dataTables_filter {
+  overflow: hidden;
+
+  &:after {
+    content: '\f002';
+  }
+
+  & > label {
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      transition: width 500ms ease;
+      background-color: $blue;
+    }
+
+    &:before {
+      left: 50%;
+    }
+
+    &:after {
+      right: 50%;
+    }
+  }
+}
+
+.dataTables_filter--toggled {
+  & > label {
+    &:before,
+    &:after {
+      width: 50%;
+    }
+  }
+}
+
+.dataTables_paginate {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.paginate_button {
+  background-color: $pagination-bg;
+  display: inline-block;
+  color: $pagination-color;
+  vertical-align: top;
+  border-radius: 50%;
+  margin: 0 1px 0 2px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  @include transition(background-color 300ms, color 300ms);
+
+  &.current {
+    background-color: $pagination-active-bg;
+    color: $white;
+    cursor: default;
+  }
+
+  &:not(.current):not(.disabled) {
+    &:hover,
+    &:focus {
+      background-color: $pagination-hover-bg;
+      color: darken($body-color, 10%);
+    }
+  }
+  
+  &.current,
+  &.disabled {
+    cursor: default;
+  }
+
+  &.previous,
+  &.next {
+    font-size: 0;
+    position: relative;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 1rem;
+    }
+
+    &:before {
+      font-family: $font-family-icon;
+      font-size: 1rem;
+      line-height: 2.55rem;
+    }
+  }
+
+  &.previous {
+    &:before {
+      content: '\F060';
+    }
+  }
+
+  &.next {
+    &:before {
+      content: '\F061';
+    }
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    
+    &:hover,
+    &:focus {
+      color: $pagination-color;
+    }
+  }
+}
+
+.dataTables_info {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: $text-muted;
+}
+
+.dataTables_buttons {
+  float: right;
+  margin: 0 0 0 20px;
+  border-bottom: 1px solid $input-border-color;
+  min-height: 35px;
+}
+
+.dt-buttons {
+  display: none;
+}
+
+.data-table-toggled {
+  overflow: hidden;
+
+  .dataTables_buttons {
+    [data-table-action="fullscreen"] {
+      &:before {
+        content: '\f78c';
+      }
+    }
+  }
+}

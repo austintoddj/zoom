@@ -1,23 +1,35 @@
 {
     "private": true,
     "scripts": {
-        "dev": "yarn development",
+        "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "yarn development -- --watch",
-        "watch-poll": "yarn watch -- --watch-poll",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "yarn production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "test": "cross-env vendor/bin/phpunit"
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-free": "^5.4.2",
+        "@fortawesome/fontawesome-free": "^5.8",
+        "autosize": "^4.0.2",
         "axios": "^0.18",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "datatables.net": "^1.10.19",
+        "datatables.net-buttons": "^1.5.4",
         "jquery": "^3.2",
-        "laravel-mix": "^2.0",
+        "jquery-mask-plugin": "^1.14.15",
+        "jquery-scroll-lock": "^3.1.3",
+        "jquery.scrollbar": "^0.2.11",
+        "jszip": "^3.1.5",
+        "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
-        "popper.js": "^1.12"
+        "popper.js": "^1.12",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0",
+        "select2": "^4.0.6-rc.1",
+        "vue": "^2.5.17",
+        "vue-template-compiler": "^2.6.5"
     }
 }

@@ -1,7 +1,5 @@
 {
-    "/js/admin.js": "/js/admin.js",
-    "/js/auth.js": "/js/auth.js",
-    "/css/public.css": "/css/public.css",
-    "/css/auth.css": "/css/auth.css",
-    "/css/admin.css": "/css/admin.css"
+    "/js/app.js": "/js/app.js?id=7c93433d7228795aca36",
+    "/css/app.css": "/css/app.css?id=78ec61a33ef63b1f8ca8",
+    "/js/app.js.map": "/js/app.js.map?id=0d6256f204619c9bdef1"
 }
