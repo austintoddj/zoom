@@ -32,7 +32,7 @@ class SettingsController extends Controller
         validator($request->all(), [
             'first_name' => 'required',
             'last_name'  => 'required',
-            'email'      => 'required|email|max:255|' . Rule::unique('users', 'email')->ignore($user->id),
+            'email'      => 'required|email|max:255|'.Rule::unique('users', 'email')->ignore($user->id),
         ])->validate();
 
         dispatch(new UpdateSettings($user, $request->all()));
