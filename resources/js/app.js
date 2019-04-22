@@ -8,11 +8,6 @@
 require('./bootstrap');
 require('jquery.scrollbar');
 require('jquery-scroll-lock');
-require('datatables.net');
-require('datatables.net-buttons/js/dataTables.buttons.min');
-require('datatables.net-buttons/js/buttons.html5.min');
-require('datatables.net-buttons/js/buttons.print.min');
-require('jszip');
 require('jquery-mask-plugin');
 require('select2');
 require('./functions/app');

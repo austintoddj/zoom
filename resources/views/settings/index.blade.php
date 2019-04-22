@@ -258,7 +258,7 @@
                         <div class="clearfix"></div>
 
                         <div class="mt-5 text-center">
-                            <a href="{{ route('feed') }}" class="btn btn-link text-muted">Cancel</a>
+                            <a href="{{ route('dashboard') }}" class="btn btn-link text-muted">Cancel</a>
                             <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>

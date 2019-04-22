@@ -3,7 +3,7 @@
     /**
      * Upload a profile picture.
      *
-     * @source https://github.com/writingink/wink
+     * @author Mohamed Said <themsaid@gmail.com>
      */
     export default {
         props: ['user', 'url'],

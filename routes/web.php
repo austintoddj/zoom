@@ -24,16 +24,21 @@ Route::middleware(['auth'])->group(function () {
     // Dashboard routes...
     Route::get('dashboard', 'DashboardController')->name('dashboard');
 
-    // User routes...
-    Route::resource('users', 'UserController')->names([
-        'index'   => 'users.index',
-        'create'  => 'users.create',
-        'store'   => 'users.index',
-        'show'    => 'users.show',
-        'edit'    => 'users.edit',
-        'update'  => 'users.update',
-        'destroy' => 'users.destroy',
-    ]);
+    // Resource routes...
+    Route::prefix('resources')->group(function () {
+        // User routes...
+        Route::resource('users', 'UserController')->names([
+            'index'   => 'users.index',
+            'create'  => 'users.create',
+            'store'   => 'users.index',
+            'show'    => 'users.show',
+            'edit'    => 'users.edit',
+            'update'  => 'users.update',
+            'destroy' => 'users.destroy',
+        ]);
+
+        Route::get('roles', 'RoleController')->name('roles.index');
+    });
 
     // Settings routes...
     Route::prefix('settings')->group(function () {

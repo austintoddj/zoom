@@ -15,8 +15,6 @@
         "axios": "^0.18",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
-        "datatables.net": "^1.10.19",
-        "datatables.net-buttons": "^1.5.4",
         "jquery": "^3.2",
         "jquery-mask-plugin": "^1.14.15",
         "jquery-scroll-lock": "^3.1.3",

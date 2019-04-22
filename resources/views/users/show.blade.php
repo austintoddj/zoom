@@ -10,8 +10,8 @@
     <section class="content">
         <div class="content__inner content__inner--sm">
             <header class="content__title">
-                <h1>{{ $user->fullName }}</h1>
-                <small>Joined in {{ $user->created_at->format('F Y') }}</small>
+                <h1>{{ $data['user']->fullName }}</h1>
+                <small>Joined in {{ $data['user']->created_at->format('F Y') }}</small>
 
                 <div class="actions">
                     <a href="" class="actions__item fas fa-chart-line"></a>
@@ -31,30 +31,30 @@
             <div class="card profile">
                 <div class="profile__img">
                     <img
-                        @isset($user->profile_image)
-                            src="{{ $user->profile_image }}"
+                        @isset($data['user']->profile_image)
+                            src="{{ $data['user']->profile_image }}"
                         @else
-                            src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($user->email))), '?s=500') }}"
+                            src="{{ sprintf('%s%s%s', 'https://secure.gravatar.com/avatar/', md5(strtolower(trim($data['user']->email))), '?s=500') }}"
                         @endisset
-                        alt="{{ $user->name }}">
+                        alt="{{ $data['user']->name }}">
                 </div>
 
                 <div class="profile__info">
-                    @isset($user->bio)
-                        <p>{{ $user->bio }}</p>
+                    @isset($data['user']->bio)
+                        <p>{{ $data['user']->bio }}</p>
                     @endisset
 
                     <ul class="icon-list">
-                        @isset($user->phoneNumber)
+                        @isset($data['user']->phoneNumber)
                             <li>
-                                <i class="fas fa-phone"></i> <a href="tel:{{ $user->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($user->phoneNumber->phone_number) }}</a>
+                                <i class="fas fa-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a>
                             </li>
                         @endisset
 
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:{{ $user->email }}">{{ $user->email }}</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:{{ $data['user']->email }}">{{ $data['user']->email }}</a></li>
 
-                        @isset($user->address)
-                            <li><i class="fas fa-map-pin"></i>{{ $user->fullAddress }}</li>
+                        @isset($data['user']->address)
+                            <li><i class="fas fa-map-pin"></i>{{ $data['user']->fullAddress }}</li>
                         @endisset
                     </ul>
                 </div>
@@ -81,36 +81,36 @@
 
             <div class="card">
                 <div class="card-body">
-                    @isset($user->bio)
+                    @isset($data['user']->bio)
                         <h4 class="card-body__title mb-4">Bio</h4>
-                        <p>{{ $user->bio }}</p>
+                        <p>{{ $data['user']->bio }}</p>
                         <br>
                     @endisset
 
                     <h4 class="card-body__title mb-4">Social Links</h4>
 
                     <ul class="icon-list">
-                        @isset($user->social['twitter'])
+                        @isset($data['user']->social['twitter'])
                             <li><i class="fab fa-twitter"></i>
-                                <a href="{{ sprintf('%s%s', 'https://twitter.com/@', $user->social['twitter']) }}" target="_blank">{{ sprintf('%s%s', '@', $user->social['twitter']) }}</a>
+                                <a href="{{ sprintf('%s%s', 'https://twitter.com/@', $data['user']->social['twitter']) }}" target="_blank">{{ sprintf('%s%s', '@', $data['user']->social['twitter']) }}</a>
                             </li>
                         @endisset
 
-                        @isset($user->social['facebook'])
+                        @isset($data['user']->social['facebook'])
                             <li><i class="fab fa-facebook-f"></i>
-                                <a href="{{ sprintf('%s%s', 'https://facebook.com/', $user->social['facebook']) }}" target="_blank">{{ $user->social['facebook'] }}</a>
+                                <a href="{{ sprintf('%s%s', 'https://facebook.com/', $data['user']->social['facebook']) }}" target="_blank">{{ $data['user']->social['facebook'] }}</a>
                             </li>
                         @endisset
 
-                        @isset($user->social['instagram'])
+                        @isset($data['user']->social['instagram'])
                             <li><i class="fab fa-instagram"></i>
-                                <a href="{{ sprintf('%s%s', 'https://instagram.com/', $user->social['instagram']) }}" target="_blank">{{ $user->social['instagram'] }}</a>
+                                <a href="{{ sprintf('%s%s', 'https://instagram.com/', $data['user']->social['instagram']) }}" target="_blank">{{ $data['user']->social['instagram'] }}</a>
                             </li>
                         @endisset
 
-                        @isset($user->social['youtube'])
+                        @isset($data['user']->social['youtube'])
                             <li><i class="fab fa-youtube"></i>
-                                <a href="{{ sprintf('%s%s', 'https://youtube.com/', $user->social['youtube']) }}" target="_blank">{{ $user->social['youtube'] }}</a>
+                                <a href="{{ sprintf('%s%s', 'https://youtube.com/', $data['user']->social['youtube']) }}" target="_blank">{{ $data['user']->social['youtube'] }}</a>
                             </li>
                         @endisset
                     </ul>
