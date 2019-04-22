@@ -1,6 +1,6 @@
 <?php
 
-use App\Helpers\User\Roles;
+use App\Helpers\Roles;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;

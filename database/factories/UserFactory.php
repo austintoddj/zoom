@@ -1,8 +1,8 @@
 <?php
 
 use App\User;
+use App\Helpers\Gender;
 use Illuminate\Support\Str;
-use App\Helpers\User\Gender;
 use Faker\Generator as Faker;
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers\Data;
+namespace App\Helpers;
 
 class States
 {

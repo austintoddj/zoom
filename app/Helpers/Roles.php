@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers\User;
+namespace App\Helpers;
 
 class Roles
 {

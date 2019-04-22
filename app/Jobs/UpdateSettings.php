@@ -4,8 +4,8 @@ namespace App\Jobs;
 
 use App\User;
 use Carbon\Carbon;
+use App\Helpers\PhoneNumber;
 use Illuminate\Bus\Queueable;
-use App\Helpers\Data\PhoneNumber;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;

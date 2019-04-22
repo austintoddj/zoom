@@ -17,6 +17,6 @@ use Faker\Generator as Faker;
 $factory->define(PhoneNumber::class, function (Faker $faker) {
     return [
 //        'user_id'      => $faker->id,
-        'phone_number' => substr(\App\Helpers\Data\PhoneNumber::clean($faker->phoneNumber), 0, 10),
+        'phone_number' => substr(\App\Helpers\PhoneNumber::clean($faker->phoneNumber), 0, 10),
     ];
 });

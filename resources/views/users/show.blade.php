@@ -47,7 +47,7 @@
                     <ul class="icon-list">
                         @isset($data['user']->phoneNumber)
                             <li>
-                                <i class="fas fa-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\Data\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a>
+                                <i class="fas fa-phone"></i> <a href="tel:{{ $data['user']->phoneNumber->phone_number }}">{{ \App\Helpers\PhoneNumber::prettyFormatPhoneNumber($data['user']->phoneNumber->phone_number) }}</a>
                             </li>
                         @endisset
 

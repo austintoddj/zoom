@@ -3,7 +3,7 @@
 use App\User;
 use App\Address;
 use App\PhoneNumber;
-use App\Helpers\User\Roles;
+use App\Helpers\Roles;
 use Illuminate\Database\Seeder;
 
 class UsersSeeder extends Seeder
