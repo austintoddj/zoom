@@ -32,6 +32,12 @@
                     <li class="{{ app('router')->is('roles.index') ? 'navigation__active' : '' }}"><a href="{{ route('roles.index') }}">Roles</a></li>
                 </ul>
             </li>
+            <li class="navigation__sub">
+                <a href=""><i class="fas fa-tools"></i> Tools</a>
+                <ul>
+                    <li><a href="#">Backups</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">

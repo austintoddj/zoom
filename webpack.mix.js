@@ -25,5 +25,6 @@ mix
     .setResourceRoot('../')
     .js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    .copy('resources/favicon.ico', 'public')
     .sourceMaps()
     .version();

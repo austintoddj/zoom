@@ -36,8 +36,19 @@ Route::middleware(['auth'])->group(function () {
             'update'  => 'users.update',
             'destroy' => 'users.destroy',
         ]);
+    });
 
-        Route::get('roles', 'RoleController')->name('roles.index');
+    // Tool routes...
+    Route::prefix('tools')->group(function () {
+        // Backup routes...
+        Route::resource('backups', 'BackupController', [
+            'except' => ['create', 'edit', 'update', 'destroy'],
+            'names' => [
+                'index'   => 'backups',
+                'store'   => 'backups.store',
+                'show'    => 'backups.show',
+            ],
+        ]);
     });
 
     // Settings routes...

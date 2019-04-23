@@ -14,6 +14,9 @@
 
     <!-- Application style sheets -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="icon" href="{{ mix('favicon.ico') }}">
 </head>
     <body data-ma-theme="blue">
         @auth()
