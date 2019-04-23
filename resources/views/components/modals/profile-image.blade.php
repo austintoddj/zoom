@@ -5,7 +5,10 @@
                 <h5 class="modal-title pull-left">Profile Image</h5>
             </div>
             <div class="modal-body">
-                <profile-image-uploader :user="`{{ auth()->user()->id }}`"></profile-image-uploader>
+                <profile-image-uploader
+                        :user="`{{ auth()->user()->id }}`"
+                        :url="`{{ auth()->user()->profile_image }}`">
+                </profile-image-uploader>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>

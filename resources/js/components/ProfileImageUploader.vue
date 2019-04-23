@@ -33,7 +33,7 @@
             },
 
             // Update the selected image
-            updateImage({url, caption}) {
+            updateImage({url}) {
                 this.imageUrl = url;
 
                 this.uploading = false;
