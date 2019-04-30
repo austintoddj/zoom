@@ -1,32 +1,12 @@
-@extends('layouts.app')
-
-@section('title', 'Dashboard')
+@extends('zoom::index')
 
 @section('content')
-    @include('components.spinners.page-loader')
-    @include('components.nav.navbar')
-    @include('components.nav.sidebar')
-
-    <section class="content">
-        <header class="content__title">
-            <h1>Dashboard</h1>
-            <small>Welcome to the unique Material Design admin web app experience!</small>
-
-            <div class="actions">
-                <a href="" class="actions__item fas fa-chart-line"></a>
-                <a href="" class="actions__item fas fa-check-double"></a>
-
-                <div class="dropdown actions__item">
-                    <i data-toggle="dropdown" class="fas fa-ellipsis-v"></i>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="" class="dropdown-item">Refresh</a>
-                        <a href="" class="dropdown-item">Manage Widgets</a>
-                        <a href="" class="dropdown-item">Settings</a>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h1 class="mt-2">Get Started</h1>
+                <p class="mt-3 mb-4">Welcome to Zoom! Get familiar with Zoom and explore it's features in the documentation.</p>
             </div>
-        </header>
-
-        @include('components.nav.footer')
-    </section>
+        </div>
+    </div>
 @endsection

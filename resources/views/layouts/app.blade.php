@@ -2,39 +2,30 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Meta -->
+    @stack('meta')
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>{{ config('app.name') }} ― @yield('title')</title>
+    <title>@yield('title')</title>
 
-    <!-- Animate style sheets -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="{{ asset(mix(\Zoom\Zoom::$useDarkMode ? 'css/app-dark.css' : 'css/app.css', 'vendor/zoom')) }}">
 
-    <!-- Application style sheets -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-    <!-- Icon -->
-    <link rel="icon" href="{{ mix('favicon.ico') }}">
+    <!-- Additional style sheets -->
+    @stack('styles')
 </head>
-    <body data-ma-theme="blue">
-        @auth()
-            <div id="app">
-                <main class="main">
-                    @yield('content')
-                </main>
-            </div>
-        @else
-            <div class="login">
-                @yield('content')
-            </div>
-        @endauth
+<body>
+    <div id="app">
+        @yield('body')
+    </div>
 
-        <!-- Application scripts -->
-        <script src="{{ mix('js/app.js') }}"></script>
+    <!-- Application scripts -->
+    <script type="text/javascript" src="{{ mix('js/app.js', 'vendor/zoom') }}"></script>
 
-        <!-- Additional scripts -->
-        @stack('scripts')
-    </body>
+    <!-- Additional scripts -->
+    @stack('scripts')
+</body>
 </html>
