@@ -17,7 +17,7 @@
             </div>
 
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('users.show', auth()->user()->id) }}">View profile</a>
+                <a class="dropdown-item" href="{{ route('user.show', auth()->user()->id) }}">View profile</a>
                 <a class="dropdown-item" href="{{ route('settings.index') }}">Settings</a>
                 <a class="dropdown-item" href="#">Privacy and security</a>
             </div>
@@ -28,8 +28,8 @@
             <li class="navigation__sub {{ app('router')->is('resources*') ? 'navigation__sub--active navigation__sub--toggled' : '' }}">
                 <a href=""><i class="fas fa-th-large"></i> Resources</a>
                 <ul>
-                    <li class="{{ app('router')->is('users.index') ? 'navigation__active' : '' }}"><a href="{{ route('users.index') }}">Users</a></li>
-                    <li class="{{ app('router')->is('roles.index') ? 'navigation__active' : '' }}"><a href="{{ route('roles.index') }}">Roles</a></li>
+                    <li class="{{ app('router')->is('user.index') ? 'navigation__active' : '' }}"><a href="{{ route('user.index') }}">Users</a></li>
+                    <li class="{{ app('router')->is('role.index') ? 'navigation__active' : '' }}"><a href="{{ route('role.index') }}">Roles</a></li>
                 </ul>
             </li>
             <li class="navigation__sub">

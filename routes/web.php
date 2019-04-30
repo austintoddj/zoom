@@ -28,13 +28,35 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('resources')->group(function () {
         // User routes...
         Route::resource('users', 'UserController')->names([
-            'index'   => 'users.index',
-            'create'  => 'users.create',
-            'store'   => 'users.index',
-            'show'    => 'users.show',
-            'edit'    => 'users.edit',
-            'update'  => 'users.update',
-            'destroy' => 'users.destroy',
+            'index'   => 'user.index',
+            'create'  => 'user.create',
+            'store'   => 'user.index',
+            'show'    => 'user.show',
+            'edit'    => 'user.edit',
+            'update'  => 'user.update',
+            'destroy' => 'user.destroy',
+        ]);
+
+        // Role routes...
+        Route::resource('roles', 'RoleController')->names([
+            'index'   => 'role.index',
+            'create'  => 'role.create',
+            'store'   => 'role.index',
+            'show'    => 'role.show',
+            'edit'    => 'role.edit',
+            'update'  => 'role.update',
+            'destroy' => 'role.destroy',
+        ]);
+
+        // Permission routes...
+        Route::resource('permissions', 'PermissionController')->names([
+            'index'   => 'permission.index',
+            'create'  => 'permission.create',
+            'store'   => 'permission.index',
+            'show'    => 'permission.show',
+            'edit'    => 'permission.edit',
+            'update'  => 'permission.update',
+            'destroy' => 'permission.destroy',
         ]);
     });
 
@@ -43,10 +65,11 @@ Route::middleware(['auth'])->group(function () {
         // Backup routes...
         Route::resource('backups', 'BackupController', [
             'except' => ['create', 'edit', 'update', 'destroy'],
-            'names' => [
-                'index'   => 'backups',
-                'store'   => 'backups.store',
-                'show'    => 'backups.show',
+            'names'  => [
+                'index'   => 'backup.index',
+                'store'   => 'backup.store',
+                'show'    => 'backup.show',
+                'destroy' => 'backup.destroy',
             ],
         ]);
     });
