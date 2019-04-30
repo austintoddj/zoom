@@ -33,6 +33,16 @@
                             <a class="dropdown-item" href="{{ route('zoom.index') }}">Dashboard</a>
 
                             <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">Resources</h6>
+                            <a class="dropdown-item" href="#">Users</a>
+                            <a class="dropdown-item" href="#">Roles</a>
+
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">Tools</h6>
+                            <a class="dropdown-item" href="#">Backups</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Account Settings</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 Sign out
