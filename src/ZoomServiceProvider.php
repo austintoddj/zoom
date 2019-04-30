@@ -42,7 +42,7 @@ class ZoomServiceProvider extends ServiceProvider
     private function handleRoutes()
     {
         Route::group($this->routeConfiguration(), function () {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/zoom.php');
+            $this->loadRoutesFrom(__DIR__.'/../routes/zoom.php');
         });
     }
 
@@ -95,7 +95,7 @@ class ZoomServiceProvider extends ServiceProvider
             ], 'zoom-assets');
 
             $this->publishes([
-                __DIR__ . '/../config/zoom.php' => config_path('zoom.php'),
+                __DIR__.'/../config/zoom.php' => config_path('zoom.php'),
             ], 'zoom-config');
 
             $this->publishes([
@@ -112,7 +112,7 @@ class ZoomServiceProvider extends ServiceProvider
     private function handleConfig(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/zoom.php',
+            __DIR__.'/../config/zoom.php',
             'zoom'
         );
     }
