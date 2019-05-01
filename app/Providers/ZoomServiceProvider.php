@@ -14,7 +14,7 @@ class ZoomServiceProvider extends ServiceProvider
      */
     public function register()
     {
-         Zoom::night();
+        Zoom::night();
     }
 
     /**
