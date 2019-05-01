@@ -4,7 +4,7 @@
             <nav class="navbar navbar-light justify-content-between flex-nowrap flex-row py-1">
                 <!-- Left Side Of Navbar -->
                 <a class="navbar-brand logo mr-4 font-weight-bold py-0"
-                   href="{{ route('zoom.index') }}">
+                   href="{{ route('dashboard') }}">
                     <i class="fas fa-bolt"></i>
                 </a>
 
@@ -30,7 +30,7 @@
                             >
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{ route('zoom.index') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
 
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header">Resources</h6>

@@ -9,21 +9,25 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>@yield('title')</title>
+    <title>Zoom</title>
 
     <!-- Style sheets -->
-    <link rel="stylesheet" type="text/css" href="{{ asset(mix(\Zoom\Zoom::$useDarkMode ? 'css/app-dark.css' : 'css/app.css', 'vendor/zoom')) }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset(mix(\App\Zoom::$useDarkMode ? 'css/app-dark.css' : 'css/app.css')) }}">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="{{ mix('favicon.ico') }}">
 
     <!-- Additional style sheets -->
     @stack('styles')
 </head>
 <body>
     <div id="app">
-        @yield('body')
+        @include('components.nav.navbar')
+        @yield('content')
     </div>
 
     <!-- Application scripts -->
-    <script type="text/javascript" src="{{ mix('js/app.js', 'vendor/zoom') }}"></script>
+    <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 
     <!-- Additional scripts -->
     @stack('scripts')
