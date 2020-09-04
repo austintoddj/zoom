@@ -1,8 +1,8 @@
 <?php
 
+use App\Interfaces\Users\UserInterface;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
-use App\Interfaces\Users\UserInterface;
 
 class UsersTableSeeder extends Seeder
 {
