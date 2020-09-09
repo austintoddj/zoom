@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Web\Admin\Account;
 
-use Exception;
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\Resources\Users\UpdateUser;
 use App\Interfaces\Meta\RoleInterface;
 use App\Interfaces\Users\UserInterface;
-use App\Http\Requests\Resources\Users\UpdateUser;
+use Exception;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class SettingsController extends Controller
 {
