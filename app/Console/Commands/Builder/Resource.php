@@ -4,8 +4,8 @@ namespace App\Console\Commands\Builder;
 
 use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\App;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\App;
 
 class Resource extends Command
 {
