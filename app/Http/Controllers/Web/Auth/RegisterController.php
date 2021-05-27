@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Web\Auth;
 use App\Entities\Users\User;
 use App\Http\Controllers\Controller;
 use App\Interfaces\Users\UserInterface;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
