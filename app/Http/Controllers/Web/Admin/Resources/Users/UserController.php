@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Web\Admin\Resources\Users;
 
-use Exception;
-use Illuminate\View\View;
 use App\Entities\Users\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
-use App\Interfaces\Meta\RoleInterface;
-use App\Interfaces\Users\UserInterface;
 use App\Http\Requests\Resources\Users\StoreUser;
 use App\Http\Requests\Resources\Users\UpdateUser;
+use App\Interfaces\Meta\RoleInterface;
+use App\Interfaces\Users\UserInterface;
+use Exception;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
