@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Web\Admin\Account;
 
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 use Spatie\Activitylog\Models\Activity;
 
 class SecurityController extends Controller
