@@ -4,8 +4,8 @@ namespace App\Console\Commands\Builder;
 
 use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\App;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\App;
 
 class Resource extends Command
 {
@@ -36,7 +36,7 @@ class Resource extends Command
     /**
      * Create a new command instance.
      *
-     * @param Filesystem $filesystem
+     * @param  Filesystem  $filesystem
      */
     public function __construct(Filesystem $filesystem)
     {
@@ -109,10 +109,10 @@ class Resource extends Command
 
     /**
      * @param $path
-     * @param string $suffix
+     * @param  string  $suffix
      * @param $class
      * @param $namespace
-     * @param bool $with_file
+     * @param  bool  $with_file
      * @return string
      */
     private function pathForResource($path, $suffix, $class, $namespace, $with_file = true)

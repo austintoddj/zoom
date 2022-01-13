@@ -16,7 +16,7 @@ class RoleRepository extends RepositoryAbstract implements RoleInterface
     /**
      * RoleRepository constructor.
      *
-     * @param Model $model
+     * @param  Model  $model
      */
     public function __construct(Model $model)
     {

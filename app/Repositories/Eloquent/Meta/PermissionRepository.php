@@ -16,7 +16,7 @@ class PermissionRepository extends RepositoryAbstract implements PermissionInter
     /**
      * PermissionRepository constructor.
      *
-     * @param Model $model
+     * @param  Model  $model
      */
     public function __construct(Model $model)
     {
