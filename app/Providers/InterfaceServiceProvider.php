@@ -36,8 +36,8 @@ class InterfaceServiceProvider extends ServiceProvider
 
     /**
      * @param $directory
-     * @param string $file_suffix
-     * @param array $ignored_files
+     * @param  string  $file_suffix
+     * @param  array  $ignored_files
      * @return array
      */
     private function generateListForDirectory($directory, $file_suffix = '.php', $ignored_files = [])

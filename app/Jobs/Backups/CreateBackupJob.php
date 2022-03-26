@@ -4,10 +4,10 @@ namespace App\Jobs\Backups;
 
 use Exception;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 use Spatie\Backup\Tasks\Backup\BackupJobFactory;
 
 class CreateBackupJob implements ShouldQueue
@@ -28,6 +28,7 @@ class CreateBackupJob implements ShouldQueue
      * Execute the job.
      *
      * @return void
+     *
      * @throws Exception
      */
     public function handle()
