@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Web\Admin\Account;
 
-use Exception;
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\Resources\Users\UpdateUser;
 use App\Interfaces\Meta\RoleInterface;
 use App\Interfaces\Users\UserInterface;
-use App\Http\Requests\Resources\Users\UpdateUser;
+use Exception;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class SettingsController extends Controller
 {
@@ -25,8 +25,8 @@ class SettingsController extends Controller
     /**
      * SettingsController constructor.
      *
-     * @param UserInterface $userInterface
-     * @param RoleInterface $roleInterface
+     * @param  UserInterface  $userInterface
+     * @param  RoleInterface  $roleInterface
      */
     public function __construct(UserInterface $userInterface, RoleInterface $roleInterface)
     {
@@ -48,7 +48,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * @param UpdateUser $request
+     * @param  UpdateUser  $request
      * @param $id
      * @return RedirectResponse
      */

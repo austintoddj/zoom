@@ -16,7 +16,7 @@ class UserRepository extends RepositoryAbstract implements UserInterface
     /**
      * UserRepository constructor.
      *
-     * @param User $user
+     * @param  User  $user
      */
     public function __construct(User $user)
     {
