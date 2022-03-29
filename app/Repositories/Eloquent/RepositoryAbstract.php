@@ -16,7 +16,7 @@ abstract class RepositoryAbstract
 
     /**
      * @param $id
-     * @param array $with
+     * @param  array  $with
      * @return mixed
      */
     public function find($id, array $with = [])
@@ -25,7 +25,7 @@ abstract class RepositoryAbstract
     }
 
     /**
-     * @param array $data
+     * @param  array  $data
      * @return mixed
      */
     public function create(array $data = [])
@@ -35,7 +35,7 @@ abstract class RepositoryAbstract
 
     /**
      * @param $id
-     * @param array $data
+     * @param  array  $data
      * @return mixed
      */
     public function update($id, array $data = [])

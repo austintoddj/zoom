@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Web\Admin\Tools\Backups;
 
-use Exception;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Spatie\Backup\Helpers\Format;
 use App\Http\Controllers\Controller;
 use App\Jobs\Backups\CreateBackupJob;
+use Exception;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Spatie\Backup\BackupDestination\Backup;
 use Spatie\Backup\BackupDestination\BackupDestination;
+use Spatie\Backup\Helpers\Format;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
 
@@ -19,7 +19,7 @@ class BackupController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return View
      */
     public function index(Request $request): View
@@ -45,7 +45,7 @@ class BackupController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
@@ -64,8 +64,8 @@ class BackupController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Request $request
-     * @param  string $disk
+     * @param  Request  $request
+     * @param  string  $disk
      * @return View
      */
     public function show(Request $request, $disk): View
