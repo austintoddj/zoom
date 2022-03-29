@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Web\Admin\Resources\Users;
 
-use Exception;
-use Illuminate\View\View;
 use App\Entities\Users\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
-use App\Interfaces\Meta\RoleInterface;
-use App\Interfaces\Users\UserInterface;
 use App\Http\Requests\Resources\Users\StoreUser;
 use App\Http\Requests\Resources\Users\UpdateUser;
+use App\Interfaces\Meta\RoleInterface;
+use App\Interfaces\Users\UserInterface;
+use Exception;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -28,8 +28,8 @@ class UserController extends Controller
     /**
      * UserController constructor.
      *
-     * @param UserInterface $userInterface
-     * @param RoleInterface $roleInterface
+     * @param  UserInterface  $userInterface
+     * @param  RoleInterface  $roleInterface
      */
     public function __construct(UserInterface $userInterface, RoleInterface $roleInterface)
     {
@@ -38,7 +38,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return View
      */
     public function index(Request $request): View
@@ -51,7 +51,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return View
      */
     public function create(Request $request): View
@@ -64,7 +64,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param StoreUser $request
+     * @param  StoreUser  $request
      * @return RedirectResponse
      */
     public function store(StoreUser $request): RedirectResponse
@@ -87,7 +87,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @param $id
      * @return View
      */
@@ -102,7 +102,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param UpdateUser $request
+     * @param  UpdateUser  $request
      * @param $id
      * @return RedirectResponse
      */
